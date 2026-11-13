@@ -20,12 +20,12 @@ An owner-controlled, open-source-first **commercially oriented VPN product** bui
 - The original 20-task plan exists and is committed as a source document.
 - Architectural choices are proposals until validated in code and tests.
 - No live US server, installed extension, or real connection has been verified by this repository.
-- No code foundation or dependency has yet been approved by a completed license/security audit.
+- The local prototype and dependency/license inventory exist; they are not an independent security audit. Run the commands in [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md).
 - GitHub project visibility is **public**. Keep all secrets and identifying account details out.
 
 ## Day-one contribution
 
-**Best first PR:** Turn the research candidates into an evidence-backed, version-pinned dependency decision: evaluate WXT + official browser proxy APIs versus adapting SuperTunnel; record the upstream license, maintenance indicators, required features, risks, and prototype implementation plan. Then build a minimal reproducible extension shell as a separate verifiable milestone.
+**Original first milestone (now locally implemented; see VALIDATION.md):** Turn the research candidates into an evidence-backed, version-pinned dependency decision: evaluate WXT + official browser proxy APIs versus adapting SuperTunnel; record the upstream license, maintenance indicators, required features, risks, and prototype implementation plan. Then build a minimal reproducible extension shell as a separate verifiable milestone.
 
 Do **not** start by building a 30-feature UI, assuming hosting availability, copying a competitor application verbatim, or deploying a publicly accessible proxy.
 

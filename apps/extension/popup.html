@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Private Route</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header><div class="mark" aria-hidden="true">↗</div><div><strong>Private Route</strong><span>FOUNDER EDITION</span></div><span class="badge">PRIVATE</span></header>
+  <main>
+    <section class="route"><div id="indicator" class="indicator" aria-hidden="true">◌</div><h1 id="status">Disconnected</h1><p id="message" role="status">Loading browser routing status…</p><p id="expires" class="muted"></p></section>
+    <form id="login"><label for="origin">Your control API</label><input id="origin" type="url" required placeholder="https://control.example.com" autocomplete="url"><label for="username">Founder username</label><input id="username" autocomplete="username" required maxlength="100"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required><button type="submit">Sign in securely</button></form>
+    <section id="controls" hidden><label for="gateways">Browser exit</label><select id="gateways"></select><p id="empty" class="muted" hidden>No verified gateway is configured. Add an authorized host before connecting.</p><button id="connect">Connect browser</button><button id="disconnect" class="secondary" hidden>Disconnect & restore routing</button><button id="logout" class="text">Sign out</button></section>
+    <button id="emergency" class="secondary" hidden>Disconnect & restore routing</button>
+    <p id="error" class="error" role="alert" hidden></p>
+    <aside><strong>Browser coverage only</strong><p>Other apps and incognito windows are not protected. The control API bypasses the proxy. Local fixture results are labelled separately.</p></aside>
+  </main><footer>Owner controlled · No public signup</footer><script src="popup.js" type="module"></script>
+</body></html>

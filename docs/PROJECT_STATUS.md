@@ -1,22 +1,21 @@
 # Project status — factual inventory
 
-**As of 2026-11-13.** Keep this file up to date at every meaningful milestone.
+Updated 2026-11-13. **Locally tested prototype; live US release blocked.** See [VALIDATION.md](VALIDATION.md) for exact results and [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for commands.
 
-| Item | Status | Evidence |
+| Capability | Implemented | Evidence / limitation |
 | --- | --- | --- |
-| Product goals and first US prototype scope | Planned / documented | README, VISION_AND_SCOPE, original plan |
-| 20-task cost/security-first sequence | Documented | TASKS.md and source-plans file |
-| Architecture and open-source options | Candidate designs | ARCHITECTURE.md, BUILD_VS_REUSE.md |
-| Working Chrome extension | **Not implemented / not verified** | No source code or test artifacts |
-| Gateway/proxy server | **Not implemented / not verified** | No deploy/test evidence |
-| Authorized free US exit host | **Unverified / blocked on preflight** | No provisioned host evidence |
-| Account/control API and database | **Not implemented** | No code |
-| Active authenticated connection | **Not verified** | No observed route/IP evidence |
-| Automated security & leak tests | **Not implemented** | No CI/test results |
-| Admin dashboard, website, billing | **Not implemented** | No code |
-| Native full-device VPN | **Deferred** | Later milestone |
-| Public commercial service | **Not launched** | No production verification |
+| Upstream selection | All 19 shortlisted repositories checked | Exact revisions, licenses and integration/deferral decisions in REPO_AUDIT; not independent security audits |
+| Founder/control API | TypeScript, SQLite, scrypt, expiring bearer sessions, closed signup, recovery | Real TLS API and persisted database tests |
+| Proxy gateway | Established proxy-chain TLS listener, HTTP and CONNECT | Real HTTP and nested HTTPS requests; site TLS validation preserved |
+| Gateway controls | DNS/IP/port checks, pinned DNS, quotas, concurrency, active revocation/expiry | Controlled negative tests, durable accounting and fail-closed persistence tests; production firewall uninstalled |
+| Chrome extension | TypeScript MV3, scoped auth, routing lifecycle, verification, privacy restoration | Controller tests and popup DOM checks; actual MV3 install blocked by managed Chromium policy |
+| Real US exit | Not verified | No authorized zero-cost US host supplied/configured |
+| Private operations/help | Local login, aggregate usage/grants and revocation | Real Chromium UI tests; no public launch |
+| Backups/recovery | Encrypted online SQLite backup and atomic restore | Tamper/wrong-password/WAL tests plus restored founder login/usage; off-host backup not verified |
+| Distribution | Reproducible private extension ZIP and hash | No store publication; owner installation still required |
+| Deployed operations | Config runner and service/firewall templates | No live deployment, renewal automation, provider billing or rollback drill verified |
+| Full-device VPN | Not implemented | Separate deferred native client workstream |
 
-Use five task states: **Not started / In progress / Blocked / Done / Deferred**. A task is Done only with recorded acceptance evidence. Never infer Done from a plan, UI prototype, generated script, or mock response.
+**Implemented** and **automatically tested** above do not mean manually verified on the owner's device. The local verifier is a controlled fixture, not a live route/location service. No new paid resource, account, external service or public proxy was provisioned. Whole-project licensing remains an owner decision; third-party obligations are inventoried separately.
 
-**Historical source:** [VPN_Company_Launch_Plan_2026-11-12.md](source-plans/VPN_Company_Launch_Plan_2026-11-12.md). Plans and market comparison are not operational proof.
+Next gate: authorized US host and provider cost/terms preflight, followed by trusted public TLS, owner Chrome installation and leak/failure acceptance. Continue development with `npm run check` and explicit local fixture mode; do not mark Tasks 14, 19 or 20 complete from local tests.

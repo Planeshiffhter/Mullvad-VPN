@@ -1,0 +1,27 @@
+# TEMPLATE: install only on an authorized host after free-host and security preflight.
+[Unit]
+Description=Private browser proxy and loopback control API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=private-browser-proxy
+Group=private-browser-proxy
+WorkingDirectory=/opt/private-browser-proxy
+Environment=PROXY_CONFIG=/etc/private-browser-proxy/config.json
+ExecStart=/usr/bin/node /opt/private-browser-proxy/infrastructure/serve.mjs
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/private-browser-proxy
+LimitNOFILE=1024
+MemoryMax=512M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target

@@ -1,6 +1,6 @@
 # Security and privacy baseline
 
-This is a **requirements and threat-model document**, not a claim that controls are already implemented.
+This is the release requirements and threat model. A subset of controls is implemented and locally tested; see [VALIDATION.md](VALIDATION.md) for exact evidence. It is not a security certification or live-deployment claim.
 
 ## Threats
 
@@ -44,3 +44,10 @@ A VPN service is a trust-sensitive network operator. We cannot claim independent
 ## Reporting security issues
 
 Follow [../SECURITY.md](../SECURITY.md). Avoid publishing exploit details or live credentials in public issues.
+
+
+## Current retention and recovery behavior
+
+The local service stores salted password hashes, hashed random bearer/proxy secrets, expiration/revocation timestamps and aggregate traffic totals. It does not implement browsing-history logs. Expired sessions are removed; expired/revoked grants prune after seven days while a cumulative account counter preserves consumed quota. Host/platform logs and deployment access policies still need review; this is not a no-logs promise. Raw account credentials created by development initialization are test-only, private and ignored. Runtime client credentials are ephemeral restricted Chrome session data.
+
+Backups faithfully preserve historical authorization. After restoring an older database, stop services and run owner recovery with a new securely supplied password before starting; this revokes all restored sessions/grants. Off-host encrypted backup and deployed rollback remain release requirements.

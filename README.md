@@ -1,6 +1,22 @@
 # VPN Platform — open-source-first, company-owned VPN project
 
-> **Project status: documentation and architecture planning only.** As of 2026-11-13, this repository does **not** contain a working browser extension, VPN client, control API, deployed US exit server, or released product. Never treat proposed functionality as implemented.
+> **Project status: locally tested browser-proxy prototype; live release blocked.** The repository now contains a TypeScript control API and Chrome MV3 extension, SQLite founder account, authenticated TLS forward proxy, private operations/help page, encrypted recovery tools and automated tests. **No authorized US exit host, owner Chrome installation, leak certification or full-device VPN is verified.** See [validation evidence](docs/VALIDATION.md) and [remaining gates](TASKS.md).
+
+## Build and test now
+
+Use Node **24.22.1**, npm, OpenSSL, `zip`, and Chromium for browser UI tests. No paid service is required for local development.
+
+```sh
+npm ci --ignore-scripts
+npm run check
+npm run package
+npm run dev:init
+npm run dev
+```
+
+Development services bind only to loopback and use verified TLS. `npm run dev -- --fixture` explicitly advertises a **local test fixture**, never a US exit. Development credentials and the local test certificate stay in ignored `.local/` with private permissions. See [local setup and installation](docs/LOCAL_DEVELOPMENT.md) before signing in. The default advertises no gateway until one is actually configured.
+
+`dist/private-route-extension-0.1.0.zip` is a private installation artifact, not a store release. Cloud Chromium policy blocks unpacked extensions in this environment; popup UI and API/gateway integrations are tested separately. An owner's unmanaged Chrome installation and real-route acceptance remain required.
 
 ## Our mission
 
@@ -44,7 +60,7 @@ Build an **original, trustworthy consumer VPN platform** that can eventually com
 
 - **One owner-controlled repository, modular monorepo architecture**; use packages/services from established open-source projects rather than pasting entire repositories together.
 - **Research before implementation.** Evaluate license obligations, maintenance, security, testability, and total integration cost.
-- Candidate components include [WXT](https://github.com/wxt-dev/wxt), official Chrome proxy APIs, [Better Auth](https://github.com/better-auth/better-auth), [shadcn/ui](https://github.com/shadcn-ui/ui), [Playwright](https://github.com/microsoft/playwright), [Gitleaks](https://github.com/gitleaks/gitleaks), established proxy software, and later WireGuard. These are **candidates, not installed dependencies**.
+- Candidate components include [WXT](https://github.com/wxt-dev/wxt), official Chrome proxy APIs, [Better Auth](https://github.com/better-auth/better-auth), [shadcn/ui](https://github.com/shadcn-ui/ui), [Playwright](https://github.com/microsoft/playwright), [Gitleaks](https://github.com/gitleaks/gitleaks), established proxy software, and later WireGuard. Selection and deferral decisions for every candidate are recorded in [REPO_AUDIT.md](docs/REPO_AUDIT.md).
 - Track ADRs and exact versions before implementation. Do not invent a VPN protocol or home-grown encryption.
 - **Public repository:** do not commit personal details, production credentials, private endpoint credentials, recovery tokens, private keys, or billing data.
 - **Code reuse is subject to upstream licenses.** Publicly visible code is not automatically freely licensed; project licensing remains an explicit decision in [docs/LICENSING.md](docs/LICENSING.md).
@@ -77,7 +93,7 @@ docs/
 .github/                 Contributor issue and PR templates
 ```
 
-**Current contents are documentation; source application folders will be created by the first implementation milestone, not faked in advance.**
+**Implemented source:** `apps/extension`, `apps/website`, `services/control-api`, `services/gateway`, `scripts`, `infrastructure`, and `tests`. The map above describes the project documentation. See the local development guide for executable commands.
 
 ## First contribution
 

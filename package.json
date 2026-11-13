@@ -1,0 +1,31 @@
+{
+  "name": "private-browser-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "test": "node --test --test-timeout=30000 tests/*.test.js",
+    "build": "node apps/extension/build.js",
+    "dev:init": "node scripts/dev.mjs init",
+    "dev": "node scripts/dev.mjs start",
+    "account": "node services/control-api/cli.ts",
+    "backup": "node scripts/ops.mjs",
+    "check": "npm run typecheck && npm test && npm run build && git diff --check",
+    "package": "node scripts/package.mjs",
+    "typecheck": "tsc --noEmit",
+    "start": "node infrastructure/serve.mjs"
+  },
+  "dependencies": {
+    "ipaddr.js": "2.3.0",
+    "proxy-chain": "3.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "@types/chrome": "0.3.7",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

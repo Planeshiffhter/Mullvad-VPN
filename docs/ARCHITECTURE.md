@@ -1,4 +1,12 @@
-# Technical architecture (proposal — not deployed)
+# Technical architecture (local prototype; not deployed)
+
+## Implemented baseline
+
+`services/control-api` uses TypeScript on Node 24 with built-in SQLite and scrypt password hashing. `services/gateway` integrates established proxy-chain 3.0.3 for HTTP forwarding and HTTPS CONNECT over a native TLS proxy listener. A conservative ipaddr.js policy checks all DNS answers and pins a validated address. The same process authorizes unique grants against SQLite and persists quota accounting; expiry and revocation terminate active source and destination sockets. Only one founder grant is active at once, with four concurrent sockets.
+
+`apps/extension` is original typed MV3 code over official Chrome APIs. No WXT, vendor extension, Better Auth or UI framework code is copied. The browser build strips checked TypeScript to packaged JavaScript; Node directly runs erasable TypeScript. `apps/website` provides the private operations/help UI. `scripts/dev.mjs` binds everything to loopback, while `infrastructure/serve.mjs` is an operator-configured deployment entry point, not a deployed endpoint.
+
+See [REPO_AUDIT.md](REPO_AUDIT.md), [DECISIONS.md](DECISIONS.md) and [VALIDATION.md](VALIDATION.md) for evidence and limits. Control API origin bypass and non-proxied browser traffic remain explicit exclusions; no global kill-switch claim is made.
 
 ## Guiding separation
 

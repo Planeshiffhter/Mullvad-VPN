@@ -30,3 +30,12 @@ Never include account login emails, billing information, provider authentication
 ## New coder / Codex kickoff
 
 "Read README.md, AGENTS.md, TASKS.md, docs/START_HERE.md, docs/PROJECT_STATUS.md, docs/ARCHITECTURE.md, docs/SECURITY_AND_PRIVACY.md, docs/BUILD_VS_REUSE.md, docs/DECISIONS.md, and docs/COST_POLICY.md. Identify the earliest unblocked task. Audit dependencies before coding. Build the smallest tested deliverable, report actual evidence, update docs, and commit. Never spend money or misrepresent mock results."
+
+
+## Current implementation handoff — 2026-11-13
+
+Source areas: TypeScript control API and MV3 extension, established TLS proxy adapter, private operations/help, SQLite recovery, private development/runtime tooling, pinned dependencies and integration/security tests. Current acceptance result: 56 automated checks passed, actual MV3-load check skipped because managed Chromium blocks unpacked extensions; see VALIDATION.md for all boundaries. Source originally started at `476a928`.
+
+Run `npm ci --ignore-scripts` and `npm run check`, then `npm run package`. For local services run `npm run dev:init` followed by `npm run dev -- --fixture`; stop with Ctrl+C. No US host or live owner Chrome verification is available. No paid resource or public deployment was created. Original project license remains undecided; upstream audit and all locked dependency licenses are documented.
+
+Next action is the Task03 owner-host preflight and Tasks10–15 actual Chrome/traffic acceptance. Do not claim the whole VPN project complete or mark Tasks14/19/20 Done from the local package. Native clients and public business features remain deferred.

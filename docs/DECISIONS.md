@@ -25,3 +25,14 @@ Add date, owner, options evaluated, direct upstream source/license/version, secu
 ## Avoid unapproved assumptions
 
 No automatic paid hosting, public users, charging customers, full no-logs promises, vendor API usage, telemetry collection, domain purchases, proprietary competitor code copying, or "all features now" rewrites.
+
+
+## 2026-11-13 — local prototype implementation decisions
+
+- **ADR-014 (implemented locally):** use proxy-chain 3.0.3 through its native HTTPS server and per-request hooks, with ipaddr.js 2.3.0 for conservative destination classification. This replaces 3proxy as the immediate proof-of-concept candidate because authorization, DNS pinning and per-grant enforcement can be integrated without an external auth/reload protocol. 3proxy remains evaluated, not vendored. Exact licenses and release refs: REPO_AUDIT.md.
+- **ADR-015 (implemented locally):** original TypeScript MV3 adapter over official Chrome APIs rather than importing WXT, SuperTunnel, Proton or Windscribe. The small extension needs no UI/build framework; executable code is bundled locally with no remote scripts. TypeScript control API and extension are strictly checked; Node 24 runs erasable TS and strips it for browser distribution.
+- **ADR-016 (implemented locally):** single founder, built-in Node SQLite and scrypt; no public signup, OAuth/email/SMS, paid API or authentication framework. Sessions last one hour; one active grant lasts five minutes, with up to four sockets. Replacement revokes previous access; renewal is explicit reconnect. Separate sessions for the same founder can revoke each other's grants. Native crypto primitives implement password hashing and authenticated backup encryption, not a networking protocol.
+- **ADR-017 (implemented locally):** persistent lifetime founder quota, no automatic refill, and seven-day expired/revoked grant retention. Account totals survive pruning/recovery. Usage records aggregate bytes, timestamps and revocation state, not browsing history. Application counters exclude provider overhead; a host must supply independent limits before deployment.
+- **ADR-018 (release boundary):** loopback development and explicit LOCAL fixture; management remains loopback in the operator runner. An SSH/VPN management path and certificate setup are operator prerequisites. Managed cloud browser policy is preserved. No real US route, global browser kill switch, native protection, no-logs audit or legal compliance is claimed. Project license remains undecided.
+
+Reversal: keep the thin API/grant contract and replace the separate proxy adapter or extension build tooling behind its tests. No upstream whole repository was merged.

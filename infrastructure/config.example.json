@@ -1,0 +1,28 @@
+{
+  "database": "/var/lib/private-browser-proxy/control.sqlite",
+  "tls": {
+    "key": "/etc/private-browser-proxy/tls.key",
+    "cert": "/etc/private-browser-proxy/tls.crt"
+  },
+  "apiOrigin": "https://control.example.invalid",
+  "management": {"host": "127.0.0.1", "port": 9443},
+  "proxy": {"host": "127.0.0.1", "port": 8443},
+  "extensionOrigins": [],
+  "gateway": {
+    "id": "owner-us",
+    "name": "Owner gateway — NOT VERIFIED",
+    "scheme": "https",
+    "host": "proxy.example.invalid",
+    "port": 8443,
+    "country": "US",
+    "live": false,
+    "expectedIp": "203.0.113.10",
+    "verificationUrl": "https://route.example.invalid/ip"
+  },
+  "preflight": {
+    "authorized": false,
+    "zeroAdditionalCostVerified": false,
+    "providerPermitsProxy": false,
+    "usRegionVerified": false
+  }
+}

@@ -23,3 +23,18 @@ Paid proxy/VPS/cloud instance, credit top-up, commercial VPN API, domain, app-st
 6. No paid fallback without an explicit owner decision recorded in [DECISIONS.md](DECISIONS.md).
 
 **Possible candidate, not an approved or guaranteed resource:** Oracle Cloud Always Free (home-region / availability / card-verification constraints apply). See the historical plan for source references. The user remains responsible for owner-controlled cloud verification.
+
+
+## Current dependency and service inventory
+
+| Item | Current use | Incremental spend / boundary |
+| --- | --- | --- |
+| Existing Codex cloud environment + installed Chromium/Node/OpenSSL/zip | Local build/test | Existing entitlement only; no new purchase made, usage allowance still applies |
+| npm runtime packages (proxy-chain, ipaddr.js and locked transitives) | Local forwarding/policy | Open-source artifacts; no hosted API subscription |
+| TypeScript, Chrome/Node types and Playwright | Development | Open-source tooling; no paid browser cloud |
+| Built-in SQLite and Node crypto | Local account/state/backup | No managed database, email, SMS or AI API |
+| Local test certificates and loopback verifier | Explicit fixtures | No purchased domain/certificate; not a public CA or US host |
+| US compute, public IP, disk, bandwidth, DNS/TLS renewal, off-host backup | Not configured | Cost/terms unknown; live deployment blocked, no paid fallback |
+| Public CI, stores, billing, analytics and external users | Disabled/not configured | No billable workflow or external launch enabled |
+
+Application byte quotas are not provider billing caps. TLS/IP overhead, rejected/unauthenticated traffic, updates and management may consume resources. Live $0 acceptance requires separate provider limits, emergency shutdown and actual bill review.

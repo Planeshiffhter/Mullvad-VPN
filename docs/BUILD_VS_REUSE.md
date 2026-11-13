@@ -1,6 +1,6 @@
 # Build vs reuse — upstream research shortlist
 
-**All entries below are research candidates, not imported dependencies or verified security audits.** Pin to exact commits/releases and review LICENSE, NOTICE, transitive dependencies, project health, threat model, browser permissions and compatibility before incorporation. Verify upstream repository status at decision time.
+**The shortlist below is preserved as candidate context. Current decisions and exact upstream revisions are in [REPO_AUDIT.md](REPO_AUDIT.md); all locked dependencies are in [DEPENDENCY_LICENSE_MATRIX.md](DEPENDENCY_LICENSE_MATRIX.md).** The prototype integrates proxy-chain, ipaddr.js and Playwright. The extension uses official Chrome APIs directly; WXT, SuperTunnel and other frameworks are evaluated alternatives, not imported source. This is not an independent security audit. Pin to exact commits/releases and review LICENSE, NOTICE, transitive dependencies, project health, threat model, browser permissions and compatibility before incorporation. Verify upstream repository status at decision time.
 
 | Capability | Candidate | Proposed use | Integration decision |
 | --- | --- | --- | --- |
