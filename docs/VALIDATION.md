@@ -13,6 +13,8 @@ Environment: Linux cloud task, Node 24.22.1, npm 11.9.0, installed Chromium, Ope
 | `npm audit --json` | Passed: 0 reported advisories | Registry advisory result for locked package tree, not independent security assurance |
 | `git diff --check` | Passed | Whitespace validation |
 | Development CLI | Passed | Initialization, verified-TLS API/fixture requests, SIGTERM shutdown, no secret output |
+| Independent clean checkout at source commit `3843d3e` | Passed | Local clone outside the workspace; frozen install, strict types, all 56 passing tests/1 documented skip, build and identical package hash; checkout remained clean |
+| Local Markdown links / limited secret patterns | Passed | 84 local Markdown links resolve; staged private-key/GitHub-token/AWS-access-key patterns absent. This limited check is not a full Gitleaks audit |
 
 Package: `dist/private-route-extension-0.1.0.zip`; SHA-256 `076387f8b6e6d8ec57c9aeac6e6782664625837be8a4b5ce14cb5878f8c93bc6`. Rebuild with `npm run package`; compare the generated `.sha256` file. Generated artifacts stay ignored rather than being committed. No services are intentionally left running.
 
