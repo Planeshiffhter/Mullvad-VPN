@@ -1,5 +1,15 @@
 # Project handoff and session continuity
 
+## Latest verified engineering handoff — 2026-11-15
+
+- **Source:** `feat/tested-private-browser-proxy` in [PR #1](https://github.com/rejoansardar23/vpn/pull/1), still open. Functional code milestone `f0535cb` passed [CI 43651036666](https://github.com/rejoansardar23/vpn/actions/runs/43651036666), **59/59 tests**, 0 skips. Subsequent documentation-only commits require their own newest CI verification before merging.
+- **Working real-browser integration:** `tests/chromium-route.test.js` exercises the unpacked MV3 popup/worker, exact allowed extension origin, HTTPS control login, local grant, Chrome TLS proxy setup, actual HTTP and HTTPS CONNECT, per-navigation gateway traffic accounting, non-US fixture state, Disconnect, restored settings and server-side revocation.
+- **Production bug fix:** `apps/extension/core.ts` binds default fetch to `globalThis` to avoid `WorkerGlobalScope: Illegal invocation`. The receiver regression is in `tests/extension.test.js`. `apps/extension/build.js` allows a validated test build suffix to isolate parallel browser builds. CI installs NSS tooling for temporary certificate trust; no insecure browser TLS flags or production private-network policy changes.
+- **Run:** `npm ci --ignore-scripts`, `npm run typecheck`, `npm test`, `npm run build`, `npm run package`, `npm run check`, `npm audit`. GitHub Actions runs pinned Gitleaks and archive SHA/ZIP checks. Browser test needs authorized Chromium and `certutil` on Linux; a restricted managed browser or missing tooling may cause explicit skip, never false success.
+- **Next engineering task:** cover MV3 suspension/restart and outage/revocation edge cases in the real-browser fixture. **Owner-only blockers:** genuine authorized zero-incremental-cost US host, independent live exit-IP verification, public TLS/firewall/provider limits, owner Chrome DNS/WebRTC/IPv6 leak and network-change checks, off-host recovery, final project license and independent security review. No paid service provisioned. **Do not auto-merge PR #1**.
+
+
+
 Developers and coding agents should be able to resume from GitHub without chat history.
 
 ## Canonical handoff artifacts
