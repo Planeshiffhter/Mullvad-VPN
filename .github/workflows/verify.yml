@@ -1,0 +1,63 @@
+name: Verify private browser proxy
+
+on:
+  push:
+    branches:
+      - feat/tested-private-browser-proxy
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vpn-verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out reviewed source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Use pinned Node.js runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Frozen dependency installation (without lifecycle scripts)
+        run: npm ci --ignore-scripts
+
+      - name: Strict TypeScript verification
+        run: npm run typecheck
+
+      - name: Install test Chromium with system dependencies
+        run: |
+          npx playwright install --with-deps chromium
+          echo "CHROMIUM_PATH=$(node --input-type=module -e 'import {chromium} from "@playwright/test"; console.log(chromium.executablePath())')" >> "$GITHUB_ENV"
+
+      - name: Execute all unit, integration, and browser tests
+        run: npm test
+
+      - name: Build unpacked extension
+        run: npm run build
+
+      - name: Build private extension archive
+        run: npm run package
+
+      - name: Verify packaged checksum and archive integrity
+        run: |
+          cd dist
+          sha256sum -c private-route-extension-0.1.0.zip.sha256
+          unzip -t private-route-extension-0.1.0.zip
+
+      - name: Audit locked dependencies
+        run: npm audit
+
+      - name: Check whitespace integrity
+        run: git diff --check
