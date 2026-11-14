@@ -1,6 +1,6 @@
 # Project status — factual inventory
 
-Updated 2026-11-15, retaining the earlier 2026-11-13 local test report. **Locally tested prototype; live US release blocked.** See [VALIDATION.md](VALIDATION.md) for exact results and [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for commands.
+Updated 2026-11-15 following real Chromium integration CI (59/59). **Locally tested browser-proxy prototype; live US release blocked.** See [VALIDATION.md](VALIDATION.md) for exact results and [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for commands.
 
 | Capability | Implemented | Evidence / limitation |
 | --- | --- | --- |
@@ -8,7 +8,7 @@ Updated 2026-11-15, retaining the earlier 2026-11-13 local test report. **Locall
 | Founder/control API | TypeScript, SQLite, scrypt, expiring bearer sessions, closed signup, recovery | Real TLS API and persisted database tests |
 | Proxy gateway | Established proxy-chain TLS listener, HTTP and CONNECT | Real HTTP and nested HTTPS requests; site TLS validation preserved |
 | Gateway controls | DNS/IP/port checks, pinned DNS, special-use IPv4/IPv6 denials, quotas, concurrency, active revocation/expiry | Controlled negative regression tests including special-use and mapped IPv4/IPv6, durable accounting and fail-closed persistence; production firewall uninstalled |
-| Chrome extension | TypeScript MV3, scoped auth, routing lifecycle, verification, privacy restoration | Controller tests and actual MV3 worker/popup load passed in GitHub Actions Chromium; earlier managed cloud Chromium prohibits extension installation; owner-device live proxy behavior not tested |
+| Chrome extension | TypeScript MV3, scoped auth, routing lifecycle, verification, privacy restoration | Real GitHub-hosted Chromium independently verified HTTPS API sign-in, issued grant, authenticated HTTP and HTTPS CONNECT through Chrome TLS proxy, metering, fixture-only status, Disconnect, privacy restoration and revocation (59/59 tests); owner-device and US exit remain unverified |
 | Real US exit | Not verified | No authorized zero-cost US host supplied/configured |
 | Private operations/help | Local login, aggregate usage/grants and revocation | Real Chromium UI tests; no public launch |
 | Backups/recovery | Encrypted online SQLite backup and atomic restore | Tamper/wrong-password/WAL tests plus restored founder login/usage; off-host backup not verified |
