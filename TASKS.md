@@ -7,15 +7,15 @@ Updated 2026-11-15 following independent GitHub Actions verification (original l
 | 01 | Freeze MVP scope and zero-additional-cost policy | Done | Browser-only founder scope, acceptance gates and cost inventory documented; no paid dependency |
 | 02 | Repository structure and task tracking | Done | Source, lockfile, version pin, tests, installation docs, private examples and ignore rules |
 | 03 | Verify authorized truly free US host | Blocked | Owner must supply authorized US compute, region, terms, IP/egress limits and actual billing evidence |
-| 04 | Reproducible development/test environment | Done | Node 24.22.1 GitHub-hosted Ubuntu CI: frozen install, strict types, 57/57 tests, six-file build, package, checksum, audit; fixed nonportable npm cache; see validation |
+| 04 | Reproducible development/test environment | Done | Node 24.22.1 GitHub-hosted Ubuntu CI: frozen install, strict types, 59/59 tests including authenticated Chromium HTTP/HTTPS proxy routing, six-file build, package, checksum, audit; fixed nonportable npm cache; see validation |
 | 05 | Prove authenticated TLS proxy path locally | Done | Real HTTP and nested target HTTPS CONNECT; valid/invalid auth and trusted TLS tests |
 | 06 | Harden gateway, firewall, destination restrictions | In progress | Pinned DNS and additional special-use/mapped IPv4/IPv6 CIDR denials regression-tested in CI; gateway authentication/quotas tested; host firewall, abuse review and production network not yet verified |
 | 07 | Founder account and SQLite migrations | Done | Creation, scrypt hashes, failed login, rate limit, logout, recovery and database upgrade tests |
 | 08 | Authenticated control API | Done | TLS API auth, session expiry, origin policy, status and founder authorization tested |
 | 09 | Issue, renew and revoke scoped proxy grants | Done | Replacement grants, five-minute expiry, four-socket limit, durable usage, active revocation and cross-session founder revocation tested |
-| 10 | Manifest V3 Chrome extension scaffold | In progress | Actual MV3 worker and popup loading passed in un-managed GitHub Actions Playwright Chromium; prior managed cloud Chromium still blocks loading; owner Chrome proxy routing and auth events remain unverified |
-| 11 | Connect/Disconnect + precise proxy auth scoping | In progress | Lifecycle/ownership/exact challenge tests; actual Chrome proxy events and restored live route not yet verified |
-| 12 | Truthful route/IP verification and states | In progress | Expected-IP, mismatch, expiry-during-check and outage tests; local fixtures visibly labelled, live US verifier pending |
+| 10 | Manifest V3 Chrome extension scaffold | In progress | GitHub Actions Chromium verifies real MV3 worker/popup, HTTPS API login, authenticated local HTTP/HTTPS proxy routing; owner Chrome and live US host remain unverified |
+| 11 | Connect/Disconnect + precise proxy auth scoping | In progress | Real Chromium fixture verifies Connect, authenticated HTTP/HTTPS, gateway metering, Disconnect, proxy/privacy restoration and gateway revocation; live owner route unverified |
+| 12 | Truthful route/IP verification and states | In progress | Real Chromium fixture verification is explicitly non-US; mismatch/expiry/outage tests exist; live US verifier pending |
 | 13 | Server-enforced quotas and budget controls | In progress | Persistent lifetime application quota and exhaustion tests; provider-level caps/overhead/billing comparison await host |
 | 14 | Deploy live free US service | Blocked | Task 03, owner preflight, public TLS/renewal and authorized connectivity required |
 | 15 | Leak, outage, lifecycle, error tests | In progress | Local outage/restart/auth/IPv4/IPv6 rules tested; owner-browser DNS/WebRTC/IPv6, sleep/wake and network changes unrun |
@@ -34,3 +34,10 @@ All 19 upstream shortlist projects received explicit decisions in [REPO_AUDIT.md
 - Fixed: a reproducible npm `EACCES` build failure from a workspace-specific `.npmrc` cache path; explicit special-use IPv4/IPv6 destination denials and regression assertions. No new runtime dependencies or paid services.
 - Open safety/release gates: authorized US exit/terms/real $0 spend, public TLS/renewal and firewall, real owner Chrome Connect/Disconnect/auth/DNS/WebRTC/IPv6 and outage checks, remote recovery drill, retention/log review, provider-level egress cap and project license choice. Do **not** mark Tasks 03, 14, 15, 19, 20 or 21–26 complete from CI alone.
 - Read [docs/VALIDATION.md](docs/VALIDATION.md) and the review PR before extending the implementation. **Never merge automatically.**
+
+## Latest engineering checkpoint — 2026-11-15
+
+- **Real browser milestone passed:** [GitHub CI run 43651036666](https://github.com/rejoansardar23/vpn/actions/runs/43651036666), code commit `f0535cb`: **59 passed, 0 failed, 0 skipped**. Real Chrome MV3 login, authenticated HTTPS proxy, actual HTTP and HTTPS CONNECT, metered traffic, Connect/Disconnect, proxy/privacy restoration and server revocation tested. UI labels local fixture accurately.
+- **Production defect fixed:** worker sign-in's unbound `fetch` caused Chrome's `Illegal invocation`. Default fetch is now bound; regression test included.
+- NSS certificate trust is restricted to a disposable test HOME; production destination policy is unchanged. No new runtime dependency, public deployment or incremental spending.
+- **Outstanding:** authorized US host and billing terms, trusted public TLS/firewall, owner-device DNS/WebRTC/IPv6/outage acceptance, independent review and owner commercial licensing decision. PR #1 remains open; never auto-merge.
