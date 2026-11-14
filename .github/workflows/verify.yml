@@ -1,9 +1,6 @@
 name: Verify private browser proxy
 
 on:
-  push:
-    branches:
-      - feat/tested-private-browser-proxy
   pull_request:
     branches:
       - main
