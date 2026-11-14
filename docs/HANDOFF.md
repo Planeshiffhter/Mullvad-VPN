@@ -42,7 +42,7 @@ Next action is the Task03 owner-host preflight and Tasks10–15 actual Chrome/tr
 
 ## Current review handoff — 2026-11-15
 
-**Source branch:** `feat/tested-private-browser-proxy` targeting `main`. Do not force-push or merge without explicit review/authorization. The original existing implementation, architecture, licensing policy, and zero-additional-spend constraint were preserved. Existing project artifacts and source remain authoritative, not chat history.
+**Review PR:** [#1 — tested browser-proxy prototype](https://github.com/rejoansardar23/vpn/pull/1) (open; do not merge automatically). **Source branch:** `feat/tested-private-browser-proxy` targeting `main`. Do not force-push or merge without explicit review/authorization. The original existing implementation, architecture, licensing policy, and zero-additional-spend constraint were preserved. Existing project artifacts and source remain authoritative, not chat history.
 
 **Code/CI changes made during independent review:**
 
