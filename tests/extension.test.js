@@ -245,3 +245,25 @@ test('worker bounds repeated proxy challenges without cancelling website authent
     assert.deepEqual(await challenge(details), {authCredentials: {username: active.username, password: active.password}});
   } finally { if (previous === undefined) delete globalThis.chrome; else globalThis.chrome = previous; }
 });
+
+
+test('default RouteController fetch retains the browser global receiver', async () => {
+  const original = globalThis.fetch;
+  const requests = [];
+  globalThis.fetch = function(url) {
+    assert.equal(this, globalThis, 'Browser fetch requires its global receiver');
+    requests.push(url);
+    return Promise.resolve({ok: true, status: 200,
+      json: async () => ({token: 'regression-session-token-12345', expiresAt: Date.now() + 60000})});
+  };
+  try {
+    const f = fixture();
+    const controller = new RouteController(f.browser);
+    await controller.init();
+    const result = await controller.login({origin, username: 'founder', password: 'local-test-only'});
+    assert.equal(result.signedIn, true);
+    assert.deepEqual(requests, [origin + '/v1/login']);
+  } finally {
+    globalThis.fetch = original;
+  }
+});

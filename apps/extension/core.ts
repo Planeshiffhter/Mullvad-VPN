@@ -75,7 +75,7 @@ export class RouteController {
   auth: AccountSession | null;
   active: ActiveGrant | null;
   metadata: RoutingMetadata | null;
-  constructor(browser: typeof chrome, request: typeof fetch = fetch, now: () => number = Date.now) {
+  constructor(browser: typeof chrome, request: typeof fetch = globalThis.fetch.bind(globalThis), now: () => number = Date.now) {
     this.browser = browser; this.request = request; this.now = now;
     this.state = {status: 'disconnected', message: 'No browser proxy is active.'};
     this.auth = null; this.active = null; this.metadata = null;
