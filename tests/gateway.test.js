@@ -65,9 +65,12 @@ async function tunnel(gateway, targetPort, authorization = auth) {
   return { socket, header };
 }
 
-test('public destination policy rejects private IPv4/IPv6, metadata, mixed answers and ports', async () => {
+test('public destination policy rejects private and special-use IPv4/IPv6, mixed answers and ports', async () => {
   for (const address of ['127.0.0.1', '10.0.0.1', '172.16.1.1', '192.168.0.1', '169.254.169.254',
-    '100.64.0.1', '0.0.0.0', '224.0.0.1', '::1', '::', 'fd00::1', 'fe80::1', '::ffff:127.0.0.1', 'fec0::1', '3fff::1', '64:ff9b:1::1', '5f00::1']) {
+    '100.64.0.1', '0.0.0.0', '192.0.0.9', '192.0.2.1', '198.18.0.1',
+    '198.51.100.20', '203.0.113.9', '224.0.0.1', '::1', '::', 'fd00::1',
+    'fe80::1', '::ffff:127.0.0.1', '::ffff:198.18.0.1', 'fec0::1',
+    '2001:db8::1', '2002::1', '3fff::1', '64:ff9b:1::1', '5f00::1']) {
     assert.equal(isPublicAddress(address), false, address);
   }
   assert.equal(isPublicAddress('93.184.216.34'), true);
@@ -75,6 +78,10 @@ test('public destination policy rejects private IPv4/IPv6, metadata, mixed answe
   const policy = createDestinationPolicy({ resolve: async () => [
     { address: '93.184.216.34', family: 4 }, { address: '127.0.0.1', family: 4 }] });
   await assert.rejects(policy('rebinding.invalid', 443, false), /address denied/);
+  const publicPlusSpecial = createDestinationPolicy({ resolve: async () => [
+    { address: '93.184.216.34', family: 4 }, { address: '198.18.0.1', family: 4 },
+  ] });
+  await assert.rejects(publicPlusSpecial('special-use.invalid', 443, false), /address denied/);
   await assert.rejects(policy('93.184.216.34', 22, false), /port denied/);
   await assert.rejects(policy('127.1', 80, true));
 });
