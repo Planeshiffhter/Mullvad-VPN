@@ -1,4 +1,28 @@
-# Validation report — local prototype, 2026-11-13
+# Validation report — private proxy prototype (latest verified 2026-11-15)
+
+## 2026-11-15 — independently reproduced on GitHub-hosted Ubuntu
+
+Source: `feat/tested-private-browser-proxy`, commit [`91e90c1d`](https://github.com/rejoansardar23/vpn/commit/91e90c1df91c5d4e0c3a7e4c3598bb824c6c2c96), [successful Actions run 43647697066](https://github.com/rejoansardar23/vpn/actions/runs/43647697066), job 132609050725. The workflow was created during this review, and uses an Ubuntu 24.04 GitHub-hosted runner with Node 24.22.1, lockfile-based dependencies and Playwright Chromium. **This is fresh execution evidence**, distinct from the older original cloud-task report below.
+
+| Command/check executed in CI | Actual observation |
+| --- | --- |
+| `npm ci --ignore-scripts` | **Passed** after fixing nonportable `.npmrc` cache path; earlier run 43647644278 failed `EACCES: mkdir /workspace` before tests |
+| `npm run typecheck` | **Passed** with repository strict TypeScript config; JS files are not under `tsconfig.json`'s checked include paths |
+| `npx playwright install --with-deps chromium` | **Passed**; browser executable supplied as `CHROMIUM_PATH` without disabling managed policies or TLS validation |
+| `npm test` | **57 tests, 57 passed, 0 failed, 0 skipped, 0 todo**; includes real unpacked Manifest V3 worker load/popup test and a separate browser popup test with simulated runtime |
+| `npm run build` | **Passed**; 6 local MV3 extension files |
+| `npm run package` | **Passed**; `dist/private-route-extension-0.1.0.zip`; packaging includes 6 assets and `THIRD_PARTY_NOTICES.txt` |
+| `sha256sum -c ...sha256` and `unzip -t` | **Passed**; archive SHA-256 `02331f7667bc387f866867e330553d5bb184657971fcf54d50ce3b286aaa9e70` |
+| `npm audit` | **Passed: 0 reported vulnerabilities** for the frozen npm dependency tree at that time, not a comprehensive software security certification |
+| `git diff --check` | **Passed** |
+
+**Security changes covered by the successful run:** explicit denials for special-use IPv4, IPv4-mapped and IPv6 ranges and a mixed-DNS-answer regression check; unchanged authenticated gateway/credential/usage integration tests. Exact dependency versions and third-party license obligations remain in `package-lock.json` and [DEPENDENCY_LICENSE_MATRIX.md](DEPENDENCY_LICENSE_MATRIX.md). There are 38 locked npm packages, with ten production packages (two direct); no npm integrity or registry URL exceptions were observed in static lockfile inspection. The overall product license is still undecided. The updated workflow action versions (`actions/checkout@v7.0.1`, `actions/setup-node@v7.1.0`) are later CI-only commits; check the current branch/PR status before merging.
+
+**Unverified/not implied by this CI:** an actual US exit and authorized zero-cost host, live proxy-auth and public TLS route on the owner's Chrome, DNS/WebRTC/IPv6 leak tests, browser network-change/restart failure and routing-bypass behavior, production firewall, independent security audit, provider-level bandwidth and billing controls, off-host backup/restore, and commercial or native-device VPN. The GitHub runner's MV3 test asserts loading and disconnected popup, not complete browser network tunneling. The prior cloud Chromium's managed `ExtensionInstallBlocklist` continues to explain why its earlier run skipped the same test. No paid or deployed infrastructure was created.
+
+---
+
+# Previous validation report — local prototype, 2026-11-13
 
 ## Executed results
 
