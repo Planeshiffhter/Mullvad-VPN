@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import https from 'node:https';
 import {execFileSync, spawnSync} from 'node:child_process';
+import {randomUUID} from 'node:crypto';
 import {once} from 'node:events';
 import {mkdtemp, mkdir, readFile, rm, writeFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
@@ -70,7 +71,13 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
   });
   httpsTarget.listen(0, '127.0.0.1');
   await once(httpsTarget, 'listening');
+  // A unique, never-fetched URL makes a direct fallback observable at the
+  // destination instead of trusting a popup state or a cached browser page.
+  const revokedProbePath = '/revoked-' + randomUUID();
+  let revokedDestinationArrivals = 0;
   httpTarget = http.createServer((req, res) => {
+    res.setHeader('Cache-Control', 'no-store');
+    if (req.url === revokedProbePath) revokedDestinationArrivals++;
     if (req.url === '/content') return res.end('controlled-http-through-authenticated-proxy');
     res.writeHead(404).end('Not found');
   });
@@ -133,6 +140,8 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
 
   const privacyBefore = await worker.evaluate(async () =>
     (await chrome.privacy.network.webRTCIPHandlingPolicy.get({})).value);
+  const proxyBefore = await worker.evaluate(async () =>
+    chrome.proxy.settings.get({incognito: false}));
   await page.locator('#origin').fill('https://localhost:' + apiPort);
   await page.locator('#username').fill('founder');
   await page.locator('#password').fill('ephemeral-browser-test-credential');
@@ -150,7 +159,7 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
     const routing = await chrome.proxy.settings.get({incognito: false});
     const session = (await chrome.storage.session.get('session')).session;
     return {control: routing.levelOfControl, mode: routing.value.mode,
-      grantId: session.active?.id, status: session.state.status};
+      rules: routing.value, grantId: session.active?.id, status: session.state.status};
   });
   assert.equal(connected.control, 'controlled_by_this_extension');
   assert.equal(connected.mode, 'fixed_servers');
@@ -169,6 +178,54 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
   assert.ok((gateway.usage(connected.grantId)?.bytes ?? 0) > afterHttp,
     'Actual HTTPS CONNECT navigation must cross the gateway');
 
+  // A different authenticated founder session revokes the browser's grant
+  // through the real HTTPS control API. The API calls gateway.revoke(), which
+  // terminates existing sockets and denies the credential on new requests.
+  const operator = store.login('founder', 'ephemeral-browser-test-credential');
+  assert.ok(operator?.token);
+  const revokeStatus = await new Promise((resolve, reject) => {
+    const req = https.request({
+      hostname: '127.0.0.1', port: apiPort, method: 'DELETE',
+      path: '/v1/grants/' + connected.grantId, ca: tls.cert,
+      headers: {Authorization: 'Bearer ' + operator.token},
+    }, res => {
+      res.resume();
+      res.once('end', () => resolve(res.statusCode));
+    });
+    req.once('error', reject);
+    req.end();
+  });
+  assert.equal(revokeStatus, 200, 'Founder revocation API must accept the request');
+  assert.equal(gateway.usage(connected.grantId)?.revoked, true,
+    'The live gateway must terminate/revoke the active grant');
+
+  const rejectedBefore = gateway.stats().rejectedProxyAuthentications;
+  assert.equal(revokedDestinationArrivals, 0);
+  let blockedNavigation = false;
+  try {
+    const response = await page.goto('http://localhost:' + httpPort + revokedProbePath, {
+      waitUntil: 'domcontentloaded', timeout: 15000,
+    });
+    blockedNavigation = !response || response.status() >= 400;
+  } catch {
+    // Chromium may report proxy-auth rejection as a navigation error.
+    blockedNavigation = true;
+  }
+  assert.ok(blockedNavigation, 'A revoked grant must not deliver a successful browser response');
+  assert.ok(gateway.stats().rejectedProxyAuthentications > rejectedBefore,
+    'The revoked browser request must reach the gateway and fail proxy authentication');
+  assert.equal(revokedDestinationArrivals, 0,
+    'The destination must not see the unique URL: a direct fallback is a security regression');
+
+  const afterRevocation = await worker.evaluate(async () => ({
+    proxy: await chrome.proxy.settings.get({incognito: false}),
+    privacy: await chrome.privacy.network.webRTCIPHandlingPolicy.get({}),
+  }));
+  assert.equal(afterRevocation.proxy.levelOfControl, 'controlled_by_this_extension');
+  assert.deepEqual(afterRevocation.proxy.value, connected.rules,
+    'Revocation must not silently clear or replace Chrome proxy settings');
+  assert.equal(afterRevocation.privacy.value, 'disable_non_proxied_udp');
+
   await page.goto('chrome-extension://' + extensionId + '/popup.html');
   await page.getByRole('button', {name: 'Disconnect & restore routing'}).click();
   await page.locator('#status').filter({hasText: 'Disconnected'}).waitFor({timeout: 15000});
@@ -178,6 +235,8 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
     session: (await chrome.storage.session.get('session')).session,
   }));
   assert.equal(disconnected.proxy.levelOfControl, 'controllable_by_this_extension');
+  assert.deepEqual(disconnected.proxy.value, proxyBefore.value,
+    'Disconnect must restore the previous browser proxy configuration');
   assert.equal(disconnected.privacy.value, privacyBefore);
   assert.equal(disconnected.session.active, null);
   assert.equal(disconnected.session.state.status, 'disconnected');

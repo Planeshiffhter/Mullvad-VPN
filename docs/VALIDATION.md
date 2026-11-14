@@ -1,5 +1,13 @@
 # Validation report — private proxy prototype (latest verified 2026-11-15)
 
+## Task 15 proposal — revoked grant must not fall back directly (new PR, results pending)
+
+**Implemented (not yet certified):** `tests/chromium-route.test.js` adds an authenticated founder control-API DELETE for the live test grant, verifies gateway-side revocation and rejection, attempts a brand-new HTTP destination URL in real Chromium, asserts the destination receives **zero** requests, and checks Chrome's proxy and WebRTC settings remain extension-owned until explicit Disconnect. The existing real HTTP and HTTPS CONNECT metering evidence remains intact. `services/gateway/index.js` exposes an aggregate in-memory denied-authentication count; no browsing URLs, username, password or secret material are logged. A gateway unit assertion covers rejected credentials. The CI workflow now validates PRs targeting the implementation branch as well as main.
+
+**Automatic verification:** not yet run for this new change; run `npm ci --ignore-scripts`, `npm run typecheck`, `node --test --test-timeout=30000 tests/gateway.test.js tests/extension.test.js`, `node --test --test-timeout=30000 tests/chromium-route.test.js`, `npm run check`, `npm run package` and `git diff --check`. The known prior implementation head `8eeb33e` passed [CI 43651339909](https://github.com/rejoansardar23/vpn/actions/runs/43651339909); this is **not** evidence of the new change. **Manual verification:** none on owner Chrome. **Controlled fixture:** localhost TLS trust only in isolated NSS profile; never a US exit. **Blocked/deferred:** real gateway outage, service-worker suspension/restart, DNS/WebRTC/IPv6 leaks and public release acceptance. Passing this one proxy route test cannot prove a universal browser kill switch.
+
+---
+
 ## 2026-11-15 — independently verified real Chromium proxy integration
 
 **Source commit:** [`f0535cb`](https://github.com/rejoansardar23/vpn/commit/f0535cb43eb769e2cd7805a3bfd3d41e73f405e9). **Successful CI:** [run 43651036666](https://github.com/rejoansardar23/vpn/actions/runs/43651036666), job 132619327998 (Ubuntu 24.04, pinned Node 24.22.1, Playwright Chromium 158).

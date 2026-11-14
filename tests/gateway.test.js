@@ -104,6 +104,8 @@ test('missing/invalid/expired credentials fail and TLS trust is mandatory', asyn
   await assert.rejects(request(gateway, 'http://test.invalid/', auth, null), /self.signed|certificate/);
   grant.expiresAt = Date.now() - 1;
   assert.equal((await request(gateway, 'http://test.invalid/')).status, 407);
+  assert.ok(gateway.stats().rejectedProxyAuthentications >= 3,
+    'Gateway must observe the denied proxy authentication attempts');
 });
 
 test('CONNECT preserves target HTTPS certificate validation without interception', async t => {
@@ -130,7 +132,10 @@ test('revocation closes active tunnel and prevents credential reuse', async t =>
   const ended = once(socket, 'close');
   gateway.revoke('grant');
   await ended;
+  const rejectedBefore = gateway.stats().rejectedProxyAuthentications;
   assert.equal((await request(gateway, 'http://test.invalid/')).status, 407);
+  assert.ok(gateway.stats().rejectedProxyAuthentications > rejectedBefore,
+    'Revoked credentials must reach the gateway and be rejected');
 });
 
 test('server connection limit and expiry terminate established tunnels', async t => {

@@ -14,6 +14,8 @@ export function createGateway({
   const maxLifetime = 60 * 60 * 1000;
   const maxRetainedGrants = 4096;
   let overloaded = false;
+  // In-memory aggregate only: never retain rejected credentials or target URLs.
+  let rejectedProxyAuthentications = 0;
   function sweep() {
     const now = Date.now();
     for (const [id, state] of grants) {
@@ -62,6 +64,7 @@ export function createGateway({
     async prepareRequestFunction({ request, username, password, hostname, port: targetPort, isHttp }) {
       const grant = username && password ? await authorize(username, password) : null;
       if (overloaded || !grant || revoked.has(grant.id) || grant.expiresAt <= Date.now()) {
+        rejectedProxyAuthentications++;
         return { requestAuthentication: true, failMsg: 'Valid connection grant required' };
       }
       if (typeof grant.id !== 'string' || grant.id.length > 128 || !Number.isSafeInteger(grant.maxBytes) || grant.maxBytes <= 0
@@ -169,6 +172,7 @@ export function createGateway({
       return state ? { bytes: state.bytes, connections: state.sockets.size,
         revoked: state.revoked, exhausted: state.exhausted } : null;
     },
+    stats() { return { rejectedProxyAuthentications }; },
     address() { return proxy.server.address(); },
   };
 }

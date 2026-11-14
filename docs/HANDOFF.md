@@ -1,5 +1,9 @@
 # Project handoff and session continuity
 
+## Task 15 follow-up PR (CI pending)
+
+Continue from `feat/tested-private-browser-proxy` / PR #1, not documentation-only main. A focused child review branch adds server-revoked grant failure coverage in `tests/chromium-route.test.js`, with a fresh uncached URL and destination-side counter to catch Chrome direct bypass. The founder HTTPS API revokes the active grant while a real Chromium extension owns the proxy; the test checks gateway auth denial, zero destination arrivals, unchanged proxy/WebRTC configuration and explicit Disconnect restoration. In-memory gateway denial telemetry does not record credentials or destination URLs. The Actions workflow also runs for PRs targeting this implementation branch. **Implemented:** test and minimal instrumentation. **Automatically tested:** new branch CI pending, do not count a skip as a pass. **Manually verified:** no owner-device Chrome. **Simulated/fixture:** controlled localhost targets and isolated certificate trust only. **Blocked:** US host, real Chrome leak/outage/lifecycle acceptance. **Deferred:** commercial/public and native VPN. After CI, record actual pass/fail/skip totals and PR URL in the review thread before merging; do not auto-merge. New runtime dependencies and paid resources: none.
+
 ## Latest verified engineering handoff — 2026-11-15
 
 - **Source:** `feat/tested-private-browser-proxy` in [PR #1](https://github.com/rejoansardar23/vpn/pull/1), still open. Functional code milestone `f0535cb` passed [CI 43651036666](https://github.com/rejoansardar23/vpn/actions/runs/43651036666), **59/59 tests**, 0 skips. Subsequent documentation-only commits require their own newest CI verification before merging.
