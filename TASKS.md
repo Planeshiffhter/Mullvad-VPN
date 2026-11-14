@@ -1,19 +1,19 @@
 # Task tracker — one authoritative sequence
 
-Updated 2026-11-13 for the local prototype. Original acceptance criteria remain in [the source plan](docs/source-plans/VPN_Company_Launch_Plan_2026-11-12.md). Evidence is in [VALIDATION.md](docs/VALIDATION.md). Done means the scoped local deliverable passed its stated checks; it never implies a deployed US service.
+Updated 2026-11-15 following independent GitHub Actions verification (original local evidence is retained). Original acceptance criteria remain in [the source plan](docs/source-plans/VPN_Company_Launch_Plan_2026-11-12.md). Evidence is in [VALIDATION.md](docs/VALIDATION.md). Done means the scoped local deliverable passed its stated checks; it never implies a deployed US service.
 
 | ID | Task | Status | Evidence / remaining requirement |
 | --- | --- | --- | --- |
 | 01 | Freeze MVP scope and zero-additional-cost policy | Done | Browser-only founder scope, acceptance gates and cost inventory documented; no paid dependency |
 | 02 | Repository structure and task tracking | Done | Source, lockfile, version pin, tests, installation docs, private examples and ignore rules |
 | 03 | Verify authorized truly free US host | Blocked | Owner must supply authorized US compute, region, terms, IP/egress limits and actual billing evidence |
-| 04 | Reproducible development/test environment | Done | Frozen install, build, explicit loopback fixture, startup/stop/restart and isolated TLS tests; actual extension browser policy limitation documented |
+| 04 | Reproducible development/test environment | Done | Node 24.22.1 GitHub-hosted Ubuntu CI: frozen install, strict types, 57/57 tests, six-file build, package, checksum, audit; fixed nonportable npm cache; see validation |
 | 05 | Prove authenticated TLS proxy path locally | Done | Real HTTP and nested target HTTPS CONNECT; valid/invalid auth and trusted TLS tests |
-| 06 | Harden gateway, firewall, destination restrictions | In progress | Public-only pinned DNS, IPv4/IPv6/port denial and resource limits tested; host firewall template not applied or production-tested |
+| 06 | Harden gateway, firewall, destination restrictions | In progress | Pinned DNS and additional special-use/mapped IPv4/IPv6 CIDR denials regression-tested in CI; gateway authentication/quotas tested; host firewall, abuse review and production network not yet verified |
 | 07 | Founder account and SQLite migrations | Done | Creation, scrypt hashes, failed login, rate limit, logout, recovery and database upgrade tests |
 | 08 | Authenticated control API | Done | TLS API auth, session expiry, origin policy, status and founder authorization tested |
 | 09 | Issue, renew and revoke scoped proxy grants | Done | Replacement grants, five-minute expiry, four-socket limit, durable usage, active revocation and cross-session founder revocation tested |
-| 10 | Manifest V3 Chrome extension scaffold | In progress | Typed worker/popup built, controller and UI tested; installed cloud Chromium blocks actual extension load by managed policy |
+| 10 | Manifest V3 Chrome extension scaffold | In progress | Actual MV3 worker and popup loading passed in un-managed GitHub Actions Playwright Chromium; prior managed cloud Chromium still blocks loading; owner Chrome proxy routing and auth events remain unverified |
 | 11 | Connect/Disconnect + precise proxy auth scoping | In progress | Lifecycle/ownership/exact challenge tests; actual Chrome proxy events and restored live route not yet verified |
 | 12 | Truthful route/IP verification and states | In progress | Expected-IP, mismatch, expiry-during-check and outage tests; local fixtures visibly labelled, live US verifier pending |
 | 13 | Server-enforced quotas and budget controls | In progress | Persistent lifetime application quota and exhaustion tests; provider-level caps/overhead/billing comparison await host |
@@ -22,8 +22,15 @@ Updated 2026-11-13 for the local prototype. Original acceptance criteria remain 
 | 16 | Private operations dashboard | In progress | Authenticated usage/grant view/revoke tested in Chromium; deployed host/resource health and operator retention review pending |
 | 17 | Backup, restore and rollback tests | In progress | Encrypted WAL-safe restore and restored account/usage/revocation tested; off-host recovery copy and deployed rollback drill pending |
 | 18 | Accurate website and help/privacy drafts | Done | Private operations/help page works, no nonexistent US/country claims, browser-only and review boundaries explicit |
-| 19 | Package/install private browser release | In progress | Deterministic ZIP/hash and install guide exist; owner Chrome install/live route gates blocked |
+| 19 | Package/install private browser release | In progress | GitHub Actions verified deterministic ZIP, SHA-256 and zip structure with retained third-party notices; owner installation/live route gates remain blocked |
 | 20 | One-user observation period and handoff | Blocked | Needs deployed service, owner usage period and actual cost reconciliation |
 | 21–26 | External users, extra countries, payments, stores, native VPN | Deferred | Separate scope, licenses, operating obligations, authorized hosts and budget decisions |
 
 All 19 upstream shortlist projects received explicit decisions in [REPO_AUDIT.md](docs/REPO_AUDIT.md). Only dependencies needed for this prototype were integrated; no competitor source, unsupported protocol, paid service or wholesale repository merge was added.
+
+## Verification and review checkpoint — 2026-11-15
+
+- Implemented: restricted no-secret GitHub Actions verification workflow for the public repository's standard no-charge runners; no self-hosted or billable resources. Runner installs pinned Node 24.22.1, frozen npm tree and Playwright Chromium. **Actual successful execution**: [run 43647697066](https://github.com/rejoansardar23/vpn/actions/runs/43647697066), commit `91e90c1d`: 57 passed, 0 failed, 0 skipped; install, types, build, package, archive integrity, npm advisory audit and whitespace check passed. The follow-on action-version upgrade and documentation commits require their own passing checks before merge.
+- Fixed: a reproducible npm `EACCES` build failure from a workspace-specific `.npmrc` cache path; explicit special-use IPv4/IPv6 destination denials and regression assertions. No new runtime dependencies or paid services.
+- Open safety/release gates: authorized US exit/terms/real $0 spend, public TLS/renewal and firewall, real owner Chrome Connect/Disconnect/auth/DNS/WebRTC/IPv6 and outage checks, remote recovery drill, retention/log review, provider-level egress cap and project license choice. Do **not** mark Tasks 03, 14, 15, 19, 20 or 21–26 complete from CI alone.
+- Read [docs/VALIDATION.md](docs/VALIDATION.md) and the review PR before extending the implementation. **Never merge automatically.**
