@@ -60,6 +60,9 @@ jobs:
           npx playwright install --with-deps chromium
           echo "CHROMIUM_PATH=$(node --input-type=module -e 'import {chromium} from "@playwright/test"; console.log(chromium.executablePath())')" >> "$GITHUB_ENV"
 
+      - name: Install NSS tools for isolated Chromium certificate trust
+        run: sudo apt-get install --yes --no-install-recommends libnss3-tools
+
       - name: Execute all unit, integration, and browser tests
         run: npm test
 
