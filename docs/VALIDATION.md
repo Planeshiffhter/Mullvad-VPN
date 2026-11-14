@@ -1,5 +1,22 @@
 # Validation report — private proxy prototype (latest verified 2026-11-15)
 
+## 2026-11-15 — independently verified real Chromium proxy integration
+
+**Source commit:** [`f0535cb`](https://github.com/rejoansardar23/vpn/commit/f0535cb43eb769e2cd7805a3bfd3d41e73f405e9). **Successful CI:** [run 43651036666](https://github.com/rejoansardar23/vpn/actions/runs/43651036666), job 132619327998 (Ubuntu 24.04, pinned Node 24.22.1, Playwright Chromium 158).
+
+**Checks passed:** `npm ci --ignore-scripts`, `npm run typecheck`, `npm test` (**59 passed / 0 failed / 0 skipped**), `npm run build`, `npm run package`, SHA-256 checksum check, ZIP integrity, `npm audit` (0 reported vulnerabilities), whitespace check, and pinned Gitleaks history scan.
+
+**New concrete evidence:** the actual unpacked Chrome MV3 popup/worker authenticated to the local HTTPS control API, obtained a short-lived proxy grant and configured Chrome's TLS proxy. Controlled Chromium HTTP and HTTPS CONNECT navigations passed **through the real gateway**, with usage increasing after each navigation. Disconnect restored Chrome proxy and WebRTC privacy settings, cleared the active grant and revoked it server-side. The popup explicitly displayed **Fixture verified**, not a live US connection. This goes beyond the separate existing simulated-runtime popup test.
+
+**Application bug discovered and fixed:** the worker's default `fetch` had been invoked without a `WorkerGlobalScope` receiver and threw `Illegal invocation` on real sign-in. `RouteController` now binds default fetch to `globalThis`, with a unit regression test. An isolated extension build suffix prevents test workers from overwriting one another.
+
+**Testing safety:** ephemeral localhost certificate trust is imported with NSS `certutil` only into a disposable Chromium HOME; no TLS-verification override, public listener or managed browser-policy bypass. A *test-only* injected policy permits exactly two local fixture destinations; the real production destination policy remains unchanged. No runtime dependency, new paid cloud service or deployment was introduced.
+
+**Still unverified/blocked:** actual US exit and owner-host authorization/costs, public TLS lifecycle, owner-device Chrome acceptance, DNS/WebRTC/IPv6 leak behavior, network-change and browser restart coverage, production firewall, independent security review, project license and commercial launch. This successful local fixture cannot certify a full-device VPN or a browser-wide kill switch. PR #1 remains open for owner review.
+
+---
+
+
 ## 2026-11-15 — independently reproduced on GitHub-hosted Ubuntu
 
 Source: `feat/tested-private-browser-proxy`, commit [`91e90c1d`](https://github.com/rejoansardar23/vpn/commit/91e90c1df91c5d4e0c3a7e4c3598bb824c6c2c96), [successful Actions run 43647697066](https://github.com/rejoansardar23/vpn/actions/runs/43647697066), job 132609050725. The workflow was created during this review, and uses an Ubuntu 24.04 GitHub-hosted runner with Node 24.22.1, lockfile-based dependencies and Playwright Chromium. **This is fresh execution evidence**, distinct from the older original cloud-task report below.
