@@ -21,14 +21,15 @@ jobs:
     timeout-minutes: 25
     steps:
       - name: Check out reviewed source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Use pinned Node.js runtime
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .node-version
+          package-manager-cache: false
 
       - name: Frozen dependency installation (without lifecycle scripts)
         run: npm ci --ignore-scripts
