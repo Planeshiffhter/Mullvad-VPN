@@ -28,8 +28,8 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
     return;
   }
 
-  execFileSync(process.execPath, ['apps/extension/build.js']);
-  const extension = path.resolve('dist/extension');
+  execFileSync(process.execPath, ['apps/extension/build.js', 'chromium-route']);
+  const extension = path.resolve('dist/extension-chromium-route');
   const dir = await mkdtemp(path.join(tmpdir(), 'private-route-real-browser-'));
   const tls = await createTlsFixture();
   let context, api, gateway, httpsTarget, httpTarget, store;
@@ -118,6 +118,14 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
   });
   const apiPort = (await api.listen()).port;
 
+  const apiProbe = await worker.evaluate(async url => {
+    try {
+      const response = await fetch(url, {cache: 'no-store'});
+      return {status: response.status, body: (await response.text()).slice(0, 100)};
+    } catch (error) { return {error: String(error)}; }
+  }, 'https://localhost:' + apiPort + '/healthz');
+  assert.equal(apiProbe.status, 200, 'Chromium HTTPS/API access failed: ' + JSON.stringify(apiProbe));
+
   const page = await context.newPage();
   await page.goto('chrome-extension://' + extensionId + '/popup.html');
   await page.locator('#message').filter({hasText: 'No browser proxy is active.'}).waitFor();
@@ -129,7 +137,10 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
   await page.locator('#username').fill('founder');
   await page.locator('#password').fill('ephemeral-browser-test-credential');
   await page.getByRole('button', {name: 'Sign in securely'}).click();
-  await page.locator('#controls').waitFor({state: 'visible', timeout: 15000});
+  await page.waitForFunction(() => !document.querySelector('#controls').hidden ||
+    !document.querySelector('#error').hidden, null, {timeout: 15000});
+  assert.equal(await page.locator('#error').isVisible(), false,
+    'Real browser sign-in failed: ' + (await page.locator('#error').textContent()));
   assert.equal(await page.locator('#gateways option').count(), 1);
 
   await page.getByRole('button', {name: 'Connect browser'}).click();
@@ -148,11 +159,15 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
 
   // These are real Chromium navigations through its configured TLS proxy,
   // not simulated extension messages or Node.js requests using credentials.
+  const beforeHttp = gateway.usage(connected.grantId)?.bytes ?? 0;
   await page.goto('http://localhost:' + httpPort + '/content');
   assert.match(await page.locator('body').textContent(), /controlled-http-through-authenticated-proxy/);
+  const afterHttp = gateway.usage(connected.grantId)?.bytes ?? 0;
+  assert.ok(afterHttp > beforeHttp, 'Actual HTTP navigation must cross the gateway');
   await page.goto('https://localhost:' + httpsPort + '/content');
   assert.match(await page.locator('body').textContent(), /controlled-https-through-authenticated-proxy/);
-  assert.ok(gateway.usage(connected.grantId)?.bytes > 0, 'Browser traffic must be metered by the real gateway');
+  assert.ok((gateway.usage(connected.grantId)?.bytes ?? 0) > afterHttp,
+    'Actual HTTPS CONNECT navigation must cross the gateway');
 
   await page.goto('chrome-extension://' + extensionId + '/popup.html');
   await page.getByRole('button', {name: 'Disconnect & restore routing'}).click();
@@ -166,6 +181,6 @@ test('real Chromium connects via authenticated TLS proxy, forwards HTTP and HTTP
   assert.equal(disconnected.privacy.value, privacyBefore);
   assert.equal(disconnected.session.active, null);
   assert.equal(disconnected.session.state.status, 'disconnected');
-  assert.equal(store.authorize(
-    'nonexistent', 'nonexistent'), null);
+  assert.equal(gateway.usage(connected.grantId)?.revoked, true,
+    'Disconnect must revoke the grant at the gateway');
 });
