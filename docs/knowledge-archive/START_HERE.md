@@ -8,6 +8,10 @@ Build an original, owner-controlled security/privacy product. **Phase 1** is a v
 
 The user builds primarily with **GPT-6 Astra/Codex Cloud and GitHub**, prefers web/cloud workflows without required local installs, and wants durable documentation that survives chat context loss. Code must be real, tested, incrementally merged after review, and researched for mature open-source reuse first. Never waste coding credits duplicating working libraries.
 
+## Word-format archival copy
+
+[Open the complete VPN project Word report](VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx). The Markdown files remain the canonical editable originals.
+
 ## What to read in order
 
 1. [Project memory index](../PROJECT_MEMORY.md)

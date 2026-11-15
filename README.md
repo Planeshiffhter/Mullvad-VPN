@@ -2,7 +2,7 @@
 
 > **Branch-specific status (updated 2026-11-16):** This default `main` branch holds planning and documentation. **The working Chrome proxy implementation is on `feat/tested-private-browser-proxy`, open PR #1**, and its revoked-grant Chromium regression is on PR #4 targeting that implementation branch. [Run 43653964275](https://github.com/rejoansardar23/vpn/actions/runs/43653964275) passed 59 tests (0 failed/skipped). **There is still no authorized/verified live US exit or full-device VPN.** Do not mistake older main-only task documents for the latest implementation state.
 
-**Start any new developer/AI session with [the durable project memory archive](docs/PROJECT_MEMORY.md)** — the conversation chronology, 23-project comparison, exactly two *architecture-study* winners, annotated source links, security/cost boundaries, the current PR status, and an executable next-session handoff.
+**Start any new developer/AI session with [the durable project memory archive](docs/PROJECT_MEMORY.md)** (also available as a [complete Word document](docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx)) — the conversation chronology, 23-project comparison, exactly two *architecture-study* winners, annotated source links, security/cost boundaries, the current PR status, and an executable next-session handoff.
 
 ## Our mission
 

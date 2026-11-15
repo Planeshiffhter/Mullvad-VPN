@@ -4,6 +4,10 @@
 
 > This is the permanent, chat-independent project knowledge index. It summarizes accessible project conversations and repository evidence. It is **not** a verbatim export of every ChatGPT conversation. GitHub history and linked primary sources are the audit trail.
 
+## Portable Word document
+
+[Download the complete Microsoft Word archive](knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx). The Word copy consolidates all eight Markdown research, handoff and source documents, including clickable source links. For future editing and accurate diffs, prefer the Markdown sources below.
+
 ## Start here
 
 1. [Fast developer handoff](knowledge-archive/START_HERE.md) — how to pick up the project safely.

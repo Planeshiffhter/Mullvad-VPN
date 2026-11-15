@@ -1,0 +1,67 @@
+name: Verify portable knowledge archive
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/PROJECT_MEMORY.md'
+      - 'docs/knowledge-archive/**'
+      - '.github/workflows/verify-knowledge-archive.yml'
+      - 'README.md'
+      - 'AGENTS.md'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-archive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify Word document XML, ZIP CRC and source completeness
+        run: |
+          python3 - <<'PY'
+          import os, zipfile, xml.etree.ElementTree as ET
+          from pathlib import Path
+          root = Path('docs/knowledge-archive')
+          f = root / 'VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx'
+          assert f.stat().st_size > 20000, 'Truncated Word archive'
+          with zipfile.ZipFile(f) as z:
+              assert z.testzip() is None, 'Word ZIP CRC failure'
+              names = set(z.namelist())
+              for name in ['[Content_Types].xml', '_rels/.rels',
+                           'word/document.xml', 'word/styles.xml', 'word/_rels/document.xml.rels']:
+                  assert name in names, name
+                  ET.fromstring(z.read(name))
+              document = z.read('word/document.xml').decode('utf-8')
+              for keyword in ['Mullvad', 'Amnezia', 'Proton', 'WireGuard', 'Task 15',
+                              'COUNTRY', 'GATEWAY', 'Chrome', 'revoke']:
+                  assert keyword.lower() in document.lower(), keyword
+              print(f'Word archive OK: {f.stat().st_size} bytes')
+          for name in ['START_HERE.md', 'PROJECT_CHRONICLE.md',
+                       'REPOSITORY_RESEARCH.md', 'COUNTRY_AND_SERVER_ARCHITECTURE.md',
+                       'SECURITY_LICENSE_AND_INFRASTRUCTURE.md',
+                       'CONTINUATION_HANDOFF.md', 'SOURCE_INDEX.md']:
+              text = (root/name).read_text()
+              assert len(text) > 1000, name
+          print('All seven Markdown chapter documents exist')
+          PY
+      - name: Install free document rendering tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --yes --no-install-recommends libreoffice-writer poppler-utils
+      - name: Open and render Word document with LibreOffice
+        run: |
+          mkdir -p /tmp/vpn-word-qa
+          libreoffice -env:UserInstallation=file:///tmp/lo-knowledge-archive \
+            --headless --convert-to pdf --outdir /tmp/vpn-word-qa \
+            docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx
+          test -s /tmp/vpn-word-qa/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.pdf
+          pdfinfo /tmp/vpn-word-qa/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.pdf | grep -E '^Pages:'
+          pdftoppm -f 1 -l 1 -png -r 85 \
+            /tmp/vpn-word-qa/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.pdf \
+            /tmp/vpn-word-qa/preview
+          find /tmp/vpn-word-qa -name 'preview-*.png' -size +0c | grep -q .
