@@ -1,5 +1,7 @@
 # Project handoff and session continuity
 
+**New chat-independent handoff (2026-11-16):** Start with [PROJECT_MEMORY.md](PROJECT_MEMORY.md), [the research and 23 candidates](knowledge-archive/REPOSITORY_RESEARCH.md), [the chronicle](knowledge-archive/PROJECT_CHRONICLE.md), [the next Codex prompt](knowledge-archive/CONTINUATION_HANDOFF.md), and [source index](knowledge-archive/SOURCE_INDEX.md). The implementation is on `feat/tested-private-browser-proxy` under open PR #1; PR #4 targets that branch and had green 59/59 CI. `main` status artifacts below are historically older. No live USA exit, no full-device VPN and no authorized spending.
+
 Developers and coding agents should be able to resume from GitHub without chat history.
 
 ## Canonical handoff artifacts
