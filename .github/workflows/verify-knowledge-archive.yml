@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
       - name: Verify Word document XML, ZIP CRC and source completeness
@@ -65,3 +65,10 @@ jobs:
             /tmp/vpn-word-qa/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.pdf \
             /tmp/vpn-word-qa/preview
           find /tmp/vpn-word-qa -name 'preview-*.png' -size +0c | grep -q .
+          pdftoppm -png -r 65 \
+            /tmp/vpn-word-qa/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.pdf \
+            /tmp/vpn-word-qa/page >/dev/null 2>&1
+          pdf_pages=$(pdfinfo /tmp/vpn-word-qa/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.pdf | awk '/^Pages:/ {print $2}')
+          png_pages=$(find /tmp/vpn-word-qa -name 'page-*.png' -size +0c | wc -l)
+          echo "Rendered $png_pages of $pdf_pages Word pages to PNG"
+          test "$png_pages" -eq "$pdf_pages"
