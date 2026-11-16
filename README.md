@@ -2,6 +2,10 @@
 
 > **Project status: locally tested browser-proxy prototype; live release blocked.** The repository contains a TypeScript control API and Chrome MV3 extension, SQLite founder account, authenticated TLS forward proxy, private operations/help page, encrypted recovery tools and automated tests. **No authorized US exit host, owner Chrome installation, leak certification or full-device VPN is verified.** Independent GitHub CI now covers the audited implementation head; run `43648138870` passed at `15c8fb9`. Live US deployment and owner-browser acceptance remain blocked.
 
+**Start any new developer/AI session with [the durable project memory archive](docs/PROJECT_MEMORY.md)** (also available as a [complete Word document](docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx)) — the conversation chronology, 23-project comparison, exactly two *architecture-study* winners, annotated source links, security/cost boundaries, the current PR status, and an executable next-session handoff.
+
+**2026-11-17 branch reconciliation:** This review branch now includes both the browser-proxy implementation and the `main`-branch research/knowledge archive. PR #1 remains open for explicit owner review; the new merge commit needs fresh CI. No live US exit or full-device VPN is verified.
+
 ## Build and test now
 
 Use Node **24.22.1**, npm, OpenSSL, `zip`, and Chromium for browser UI tests. No paid service is required for local development.
