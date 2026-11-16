@@ -35,3 +35,10 @@ Potential free-host candidate: Oracle Cloud Always Free, **not guaranteed** (hom
 ## Release boundaries
 
 A script, Dockerfile, README screenshot, mock region list, or passing isolated test **does not** equal a deployed US VPN service. Deployment, security-sensitive owner account actions, Chrome Web Store publication and public customer launch require separate permission and verification.
+
+
+## Available local deliverables
+
+A tested operator-configured runtime and unapplied templates are in [../infrastructure/README.md](../infrastructure/README.md). Their existence does not pass this deployment gate. Local setup/package commands and owner Chrome installation instructions are in [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md); exact test boundaries are in [VALIDATION.md](VALIDATION.md). The current cloud task exposes no public proxy. No external identity or authorized US host is configured.
+
+The loopback management API needs an owner-only access path. Its TLS certificate must match the hostname actually entered in Chrome, including when a tunnel/host mapping is used. A tunnel alone does not fix certificate names; never bypass a mismatch. Host firewall, public ingress, management routing, ACME renewal and provider quotas must be reviewed and tested on the actual authorized host.

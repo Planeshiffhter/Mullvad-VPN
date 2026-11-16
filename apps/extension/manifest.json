@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Private Route — founder browser proxy",
+  "description": "Private authenticated browser proxy. Requires your own verified gateway; does not protect other applications.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "120",
+  "permissions": ["proxy", "storage", "privacy", "alarms", "webRequest", "webRequestAuthProvider"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {"service_worker": "worker.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Private Route"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'"},
+  "incognito": "not_allowed"
+}

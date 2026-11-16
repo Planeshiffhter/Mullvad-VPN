@@ -1,6 +1,6 @@
 # Verification strategy — evidence before labels
 
-No source code or live tests are present yet. This is the future test plan, not a test report.
+The tiers below remain release requirements. Current automated results, simulation boundaries and unrun live checks are recorded in [VALIDATION.md](VALIDATION.md). Run `npm run check` for strict TypeScript checks, runtime/security tests and the extension build. Local fixtures are not live US-route evidence.
 
 ## Test tiers
 

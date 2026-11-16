@@ -1,6 +1,6 @@
 # Contributing to VPN Platform
 
-This is an early-stage, documentation-first VPN project. **No tested runtime product has been committed yet.** You should be able to contribute without knowing any prior ChatGPT conversation.
+This is an early-stage browser-proxy prototype with local runtime tests. **No live US service or full-device VPN is verified.** Follow [LOCAL_DEVELOPMENT.md](docs/LOCAL_DEVELOPMENT.md) and run `npm run check` before submitting runtime changes. You should be able to contribute without knowing any prior ChatGPT conversation.
 
 ## Before submitting changes
 

@@ -1,0 +1,35 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { execFile as execFileCallback } from 'node:child_process';
+import { promisify } from 'node:util';
+import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { packageExtension } from '../scripts/package.mjs';
+const execFile = promisify(execFileCallback);
+
+test('private package is deterministic, preserves upstream LICENSE/NOTICE and excludes secret files', async (t) => {
+  const root = await mkdtemp(join(tmpdir(), 'private-route-package-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  await mkdir(join(root, 'dist/extension'), { recursive: true });
+  await mkdir(join(root, 'node_modules/example'), { recursive: true });
+  const files = ['core.js', 'manifest.json', 'popup.css', 'popup.html', 'popup.js', 'worker.js'];
+  for (const file of files) await writeFile(join(root, 'dist/extension', file), file === 'manifest.json' ? JSON.stringify({ version: '0.1.0' }) : 'fixture');
+  for (const file of ['.env', 'localhost.key', 'credentials.json']) await writeFile(join(root, 'dist/extension', file), 'must-not-be-packaged');
+  await writeFile(join(root, 'package-lock.json'), JSON.stringify({ packages: { 'node_modules/example': { license: 'Apache-2.0' } } }));
+  await writeFile(join(root, 'node_modules/example/package.json'), JSON.stringify({ name: 'example', version: '1.0.0', license: 'Apache-2.0' }));
+  await writeFile(join(root, 'node_modules/example/LICENSE'), 'authoritative fixture license');
+  await writeFile(join(root, 'node_modules/example/NOTICE'), 'authoritative fixture attribution');
+  const first = await packageExtension({ root });
+  const firstBytes = await readFile(first.archive);
+  const second = await packageExtension({ root });
+  assert.equal(first.sha256, second.sha256);
+  assert.deepEqual(firstBytes, await readFile(second.archive));
+  const { stdout: listing } = await execFile('unzip', ['-Z', '-1', first.archive]);
+  assert.deepEqual(listing.trim().split('\n').sort(), [...files, 'THIRD_PARTY_NOTICES.txt'].sort());
+  const { stdout: notices } = await execFile('unzip', ['-p', first.archive, 'THIRD_PARTY_NOTICES.txt']);
+  assert.match(notices, /authoritative fixture license/);
+  assert.match(notices, /authoritative fixture attribution/);
+  assert.match(notices, /No whole-project license has been selected/);
+  assert.match(await readFile(first.archive + '.sha256', 'utf8'), new RegExp(`^${first.sha256}  private-route-extension-0.1.0.zip\\n$`));
+});
