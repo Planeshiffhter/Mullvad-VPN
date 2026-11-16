@@ -1,0 +1,96 @@
+WORLD-CLASS VPN PLATFORM: PROJECT IDEA AND DELIVERY PLAN
+Prepared: 17 November 2026
+Status: Product proposal grounded in the preserved source archives.
+Planning horizon: Initial proof, first year, second year, and longer-term research.
+The time ranges below are planning estimates, not release commitments.
+
+1. THE PRODUCT WE WANT TO BUILD
+
+Create an independently operated privacy and secure-connectivity platform with
+our own identity, user experience, accounts, infrastructure and release process.
+It should eventually serve users across many countries and the major desktop,
+mobile and browser platforms. Both full-device VPN apps and browser extensions
+are part of the vision.
+
+COMPETITIVE AMBITION
+Build a serious competitor to powerful VPN brands, including NordVPN and Urban
+VPN, and aim to outperform leading providers in the areas users value most.
+The long-term objective is to become a globally trusted first-choice VPN company,
+with a product people choose because its protection, experience and value are
+demonstrably excellent. This is a business and engineering ambition, not a claim
+that our current repository already matches or exceeds an established service.
+
+The product promise should be understandable:
+"Connect securely, understand what is protected, and stay in control of your data."
+
+World-class should mean measured security, reliability, usable design, honest
+privacy practices, responsive support and sustainable operations. It should not
+mean a long list of untested buttons or countries that do not have real gateways.
+
+Worldwide availability is an ambition. Supporting every device, network, country
+and legal jurisdiction without exceptions is not a realistic guarantee. We will
+publish an explicit support matrix and expand it as each target passes testing.
+
+This plan is the single requested project-idea file. The old AI-generated planning
+documents were removed; they are not evidence of implemented product features.
+
+2. WHAT WE ALREADY HAVE, AND WHAT WE HAVE ACTUALLY COMPLETED
+
+Preserved project assets:
+  - mullvadvpn-app-main.zip
+  - amnezia-client-dev.zip
+  - tools/extract_upstreams.py
+  - .gitignore and .editorconfig
+  - Extracted sources under build/upstream/mullvad/ and build/upstream/amnezia/.
+
+Completed repository work:
+  - Inspected and extracted both application archives.
+  - Organized them into independent upstream source trees.
+  - Verified 8,485 regular files and four symlinks against the archives.
+  - Preserved original archive contents, licenses and internal build layouts.
+  - Removed the old outer planning Markdown/text files and catalogs.
+  - Pushed cleanup and source-preservation changes directly to main.
+
+This is useful completed work. It is not proof that our own VPN service runs.
+Neither upstream app has been built or runtime-tested in this environment.
+Our own Chrome extension, customer backend and worldwide gateway fleet do not
+exist yet. Source availability is different from a working operated service.
+
+The extraction helper can recreate the local trees from the tracked archives:
+  cd /workspace/Mullvad-VPN
+  python3 tools/extract_upstreams.py
+
+The build/upstream directories are ignored by Git. Do not make our only copy of
+new work there. Before application development, create an explicitly tracked
+component or fork location. Before deleting generated sources, inspect added
+files as well as modified/missing files; the helper does not detect extra files.
+
+3. WHAT THE TWO CODEBASES PROVIDE
+
+MULLVAD SOURCE
+  Available in source:
+    - Rust VPN daemon, CLI and native networking components.
+    - Firewall, routing, DNS and tunnel-state handling.
+    - TypeScript/React/Electron desktop interface.
+    - Android frontend with shared Rust components.
+    - A separate Swift-based iOS implementation.
+    - Local management interfaces and existing test infrastructure.
+
+  Important boundaries:
+    - Much normal operation expects Mullvad's account, device and relay APIs.
+    - Its operated account backend and worldwide network are not included here.
+    - Its local management API is not a ready public account/control service.
+    - Its release URLs and verification keys belong to Mullvad. Our releases
+      need our own signing authority and update infrastructure.
+    - A direct custom WireGuard endpoint path exists and is a promising small
+      independent-gateway proof. It must be built, audited and tested first.
+    - This path does not automatically inherit every upstream feature, such as
+      quantum-resistant tunnel support or DAITA.
+
+AMNEZIA SOURCE
+  Available in source:
+    - C++/Qt/QML cross-platform native application components.
+    - Privileged desktop service and mobile platform integration.
+    - SSH/Docker-based self-hosted server provisioning.
+    - Protocol configurators and installation scripts, including WireGuard,
+      AmneziaWG, OpenVPN, IKEv2/IPsec and Xray-related pathways, with documented
