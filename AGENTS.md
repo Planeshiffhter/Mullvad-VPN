@@ -1,6 +1,6 @@
 # Agent operating contract (Codex Cloud and coding agents)
 
-**Read all of:** README.md, TASKS.md, docs/PROJECT_STATUS.md, docs/COST_POLICY.md, docs/SECURITY_AND_PRIVACY.md, docs/BUILD_VS_REUSE.md, docs/DECISIONS.md, and original source plan before major code changes.
+**Read all of:** [docs/PROJECT_MEMORY.md](docs/PROJECT_MEMORY.md), its linked knowledge archive, README.md, TASKS.md, docs/PROJECT_STATUS.md, docs/COST_POLICY.md, docs/SECURITY_AND_PRIVACY.md, docs/BUILD_VS_REUSE.md, docs/DECISIONS.md, and original source plan before major code changes. **Always inspect implementation branch `feat/tested-private-browser-proxy` and open PRs before coding; `main` may lag working code.**
 
 ## Mission and hard constraints
 

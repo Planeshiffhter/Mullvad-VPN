@@ -3,7 +3,12 @@ SELECTED VPN REPOSITORIES
 Project: https://github.com/rejoansardar23/vpn
 Decision recorded: 2026-11-15
 
-These are the EXACT TWO core networking repositories selected for our VPN platform.
+These are the EXACT TWO earlier core NETWORKING-COMPONENT choices for our VPN
+platform; they are not the winners of the later independent COUNTRY-ARCHITECTURE
+research (2026-11-15). The exact TWO architecture-STUDY selections are
+mullvad/mullvadvpn-app and amnezia-vpn/amnezia-client (GPL-3.0; do not copy).
+Read docs/PROJECT_MEMORY.md and
+docs/knowledge-archive/REPOSITORY_RESEARCH.md to keep these distinct.
 
 1. apify/proxy-chain
    GitHub: https://github.com/apify/proxy-chain

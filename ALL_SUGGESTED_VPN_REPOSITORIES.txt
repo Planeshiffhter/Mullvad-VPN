@@ -4,6 +4,15 @@ Project: https://github.com/rejoansardar23/vpn
 Inventory date: 2026-11-15
 Total unique repositories: 23
 
+UPDATE (2026-11-16):
+The complete 23-project classification, additional external candidates, exact
+two ARCHITECTURE-STUDY winners, scores, pinned code links, official country
+sources, and operational constraints are archived in:
+  docs/PROJECT_MEMORY.md
+  docs/knowledge-archive/REPOSITORY_RESEARCH.md
+This original inventory remains an accurate historical candidate listing.
+The present networking dependencies are a separate engineering decision.
+
 PURPOSE
 -------
 Complete inventory of the GitHub repositories suggested during VPN project planning,
