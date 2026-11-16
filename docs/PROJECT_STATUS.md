@@ -1,5 +1,9 @@
 # Project status — factual inventory
 
+## Proposed Task 15 regression (awaiting CI on review branch)
+
+Implemented in a separate PR targeting `feat/tested-private-browser-proxy`: a real Chromium negative-route check after revoking an active grant through the founder HTTPS API. The test measures authenticated gateway rejection and asserts a unique URL never reaches the destination, while Chrome retains extension-owned TLS proxy and WebRTC settings until explicit Disconnect. An in-memory rejected-authentication counter stores no URLs or credentials. **Automatically tested:** pending the new PR's GitHub Actions run; the previous implementation baseline passed 59/59 at run 43651339909. **Manually verified:** not on the owner's Chrome. **Simulated:** no fake browser or HTTP mock is used for the new test, but destinations and TLS trust are controlled loopback fixtures. **Blocked:** real US endpoint, DNS/WebRTC/IPv6 and browser outage/restart acceptance. **Deferred:** full-device VPN and public release. This does not establish a universal browser kill switch.
+
 Updated 2026-11-15 following real Chromium integration CI (59/59). **Locally tested browser-proxy prototype; live US release blocked.** See [VALIDATION.md](VALIDATION.md) for exact results and [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for commands.
 
 | Capability | Implemented | Evidence / limitation |

@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - feat/tested-private-browser-proxy
 
 permissions:
   contents: read

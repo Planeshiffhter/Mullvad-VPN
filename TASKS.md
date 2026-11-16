@@ -18,7 +18,7 @@ Updated 2026-11-15 following independent GitHub Actions verification (original l
 | 12 | Truthful route/IP verification and states | In progress | Real Chromium fixture verification is explicitly non-US; mismatch/expiry/outage tests exist; live US verifier pending |
 | 13 | Server-enforced quotas and budget controls | In progress | Persistent lifetime application quota and exhaustion tests; provider-level caps/overhead/billing comparison await host |
 | 14 | Deploy live free US service | Blocked | Task 03, owner preflight, public TLS/renewal and authorized connectivity required |
-| 15 | Leak, outage, lifecycle, error tests | In progress | Local outage/restart/auth/IPv4/IPv6 rules tested; owner-browser DNS/WebRTC/IPv6, sleep/wake and network changes unrun |
+| 15 | Leak, outage, lifecycle, error tests | In progress | Added controlled real-Chromium server-side grant revocation and unique-URL direct-fallback regression (new PR; CI pending); owner-browser DNS/WebRTC/IPv6, gateway-outage, sleep/wake and network changes unrun |
 | 16 | Private operations dashboard | In progress | Authenticated usage/grant view/revoke tested in Chromium; deployed host/resource health and operator retention review pending |
 | 17 | Backup, restore and rollback tests | In progress | Encrypted WAL-safe restore and restored account/usage/revocation tested; off-host recovery copy and deployed rollback drill pending |
 | 18 | Accurate website and help/privacy drafts | Done | Private operations/help page works, no nonexistent US/country claims, browser-only and review boundaries explicit |
