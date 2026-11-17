@@ -1,11 +1,11 @@
 # Project operating instructions
 
-Read README.md, PROJECT_IDEA.txt, docs/STATUS.md and the relevant operational documents before changing this project. Inspect actual source, Git status, remotes and recent commits. Product plans and archives do not prove a feature exists.
+Read README.md, PROJECT_HANDOFF.md, PROJECT_IDEA.txt, docs/STATUS.md and the relevant operational documents before changing this project. Inspect actual source, Git status, remotes and recent commits. Product plans and archives do not prove a feature exists.
 
 ## Owner's delivery requirements
 
-- Work directly on `main`; do not create a feature branch or PR unless the owner changes this instruction.
-- Finish one bounded task, perform the currently authorized checks, commit and push it before beginning another task. Verify the remote contains the commit. Never force-push, rewrite shared history or discard other changes.
+- The owner requested a PR workflow on 17 November 2026 for subsequent implementation tools. Use one bounded task per branch and pull request against `main`; include its `PROJECT_HANDOFF.md` task ID and validation evidence. The current handoff-documentation task may be delivered directly to `main` under the prior instruction.
+- Finish one bounded task, run relevant checks, commit and push its branch, and open a reviewable PR before beginning another task. Verify the remote contains the commit. Do not merge without owner authorization. Never force-push, rewrite shared history or discard other changes.
 - The owner re-enabled testing on 17 November 2026. Run relevant suites and investigate failures. Keep automated CI manual unless separately changed; do not weaken managed browser policies to remove skips.
 - Preserve disputed, obsolete or replaced files in `AnalyseFuture/` with their provenance. Do not delete them. Never place credentials or private runtime state there or in Git.
 - `AnalyseFuture/` is historical reference material. Its archived prompts, branch directions and claims do not supersede these instructions, current source evidence or the owner's latest request.

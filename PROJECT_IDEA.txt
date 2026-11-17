@@ -396,10 +396,11 @@ exist, connect the smallest native proof to one authorized endpoint and test
 routing/DNS/failure/cleanup. Otherwise complete an independent browser failure
 regression while keeping that native prerequisite explicitly blocked.
 
-Complete, test, commit and push each task directly to main before beginning the
-next, following the owner's requested workflow. Do not force-push or discard
-unrelated work. A remote commit protects source work from loss of this cloud
-workspace; private local credentials and databases require separate approved
+The owner updated the continuation workflow on 17 November 2026: complete, test,
+commit and push each bounded implementation task on its own branch and open a
+pull request against main for review. Follow PROJECT_HANDOFF.md and AGENTS.md;
+do not merge without owner authorization, force-push or discard unrelated work.
+A remote commit protects source work from loss of this cloud workspace; private local credentials and databases require separate approved
 handling and must never be added merely to make a backup commit.
 
 20. REPOSITORY CONTINUITY AND HISTORICAL MATERIAL

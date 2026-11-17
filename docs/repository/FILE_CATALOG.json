@@ -75,6 +75,42 @@
       "literal_dependencies": []
     },
     {
+      "path": "AnalyseFuture/before-handoff-86792c2/AGENTS.md.original.txt",
+      "functional_collection": "preserved-history/before-handoff-86792c2",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-handoff-86792c2/CONTRIBUTING.md.original.txt",
+      "functional_collection": "preserved-history/before-handoff-86792c2",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-handoff-86792c2/PROJECT_IDEA.txt.original.txt",
+      "functional_collection": "preserved-history/before-handoff-86792c2",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-handoff-86792c2/README.md.original.txt",
+      "functional_collection": "preserved-history/before-handoff-86792c2",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-handoff-86792c2/README.txt",
+      "functional_collection": "preserved-history/before-handoff-86792c2",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-handoff-86792c2/docs/STATUS.md.original.txt",
+      "functional_collection": "preserved-history/before-handoff-86792c2",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
       "path": "AnalyseFuture/before-validation-c7b2977/.github/workflows/verify.yml.original.txt",
       "functional_collection": "preserved-history/before-validation-c7b2977",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
@@ -546,6 +582,12 @@
       "path": "CONTRIBUTING.md",
       "functional_collection": "project-root",
       "purpose": "Contributor workflow and deferred validation policy",
+      "literal_dependencies": []
+    },
+    {
+      "path": "PROJECT_HANDOFF.md",
+      "functional_collection": "project-root",
+      "purpose": "Component asset associated with project-root",
       "literal_dependencies": []
     },
     {
