@@ -2,6 +2,8 @@
 
 An owner-controlled privacy and secure-connectivity project. The long-term goal is a trustworthy VPN service with native apps, browser extensions and independently operated infrastructure.
 
+**Implementation status: [Authoritative feature inventory](docs/FEATURE_INVENTORY.md)** — platform-by-platform evidence, missing work, priorities and product direction. Chrome/browser services are a locally tested prototype; Linux, Windows, macOS and Android source remains unintegrated, and Firefox has no implementation.
+
 **Start here: [Project handoff, implemented features, file guide and detailed task backlog](PROJECT_HANDOFF.md).** This is the continuation guide for other tools and PR reviewers.
 
 Read **[PROJECT_IDEA.txt](PROJECT_IDEA.txt)** for the detailed product vision, delivery stages, feasibility limits and responsibilities. It is a plan, not evidence of a completed service.
@@ -51,7 +53,7 @@ For local services, run `npm run dev:init`, then `npm run dev`. See [local devel
 
 ## Delivery and safety
 
-The owner now requests one bounded task per branch and pull request against `main` for subsequent implementation tools. Follow [the handoff and review process](PROJECT_HANDOFF.md#pull-request-handoff-and-review-process), run relevant checks, and share each PR for review. Do not merge without owner authorization, force-push or discard remote work. This supersedes earlier direct-to-main guidance for future implementation; this handoff-documentation task retains the prior direct delivery instruction. Preserve disputed material in `AnalyseFuture/` with provenance rather than deleting it.
+The owner now requests one bounded task per branch and pull request against `main` for subsequent implementation tools. Follow [the handoff and review process](PROJECT_HANDOFF.md#pull-request-handoff-and-review-process), run relevant checks, and share each PR for review. Do not merge without owner authorization, force-push or discard remote work. This supersedes earlier direct-to-main guidance for future implementation. The earlier root-handoff commit was delivered under the prior rule; this feature audit and subsequent work use reviewable PRs. Preserve disputed material in `AnalyseFuture/` with provenance rather than deleting it.
 
 Historical documents in `AnalyseFuture/` are not current operating instructions or implementation claims. [The recovery report](docs/REPOSITORY_RECOVERY.txt) explains the reorganization, preservation ledger and limits of the repository inspection. It does not certify that the owner's GitHub account is secure.
 

@@ -75,6 +75,30 @@
       "literal_dependencies": []
     },
     {
+      "path": "AnalyseFuture/before-feature-inventory-e0626cf/PROJECT_HANDOFF.md.original.txt",
+      "functional_collection": "preserved-history/before-feature-inventory-e0626cf",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-feature-inventory-e0626cf/README.md.original.txt",
+      "functional_collection": "preserved-history/before-feature-inventory-e0626cf",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-feature-inventory-e0626cf/README.txt",
+      "functional_collection": "preserved-history/before-feature-inventory-e0626cf",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-feature-inventory-e0626cf/docs/STATUS.md.original.txt",
+      "functional_collection": "preserved-history/before-feature-inventory-e0626cf",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
       "path": "AnalyseFuture/before-handoff-86792c2/AGENTS.md.original.txt",
       "functional_collection": "preserved-history/before-handoff-86792c2",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
@@ -770,6 +794,12 @@
       "path": "docs/DEPLOYMENT.md",
       "functional_collection": "docs",
       "purpose": "Current deployment operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/FEATURE_INVENTORY.md",
+      "functional_collection": "docs",
+      "purpose": "Current feature inventory operational guidance",
       "literal_dependencies": []
     },
     {

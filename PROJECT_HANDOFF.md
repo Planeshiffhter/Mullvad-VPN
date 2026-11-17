@@ -1,6 +1,8 @@
 # Project handoff: features, file guide and implementation tasks
 
-Updated: **17 November 2026**. Source baseline reviewed: **`86792c239716824eb32d94d67a355c1fbac13924`**. This document is the root continuation guide for implementation tools and PR reviewers. It describes source that exists, evidence that has been recorded, and work still to do. Check the current commit and [status](docs/STATUS.md) before starting; future PRs must update the relevant entries here.
+Updated: **17 November 2026**. Source baseline reviewed: **`e0626cfc80454ed51b9264fc36a11a7437bfcbdf`**. **Authoritative implementation status:** [docs/FEATURE_INVENTORY.md](docs/FEATURE_INVENTORY.md) provides the exact per-feature statuses, source/test evidence and product gaps. This handoff provides task ownership, file navigation and acceptance packets; it does not supersede that inventory.
+
+This document is the root continuation guide for implementation tools and PR reviewers. It describes source that exists, evidence that has been recorded, and work still to do. Check the current commit and [status](docs/STATUS.md) before starting; future PRs must update the relevant entries here.
 
 ## Start here
 
@@ -10,7 +12,7 @@ Updated: **17 November 2026**. Source baseline reviewed: **`86792c239716824eb32d
 4. Implement the smallest complete result on a task branch, run its acceptance checks, update evidence, push and open a PR against `main`.
 5. Share the PR URL with the owner/reviewer. Follow the [review process](#pull-request-handoff-and-review-process). Do not silently turn a blocked prerequisite or skipped test into completion.
 
-**Good next engineering task:** T03, the Linux native build audit, can begin with the preserved local sources. T01 is the first browser acceptance priority when an authorized extension-capable runner is available. T24 is a concrete dashboard discrepancy to reproduce and fix; T02 and T13 provide additional local work when external prerequisites are unavailable. The foundational browser build/test/package workflow is already implemented and validated; do not rebuild it from scratch.
+**Good next engineering task:** T03, the Linux native build audit, can begin with the preserved local sources. T01 is the first browser acceptance priority when an authorized extension-capable runner is available. T24 is a reproduced dashboard display defect requiring a committed regression and fix; T02 and T13 provide additional local work when external prerequisites are unavailable. The foundational browser build/test/package workflow is already implemented and validated; do not rebuild it from scratch.
 
 ## Main goal and present scope
 
@@ -28,6 +30,8 @@ The browser proxy does not protect unrelated applications, all browser-internal 
 **Current constraints:** $0 additional owner spending; no paid trials, new subscriptions, public signup/launch, store publishing or production deployment without explicit owner authorization. No repository-wide license is selected. Upstream notices and licenses remain applicable. Do not assume vendor accounts, backends, relays, signing keys or trademarks are available to us.
 
 ## Implemented features and evidence
+
+The table below is a component-level navigation summary. Use [the authoritative feature matrix](docs/FEATURE_INVENTORY.md) for the seven precise status classifications, especially real Chrome acceptance, source-only native platforms and incomplete behavior. A described implementation is not a supported product claim.
 
 “Implemented” below means code exists. “Locally validated” refers to bounded local tests, not production acceptance.
 
@@ -86,7 +90,7 @@ Every active project file is described below. Historical copies are indexed in t
 | File/folder | Purpose |
 | --- | --- |
 | [README.md](README.md) | GitHub homepage, entry link to this handoff, actual scope and development commands. |
-| [PROJECT_HANDOFF.md](PROJECT_HANDOFF.md) | This current feature inventory, file guide, task backlog and PR handoff contract. |
+| [PROJECT_HANDOFF.md](PROJECT_HANDOFF.md) | Task packets, file guide and PR handoff contract; per-feature statuses live in docs/FEATURE_INVENTORY.md. |
 | [PROJECT_IDEA.txt](PROJECT_IDEA.txt) | Detailed product vision, audiences, browser/native distinction, feasibility and staged ambitions. |
 | [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) | Functional tree, dependencies, generated areas and catalog methodology. |
 | [AGENTS.md](AGENTS.md) | Current agent operating, delivery, preservation and security instructions. |
@@ -202,6 +206,7 @@ Every active project file is described below. Historical copies are indexed in t
 
 | File/folder | Purpose |
 | --- | --- |
+| [docs/FEATURE_INVENTORY.md](docs/FEATURE_INVENTORY.md) | Authoritative per-platform feature statuses, evidence, gaps, extras and dependency-ordered roadmap. |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Current logical components, control/data flow and native boundary. |
 | [docs/LOCAL_DEVELOPMENT.md](docs/LOCAL_DEVELOPMENT.md) | Local initialization, certificate trust, services, fixture, private extension installation and owner-browser acceptance. |
 | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Hosting authorization, cost/terms, real region, TLS, firewall, private administration and live validation gates. |
@@ -261,23 +266,23 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 - **Files/output:** New `docs/NATIVE_LINUX_BUILD_AUDIT.md`, references to `upstream/` and license audit. Preserve original ZIPs. Do not change unique code only in ignored extraction outputs.
 - **Done when:** Another tool can execute an exact build plan with pinned inputs/resource-based parallelism, or can see precise missing inputs and an investigated supported remedy. Explicitly separate build, integration, distribution and runtime prerequisites.
 
-### T04 — Reproduce the selected native build (P1, depends on T03)
+### T04 — Reproduce the selected native build (P0, depends on T03)
 
 - **Needs:** Target/toolchain/source inputs established by T03; sufficient resources. Owner decisions only where required by the selected integration/distribution action.
 - **Work:** Install pinned build prerequisites, resolve trustworthy submodule/generated inputs, build the single chosen target and capture sanitized logs. Verify any downloaded artifact signatures/checksums/TLS; do not override expected hashes. Repeat from clean target outputs without discarding unique work. Add reusable setup guidance.
 - **Files/output:** Chosen tracked build instructions/helpers and a dated native-build report; update T03 findings and status. Generated binaries remain outputs.
 - **Done when:** Repeatable build, binary identity and safe nonprivileged version/CLI smoke pass, with exact tool versions/commands. A concrete external blocker must remain open if unresolved. Compiler success does not close T06.
 
-### T05 — Choose and implement a tracked native integration boundary (P1, prerequisite required)
+### T05 — Choose and implement a tracked native integration boundary (P0, prerequisite required)
 
 - **Depends on:** T03/T04 findings; owner-approved integration and license direction before covered distribution.
 - **Work:** Compare maintained protocol library, deliberate licensed fork and client/daemon interface options. Define custom-endpoint configuration, privilege separation, key ownership, storage, local IPC/auth, supported Linux versions and uninstall/cleanup. Implement one bounded tracked component at a time using established WireGuard/protocol libraries and original branding.
 - **Files/output:** Architecture decision and approved tracked native component location. Create a component only after selection, not empty speculative platform folders. Keep provenance/notices and required corresponding-source material.
 - **Done when:** Decision and owner prerequisites are recorded; component builds, configuration/IPC boundaries have negative tests and unique source survives checkout restoration. No dependence on vendor-operated credentials/relays or custom cryptography.
 
-### T06 — Smallest real native tunnel proof (P1, prerequisite required)
+### T06 — Smallest real native tunnel proof (P0, prerequisite required)
 
-- **Depends on:** T04/T05 plus a suitable authorized privileged test machine and independently authorized WireGuard endpoint; apply T07 if obtaining a host.
+- **Depends on:** T04/T05/T30 plus a suitable authorized privileged test machine and independently authorized WireGuard endpoint; apply T07 if obtaining a host.
 - **Work:** Prove tunnel establishment and intended traffic routing, DNS resolution, IPv4/IPv6 behavior, endpoint reachability, connect/disconnect cleanup, revocation/key rotation, network loss, restart and configured blocking behavior. Compare routes/interfaces/resolvers/firewall before/during/after. Test traffic outside the intended tunnel under the selected mode.
 - **Files/output:** Native integration tests/helpers and dated platform-specific evidence with secret-free configuration schema.
 - **Done when:** Repeatable real-endpoint tests cover success and failure without disturbing unrelated host networking. Record any unsupported traffic/scenario. A local proxy fixture, native binary or virtual interface alone is insufficient.
@@ -348,9 +353,9 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 - **Files:** Gateway/control API, extension/native client configuration, operations UI and directory integration tests.
 - **Done when:** Unhealthy/expired/unauthorized entries cannot be offered as usable; clients handle removal/failure truthfully; no fallback violates selected protection. Region entries have observed operational evidence and cost ownership.
 
-### T17 — First supported native application (P2, later)
+### T17 — First supported native application (P1, later)
 
-- **Depends on:** T05/T06, T11 and owner selection of one platform/OS range with test/signing hardware and a maintainer.
+- **Depends on:** T05/T06/T30, T11 and owner selection of one platform/OS range with test/signing hardware and a maintainer.
 - **Work:** Build original connection UX on the proven daemon/protocol boundary, secure enrollment/config storage, reconnect, network transitions, accessible errors, install/uninstall and verified updates. Keep browser and native scopes distinct.
 - **Done when:** A documented OS/device/network matrix passes connect/disconnect, DNS/IPv4/IPv6/failure, startup/recovery, privilege and update tests. Choose one platform first; do not promise Windows/macOS/Linux/Android/iOS support from a shared UI build.
 
@@ -367,10 +372,10 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 - **Work:** Resolve review findings; define supported scope, privacy/consumer terms, retention/deletion/support, incident response, user consent and owner launch decision. Pilot with a narrow authorized audience, measure reliability and address failures before expanding.
 - **Done when:** A release checklist links exact builds, tests, independent review/remediation, rollback and owner acceptance. No public launch, customer promises or billing starts merely because code merges.
 
-### T20 — More operating systems and countries (P3, later/optional)
+### T20 — Platform and region expansion umbrella (P2, later)
 
 - **Needs:** Successful narrow pilot, maintainers, real demand, test/signing devices and approved regional cost/terms/support model.
-- **Work:** Choose one addition at a time. For an OS, repeat platform privilege/routing/DNS/failure/update tests. For a country, establish authorized host/location/capacity/abuse/recovery evidence and health integration.
+- **Work:** The owner explicitly requests Android, Windows, macOS and Firefox as product destinations; track them in T26–T29 rather than calling them optional extras. T25 covers Chromium variants. Choose one addition at a time after the Linux private product foundation. For an OS, repeat platform privilege/routing/DNS/failure/update tests. For a country, establish authorized host/location/capacity/abuse/recovery evidence and health integration.
 - **Done when:** Each added platform/region has its own maintained support matrix and acceptance evidence. A country flag, archived mobile source or cross-compiled binary is insufficient.
 
 ### T21 — Advanced protection features (P3, optional product decisions)
@@ -391,12 +396,48 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 - **Work:** Prefer deterministic diagnostics first. If justified, build a reviewed-knowledge helper with minimal redacted inputs, consent, source references and evaluation. Never send browsing history, raw captures, keys/passwords/tokens or customer traffic for model training. AI must not silently change routing/firewall/access rules.
 - **Done when:** Evaluation covers correctness, unsupported questions, data minimization and safe authorization boundaries. No paid API adoption without approval and no claim an AI helper replaces security/operations accountability.
 
-### T24 — Reproduce and correct dashboard exhausted-grant status (P1, ready)
+### T24 — Correct reproduced dashboard exhausted-grant status (P1, ready)
 
-- **Source finding:** `services/control-api/store.ts` returns `state` and `active`, including quota-exhausted grants. `apps/operations/app.js` derives active count/“Authorized” display only from revocation and expiry, ignoring exhaustion. The existing website fixture omits those server fields. This discrepancy was identified by source inspection; no new regression has yet been run and no fix is included in this handoff.
-- **Work:** First reproduce with an unexpired, unrevoked grant whose grant or account quota is exhausted. Add a real API status/Chromium UI regression, then render active/exhausted/expired/revoked states and counts consistently. Decide explicitly whether an exhausted grant still offers a revoke action; do not imply revocability makes it traffic-authorized. Handle malformed/unknown state conservatively.
+- **Reproduced defect:** `services/control-api/store.ts` reports exhausted grants as `active: false`, but `apps/operations/app.js` derives active/“Authorized” display only from revocation and expiry. A fresh audit diagnostic exercised actual TLS API/Store plus Chromium over a loopback HTTP diagnostic bridge: exhausted authorization was rejected while the UI counted 1 active/Authorized. See the exact evidence/boundaries in [FEATURE_INVENTORY.md](docs/FEATURE_INVENTORY.md#reproduced-defect-versus-untested-risks). No application fix or committed regression is included in the audit.
+- **Work:** Convert the diagnostic into a durable regression with an unexpired, unrevoked grant whose grant or account quota is exhausted. Add a real API status/Chromium UI regression, then render active/exhausted/expired/revoked states and counts consistently. Decide explicitly whether an exhausted grant still offers a revoke action; do not imply revocability makes it traffic-authorized. Handle malformed/unknown state conservatively.
 - **Files:** `apps/operations/app.js`, `apps/operations/index.html` if copy needs updating, `tests/operations/website.test.js` and API/integration tests as needed.
 - **Done when:** The regression fails before the correction, passes afterward, and active counts/status match actual API authorization for active, exhausted, expired and revoked records. Preserve safe text rendering, session/revoke/logout behavior and server quota enforcement. Run relevant operations/API tests and the complete check workflow before PR review.
+
+### T25 — Chromium-family compatibility matrix (P1, prerequisite required)
+
+- **Needs:** T01 and authorized Edge/Brave/other specifically selected browser profiles/versions. Shared Chromium ancestry does not establish compatibility.
+- **Work:** Audit installation, manifest/permission/proxy-auth/privacy APIs, managed policies and worker lifecycle per browser; adjust only demonstrated gaps. Preserve Chrome behavior and truthful scope.
+- **Done when:** Real extension load, login, route/auth, expiry/revoke, restart/outage and restoration checks pass for each claimed browser/OS/version; publish the support matrix. No suite skip or simulated popup counts as vendor acceptance.
+
+### T26 — Firefox extension implementation and acceptance (P2, later)
+
+- **Needs:** Existing controller/schema behavior, T13, chosen Firefox versions and an authorized runner; owner-controlled signing/channel decisions for distribution.
+- **Work:** Implement Firefox-specific manifest/background, browser API, proxy/auth/privacy and credential-storage adaptations. Audit permissions and differences from Chrome. Reuse platform-neutral state/HTTPS contracts where appropriate; keep browser adapters explicit.
+- **Done when:** A Firefox package builds, actual permission/login/routing/auth, expiry/revoke, restart/outage and restoration tests pass, and protection boundaries/signing/update steps are documented. No active Firefox implementation exists at the audit baseline.
+
+### T27 — Android VPN application (P2, later)
+
+- **Needs:** T05/T06/T30, T11/T13, Android SDK/emulator and actual device, licensed native inputs and owner signing access before distribution.
+- **Work:** Select a tracked integration; implement VpnService/consent, maintained tunnel library, independent account/device config, secure keys, connect/disconnect, DNS/IPv4/IPv6, network changes, foreground/background survival and clearly supported always-on/lockdown. Build APK/AAB; measure battery behavior.
+- **Done when:** Emulator plus physical-device permission, routing/leak/failure/restart/roaming/lockdown/background and update/uninstall matrix passes. Record OS/device/toolchain, artifact identity and signed-distribution evidence separately. Archived Kotlin/Java/service/test sources are SOURCE_ONLY.
+
+### T28 — Windows VPN application (P2, later)
+
+- **Needs:** T05/T06/T30/T11, Windows test/driver/signing resources and licensed integration decision.
+- **Work:** Integrate maintained tunnel adapter, privileged service/authenticated IPC, OS routes/DNS/firewall, secure key storage, original GUI and install/update/uninstall. Define OS versions and exception/blocking semantics.
+- **Done when:** Actual Windows-device installation, privilege/IPC, IPv4/IPv6/DNS/routing/failure/recovery and signed update/rollback/uninstall tests pass. Cross-compilation or source availability does not establish support.
+
+### T29 — macOS VPN application (P2, later)
+
+- **Needs:** T05/T06/T30/T11, macOS hardware and owner-approved signing/entitlement/notarization access for the chosen distribution path.
+- **Work:** Decide supported tunnel/Network Extension design, service privilege/IPC, Keychain/key storage, routes/DNS/firewall, original UI and packaging/update/uninstall. Audit the chosen OS/API restrictions rather than assuming vendor entitlements transfer.
+- **Done when:** Actual macOS permission/install/tunnel/DNS/IPv4/IPv6/failure/network-change/update/rollback/uninstall evidence supports each claimed version. Archived platform source and signing scripts remain unverified inputs.
+
+### T30 — Authorized native endpoint and device configuration contract (P0, prerequisite required)
+
+- **Needs:** T03/T05/T07/T13 findings; T15 before multiple customer accounts. Endpoint and test-machine authorization are prerequisites to runtime proof.
+- **Work:** Define an independently authorized WireGuard server/peer lifecycle, key generation/storage/ownership, native enrollment/config delivery, endpoint eligibility, rotation/revocation and restore behavior. Separate native protocol keys from HTTP Basic proxy grants. Start with one controlled owner configuration; production enrollment is a later secured control-plane implementation.
+- **Done when:** Versioned protocol/config contract and end-to-end authorized native connect/revoke/rotate/recovery tests pass without vendor accounts/backends. The existing Node HTTP/CONNECT proxy is not a WireGuard server and must remain usable.
 
 ## Validation commands and evidence contract
 
@@ -421,7 +462,7 @@ Evidence must identify commit, commands/working directories, tool/platform versi
 
 ## Pull request handoff and review process
 
-The owner's latest request is for other implementation tools to create PRs and for this assistant to review them. That supersedes older direct-to-main directions for subsequent implementation. This documentation delivery itself may use the previous direct-main instruction. Current rules are in AGENTS.md and CONTRIBUTING.md; historical archived instructions are inert.
+The owner's latest request is for other implementation tools to create PRs and for this assistant to review them. That supersedes older direct-to-main directions for subsequent implementation. The earlier root-handoff commit used the previous direct-main instruction; this inventory audit and subsequent work require reviewable PRs. Current rules are in AGENTS.md and CONTRIBUTING.md; historical archived instructions are inert.
 
 ### Instructions to paste into another tool
 
@@ -464,6 +505,7 @@ When the owner shares a PR URL/number or requests a review, inspect its final di
 | `AnalyseFuture/previous-tooling/` | Exact earlier extractor/workflow versions and their nested original path hierarchy. |
 | `AnalyseFuture/previous-code/` | Exact pre-reorganization source, tests, package commands and readmes; nested paths identify original component ownership. |
 | `AnalyseFuture/before-validation-c7b2977/` | Documents/tooling/gateway/test originals before validation reauthorization and startup cleanup fix; nested paths retain provenance. |
+| `AnalyseFuture/before-feature-inventory-e0626cf/` | Exact pre-audit homepage/handoff/status docs, with source commit and hashes; not current execution guidance. |
 | `AnalyseFuture/before-handoff-86792c2/` | Exact docs before this handoff/PR workflow update, with hashes/source commit in README.txt. |
 | `AnalyseFuture/previous-empty-directories/` | Earlier empty folder shells, if retained locally; Git does not track empty directories. |
 
@@ -560,3 +602,10 @@ The following index explains every preserved project file. Historical filenames 
 | [AnalyseFuture/previous-tooling/tools/extract_upstreams.py.original.txt](AnalyseFuture/previous-tooling/tools/extract_upstreams.py.original.txt) | Preserved earlier version: Offline pinned ZIP verification and safe recreation; validates layout, contents, permissions and symlinks; refuses mismatched existing source. |
 
 Nested archive directories mirror original paths, so `.github/workflows/` contains historical workflow copies, `apps/extension/` historical client docs, `services/gateway/` or `services/control-api/` historical server source, `scripts/` historical operator tools, `tests/` historical regressions, `tools/` historical inventory/extraction code and `docs/` historical guidance. They are preservation containers, not active duplicate components. The exact complete project-path inventory is also in [FILE_CATALOG.json](docs/repository/FILE_CATALOG.json).
+
+| Preserved file | Original role / reason retained |
+| --- | --- |
+| [AnalyseFuture/before-feature-inventory-e0626cf/README.md.original.txt](AnalyseFuture/before-feature-inventory-e0626cf/README.md.original.txt) | Exact pre-feature-audit documentation snapshot of `README.md`; historical role only. |
+| [AnalyseFuture/before-feature-inventory-e0626cf/PROJECT_HANDOFF.md.original.txt](AnalyseFuture/before-feature-inventory-e0626cf/PROJECT_HANDOFF.md.original.txt) | Exact pre-feature-audit documentation snapshot of `PROJECT_HANDOFF.md`; historical role only. |
+| [AnalyseFuture/before-feature-inventory-e0626cf/docs/STATUS.md.original.txt](AnalyseFuture/before-feature-inventory-e0626cf/docs/STATUS.md.original.txt) | Exact pre-feature-audit documentation snapshot of `docs/STATUS.md`; historical role only. |
+| [AnalyseFuture/before-feature-inventory-e0626cf/README.txt](AnalyseFuture/before-feature-inventory-e0626cf/README.txt) | Snapshot source commit, purpose and preserved-file hashes. |
