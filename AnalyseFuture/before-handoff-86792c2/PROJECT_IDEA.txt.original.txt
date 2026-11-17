@@ -1,0 +1,424 @@
+WORLD-CLASS PRIVACY AND VPN PLATFORM
+Project idea, product boundaries and staged delivery plan
+Prepared: 17 November 2026
+Status: Owner-controlled proposal grounded in the repository's actual assets.
+
+This document describes what we want to build, what already exists, and what
+must be proved before each expansion. It is not a release announcement, a
+security certification, an approved spending plan, or a promise to deliver a
+particular feature by a particular date. The horizons below are planning
+estimates that depend on people, funding, infrastructure, testing and review.
+
+1. THE IDEA
+
+Build an independently operated privacy and secure-connectivity platform with
+an original identity, understandable applications, owner-controlled accounts,
+authorized infrastructure, and a trustworthy release process. Over time, it
+should support browser protection and full-device VPN applications across a
+clearly documented selection of desktop, mobile and network environments.
+
+The ambition is to compete seriously with established providers, including
+NordVPN and Urban VPN, and eventually become a product people choose for
+measurably good protection, reliability, experience and value. This is an
+ambition, not evidence that our current project equals or surpasses them.
+
+The product promise should be simple:
+
+  "Connect securely, understand what is protected, and stay in control of
+   your data."
+
+World-class should mean reliable engineering and earned trust. A long list of
+buttons, countries, protocols or AI features is not sufficient. Every supported
+feature needs a defined purpose, an honest protection boundary, meaningful
+tests, maintenance ownership and a sustainable operational cost.
+
+2. WHO THIS PRODUCT SHOULD HELP
+
+The first user is the owner testing a private prototype. This narrow starting
+point lets us prove connection behavior, recovery, operating cost and security
+assumptions without prematurely taking responsibility for public customers.
+
+Later audiences could include people using public Wi-Fi, privacy-conscious
+individuals, travelers, remote workers and technically capable users who want
+to connect to a server they control. Small teams may become a separate later
+offering if their access, administration and support requirements justify it.
+
+These audiences have different needs. Consumer privacy, enterprise access and
+self-hosted connectivity must not be silently combined into one confusing
+promise. We should validate demand before developing a separate product tier.
+The first release should do a small number of things clearly and reliably.
+
+3. WHAT WE ALREADY HAVE
+
+The repository contains implemented project-owned browser-proxy components:
+
+  - A typed Chrome Manifest V3 extension with a connection interface and
+    browser proxy/authentication handling.
+  - A founder-only HTTPS control API, SQLite account/state storage and scrypt
+    password hashing.
+  - An authenticated TLS forward proxy supporting HTTP and HTTPS CONNECT.
+  - Short-lived and revocable grants, destination restrictions, quotas,
+    concurrency controls and aggregate usage accounting.
+  - A private operations/help interface.
+  - Encrypted SQLite backup/restore and private extension packaging tools.
+  - Automated unit, integration, security and Chromium-oriented tests.
+
+We should preserve and improve these capabilities instead of rebuilding them
+merely to adopt a different framework. Automated fixture results establish
+specific tested behaviors; they do not establish every production property.
+Managed cloud Chromium can block actual unpacked-extension tests, which must
+remain explicitly skipped rather than described as successful execution.
+
+We also preserve Mullvad and Amnezia source archives. An offline extraction
+tool verifies archive identities and recreates 8,485 regular files and four
+symlinks, including their source layout and notices. Verification covers added,
+missing and changed source entries. The upstream native applications have not
+been built or runtime-verified in this project.
+
+No live authorized US exit, worldwide gateway fleet, public customer platform,
+full-device application, independent security certification or public release
+is established by this document. The earlier uploaded project-goal fragment is
+incomplete and contains statements that do not match the current source tree.
+It is preserved as historical input, not used as a current status report.
+
+4. ONE VISION, TWO DIFFERENT PROTECTION EXPERIENCES
+
+The browser product routes supported browser traffic through a configured
+proxy. Its interface must explain the exact control-plane exceptions,
+unsupported modes, browser policies and traffic categories it does not cover.
+It must not claim to protect unrelated applications or all operating-system
+traffic. A browser route check is not universal DNS or WebRTC certification.
+
+The native product would create a real device tunnel using established VPN
+protocols and operating-system networking interfaces. It needs privileged
+integration, platform-specific routing, DNS handling, reconnect behavior and
+failure controls. Windows, macOS, Linux, Android and iOS differ substantially;
+support and guarantees must be tested separately for each supported version.
+
+The products may share account concepts, device management and appropriate
+control-plane APIs. They must retain separate threat models and protection
+descriptions. A successful browser milestone does not complete a native one.
+
+5. THE FIRST EXPERIENCE TO MAKE EXCELLENT
+
+A user should understand where they are connecting, whether a route was
+actually verified, and what to do when the connection fails. The initial
+interface should emphasize a clear connection state, an explicit disconnect
+action, useful errors, accessible controls and a truthful location directory.
+
+A country may be shown as available only when an authorized gateway exists and
+meets the documented eligibility and health criteria. Synthetic test records
+must remain recognizable fixtures. A country label alone is not evidence of
+an exit location, legal suitability or a reliable route.
+
+Recovery matters as much as initial connection. Users need understandable
+behavior after expired credentials, a revoked device, an unavailable gateway,
+a network change, a system restart or a conflicting browser/network policy.
+Avoid silent direct fallback where the selected protection mode promises
+blocking behavior. Prove the actual behavior on each supported platform.
+
+6. A PRACTICAL ARCHITECTURE
+
+Keep a modular repository with a small number of clear responsibilities:
+
+  apps/             User-facing applications and browser extension.
+  services/         Control API and gateway implementation.
+  scripts/          Development, packaging and recovery tooling.
+  tests/            Automated behavioral and security regressions.
+  infrastructure/   Reviewed runtime and deployment examples.
+  tools/            Repository and source-verification utilities.
+  upstream/archives/ Preserved third-party source ZIP assets.
+  build/upstream/   Ignored, recreatable extracted source trees.
+  AnalyseFuture/    Preserved historical/disputed material for later analysis.
+
+The control plane manages identity, device authorization, configuration,
+revocation and gateway eligibility. The data plane carries authorized network
+traffic with restrictive access rules. Administration should have separate,
+limited exposure. Client secrets must not become embedded shared passwords.
+
+The existing founder API is a starting point, not a ready multi-customer
+identity platform. Public users require separate design and validation of
+authentication, recovery, entitlements, device limits, abuse handling and data
+access. Add services when a demonstrated requirement justifies maintaining
+them; avoid speculative microservices or duplicated frameworks.
+
+7. HOW TO USE THE TWO UPSTREAM CODEBASES
+
+Mullvad provides substantial native-client, daemon, interface and networking
+source. Amnezia provides native-client and self-hosted provisioning patterns
+across several protocols. Both are valuable technical assets to study.
+Neither archive gives us the upstream company's operated accounts, worldwide
+servers, update authority, production signing keys or permission to use its
+trademarks. Building source is different from operating an independent service.
+
+Preserve upstream copyrights, license texts and dependency notices. Before
+copying or distributing a component, establish its exact revision, dependency
+licenses, intended integration model and applicable source-distribution or
+other obligations. Commercial ambitions do not remove copyleft requirements.
+No project-wide distribution license should be invented without the owner's
+decision and appropriate review.
+
+Archive checksums identify the bytes preserved in this repository. They do
+not independently prove an upstream signature or complete source provenance.
+Check missing submodules, pinned toolchains, generated inputs and platform
+dependencies before promising reproducible native builds.
+
+8. THE SMALLEST USEFUL NATIVE PROOF
+
+Start with one Linux daemon/CLI target and one independently authorized
+WireGuard endpoint. First establish a reproducible build and the license,
+dependency and privilege boundaries. Investigate a direct custom-endpoint
+configuration path; do not imitate vendor account APIs or assume access to
+vendor-operated infrastructure.
+
+The proof must demonstrate a real tunnel, intended routes, DNS behavior,
+IPv4/IPv6 handling, connect/disconnect cleanup, network failure behavior and
+restart recovery on an authorized target machine. Test whether packet traffic
+can leave outside the intended tunnel under the selected mode. A successful
+compiler exit alone does not establish these properties.
+
+Use established WireGuard implementations and supported cryptographic
+libraries. Do not invent a VPN protocol, key exchange or encryption format.
+A custom-endpoint proof does not automatically include upstream advanced
+features, quantum-resistant negotiation, traffic-shaping protections or all
+kill-switch behavior. Evaluate each feature explicitly before claiming it.
+
+9. DELIVERY HORIZON: NOW THROUGH APPROXIMATELY THREE MONTHS
+
+Concentrate on a reproducible foundation and a private owner-controlled pilot.
+This horizon is an estimate, not a delivery commitment.
+
+Priorities are to restore a clear source structure, preserve historical work,
+reproduce the browser build/tests, finish practical browser acceptance checks,
+and investigate the first native Linux build. Do not discard completed code
+because old planning documents describe a different implementation order.
+
+For the browser pilot, verify an actual authorized gateway and its operating
+constraints before attempting public deployment. Trusted TLS, private
+administration, destination restrictions, quotas, revocation and recovery must
+work together. Observe the exit IP independently and test real failures.
+
+Acceptance means repeatable commands, explicit pass/fail/skip evidence, a
+tested recovery path and no fictional location claims. If hosting, credentials,
+privileges or a test device are unavailable, record that concrete blocker and
+continue an independent task. Writing a blocker into a plan does not resolve it.
+
+10. DELIVERY HORIZON: THE FIRST YEAR
+
+Subject to resources and successful earlier gates, turn the private pilot into
+a narrow, dependable product foundation. Complete the native proof, then choose
+the first supported customer platform based on demand, maintainability and
+available test/signing hardware. Do not promise every platform in year one.
+
+Develop original connection UX, safe device enrollment/revocation, configuration
+rotation, a real gateway directory and clear eligibility rules. Improve
+accessibility and useful error handling before adding a large feature list.
+Establish signed releases, update verification, dependency inventories,
+vulnerability handling, reproducible builds and tested rollback procedures.
+
+A small private beta is reasonable only after user-account security, support,
+privacy/legal preparation, abuse response and operational monitoring are
+adequate for that responsibility. Seek independent network/security review
+before broader exposure. Passing tests are necessary evidence, not a
+substitute for review of the whole system and its operating practices.
+
+11. DELIVERY HORIZON: THE SECOND YEAR
+
+If the early product is reliable and funding is sustainable, expand carefully
+across platforms and countries. Choose additions using real demand and measured
+capacity. A location is a maintained operational commitment, not a marketing
+entry. Geographic expansion needs provider authorization, regional testing,
+abuse handling, incident response and cost visibility.
+
+Potential work includes better roaming/reconnect behavior, battery efficiency,
+supported split tunneling, carefully described local-network exceptions,
+localization and stronger customer support. Test each platform's supported
+scope; exceptions that improve convenience may also change protection.
+
+Introduce billing only after explicit owner authorization and preparation for
+payments, tax/accounting, refunds, consumer terms and account security. Define
+service objectives, capacity management, regional redundancy, backups, disaster
+recovery and deployment controls. Commission independent assessments and track
+remediation rather than treating an audit badge as permanent proof of safety.
+
+12. DELIVERY HORIZON: YEAR THREE AND BEYOND
+
+Longer-term options include a broader regional network, multi-hop routes,
+dedicated IP offerings, supported censorship-resistance modes, enterprise
+administration, router support and privacy-preserving diagnostics. They are
+optional directions, not a bundle that must all ship.
+
+Multi-hop adds latency, cost and operational complexity and does not guarantee
+anonymity. Enterprise access introduces different trust and administrator
+requirements. Traffic masking needs a stated adversary and realistic testing;
+it cannot promise universal access through every censor or network policy.
+
+Protocol agility, standardized post-quantum capabilities and advanced traffic
+analysis resistance belong in a research track. Adopt mature reviewed
+implementations only when applicable standards, compatibility and performance
+support them. Research should define measurable goals, known limitations,
+funding and independent review before becoming a customer-facing promise.
+
+13. A FEATURE LADDER THAT PREVENTS FALSE COMPLETENESS
+
+Possible now with the existing repository and local resources:
+  - Build, inspect and improve the browser prototype.
+  - Test account/grant lifecycle, restrictions, recovery and packaging.
+  - Recreate and audit preserved upstream sources.
+  - Improve documentation, dependency review and test coverage.
+  - Investigate a native build without claiming a working tunnel.
+
+Possible after specific prerequisites and validation:
+  - A real private browser exit and native tunnel.
+  - More countries, public accounts and additional operating systems.
+  - Split tunneling, filtering, multi-hop and account/device features.
+  - Billing, public distribution and enterprise offerings.
+
+Not defensible as absolute promises:
+  - Perfect anonymity, universal access or total leak prevention.
+  - Unlimited speed/bandwidth, zero overhead or permanent free global operation.
+  - Guaranteed streaming access, permanent censorship bypass or perfect uptime.
+
+This ladder distinguishes resource and engineering constraints from features
+that are logically or operationally impossible to guarantee.
+
+14. PRODUCTIVE USE OF AI
+
+AI can assist with source navigation, maintained-documentation research,
+regression-test ideas, code review, localization, accessibility improvements,
+redacted support drafts and release-note preparation. An optional support
+assistant could explain supported product behavior using reviewed knowledge.
+
+Diagnostics should first use deterministic local checks where they are simpler
+and sufficient. If AI helps explain a diagnostic result, the user should be able
+to inspect what is shared. Explicitly minimize and redact the inputs.
+
+Do not inspect browsing content by default, upload browsing histories or raw
+packet captures to model providers, train on customer traffic, or send keys,
+passwords, session tokens or private configuration secrets to AI services.
+AI output must not silently change routing, firewall, privacy or access rules.
+Important operations require controlled authorization and tested validation.
+
+An AI assistant is not the accountable owner, security auditor, legal advisor
+or production operator. Treat confident output as a hypothesis until evidence
+supports it. A product without AI features can still be excellent in the AI era.
+
+15. PRIVACY AND SECURITY PRINCIPLES
+
+Use a documented threat model and collect only information required for a
+defined purpose. Specify diagnostic fields, retention, access, deletion and
+support handling before public users. Aggregate counters still count as data.
+Host, provider, payment, support and incident systems also affect privacy.
+
+Do not advertise an independently verified no-logs service until the relevant
+implementation and operating practices have been assessed. Do not claim
+anonymity merely because the tunnel encrypts a transport link. A VPN provider
+may observe connection metadata and some destination information; website
+HTTPS remains an important independent protection. Avoid website TLS
+interception. Account correlation, compromised devices and endpoint tracking
+remain outside many VPN protections.
+
+Protect control-plane access, rotate/revoke secrets, verify updates, limit
+administrator privileges, restrict destinations, and prepare for incidents.
+Network changes, outages, restart, expiry, revocation and recovery must be
+tested as ordinary product behavior rather than exceptional demonstrations.
+
+16. COST AND SUSTAINABILITY
+
+The existing prototype has a strict $0 additional owner-spending constraint.
+Local work within already available entitlements can continue. Nothing in this
+idea authorizes a new purchase, paid runner, API subscription, hosting account,
+domain, store fee or trial that could charge later.
+
+A dependable worldwide service needs ongoing compute, bandwidth, public IPs,
+security/release work, support and operational attention. Free tiers and credits
+are limited and can change. They are candidates to verify, not a sustainable
+global business guarantee. Application byte quotas are not provider billing
+caps; management traffic, rejected traffic and protocol overhead may cost too.
+
+Before expansion, build an explicit cost model, validate provider terms, define
+emergency shutdown and confirm owner-approved limits. Future pricing or funding
+should follow real unit costs and user needs. No invented budget or presumed
+future investment is part of this plan.
+
+17. WHO WILL DO THE WORK
+
+The owner sets priorities, controls accounts and spending, chooses product and
+license direction, approves public release and accepts documented risk. Those
+decisions should not be silently delegated to autonomous software.
+
+Engineering maintainers implement bounded changes, maintain tests, preserve
+provenance and produce reproducible releases. Networking/security specialists
+review protocol integration, routing, leaks, failure behavior and the threat
+model. Platform/release specialists handle OS privileges, signing, update paths
+and device test coverage. Operations/support personnel need controlled access,
+incident procedures, recovery practice and reliable escalation routes.
+
+Qualified legal/privacy and financial advice may be required for jurisdictions,
+distribution obligations, public claims, payments and customer operations.
+These are needed roles, not a claim that a staffed team already exists or that
+any named person has accepted responsibility. Add scope only when responsible
+people and resources can maintain it. AI assists these roles; it replaces none
+of their accountability.
+
+18. MEASURING SUCCESS
+
+Track connection success, recovery behavior, route verification, observed leak
+tests, reconnect time, platform-specific power use, realistic throughput/latency,
+crash rates and support outcomes. Use documented measurement environments and
+publish the limits of comparisons. Do not invent performance targets or quote
+competitor claims as our measured results.
+
+For every supported release, maintain a matrix of platform versions, protocols,
+network types, DNS/IPv4/IPv6 behavior and tested failure scenarios. Keep passed,
+failed, skipped, simulated, manually observed and untested outcomes distinct.
+Define practical reliability objectives after collecting a meaningful baseline.
+
+Security readiness includes relevant negative tests, dependency review, signed
+release/update checks, access control, recovery/rollback and operational
+response. A clean repository layout, successful build or zero scanner findings
+does not certify a safe deployed product.
+
+19. THE NEXT THREE SMALL TASKS
+
+Task one: reproduce the active browser-proxy build/test/package workflow and
+source-verification workflow after the repository reorganization. Record actual
+test counts and skipped browser cases. Accept when commands work from their
+documented directories and no historical path is required accidentally.
+
+Task two: audit one native Linux build target, pin the source/toolchain inputs,
+check submodules and license obligations, and attempt its documented build.
+Accept a successful reproducible target or a precise, investigated prerequisite
+blocker. Do not alter expected checksums or disable verification to force a pass.
+
+Task three: if authorized infrastructure and a suitable privileged test machine
+exist, connect the smallest native proof to one authorized endpoint and test
+routing/DNS/failure/cleanup. Otherwise complete an independent browser failure
+regression while keeping that native prerequisite explicitly blocked.
+
+Complete, test, commit and push each task directly to main before beginning the
+next, following the owner's requested workflow. Do not force-push or discard
+unrelated work. A remote commit protects source work from loss of this cloud
+workspace; private local credentials and databases require separate approved
+handling and must never be added merely to make a backup commit.
+
+20. REPOSITORY CONTINUITY AND HISTORICAL MATERIAL
+
+Keep active source and current instructions easy to identify. Preserve older,
+duplicated or disputed material in AnalyseFuture/ with its original context;
+archiving does not establish that a file is malicious or worthless. Historical
+instructions and status claims are not current execution directions.
+
+Keep original source assets and their notices intact. Generated extraction
+trees are recreatable and ignored by Git; new unique application work must live
+in tracked components rather than only inside those trees. Preserve local
+changes before any regeneration or cleanup.
+
+Repository reorganization does not determine whether an account was compromised
+or remediate account-level access. Ownership recovery, credential revocation and
+access review are distinct matters for the authorized account owner. This
+document makes no claim that a reported breach has been investigated fully or
+resolved.
+
+The destination is a trustworthy operated product. The next step is always a
+small piece of working, tested evidence that moves toward that destination.

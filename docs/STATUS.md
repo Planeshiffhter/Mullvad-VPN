@@ -1,8 +1,18 @@
 # Current project status
 
-Updated: 17 November 2026. Current instructions are README.md, PROJECT_IDEA.txt, PROJECT_STRUCTURE.md and AGENTS.md. Earlier snapshots and research are preserved in AnalyseFuture/.
+Updated: 17 November 2026. Current instructions are README.md, PROJECT_HANDOFF.md, PROJECT_IDEA.txt, PROJECT_STRUCTURE.md and AGENTS.md. Earlier snapshots and research are preserved in AnalyseFuture/.
 
-## Latest task: validation authorized and executed
+## Latest task: implementation handoff and PR continuation
+
+Added root [PROJECT_HANDOFF.md](../PROJECT_HANDOFF.md), linked prominently from the repository homepage. It inventories implemented browser-proxy capabilities and their evidence/limits, explains every active project file and folder plus individual historical files, and links the exhaustive third-party/native catalogs. It defines 24 task packets with dependencies, owner prerequisites, implementation scope and acceptance evidence, including the native, browser, deployment, recovery, release and later customer-platform tracks.
+
+The owner requested that subsequent implementation tools create pull requests for review. AGENTS.md, CONTRIBUTING.md, README.md and PROJECT_IDEA.txt now reflect one bounded task per branch/PR, with no automatic merge. This handoff-documentation delivery retains the prior direct-main instruction. Exact pre-change documents are preserved with hashes in `AnalyseFuture/before-handoff-86792c2/`. Static inventories are refreshed for the final file set. The restored instance lacks the prior generated `build/initial-extraction-4t_gtg6r/` copy and some empty/cache directories, so the workspace snapshot has fewer rows; no tracked application or archive files were removed.
+
+Documentation validation: local Markdown paths/anchors, complete project-file link coverage, unique task IDs, workflow consistency, preserved-byte hashes, catalog coverage and whitespace passed for this task (167 project-file links and 24 unique task IDs). No application behavior is changed or new runtime result claimed; the known local runtime evidence is recorded below. T24 is a source-identified discrepancy requiring a new reproduction/regression: the dashboard ignores exhausted grant state when calculating active/Authorized display. No fix is claimed.
+
+PR monitoring is a review workflow in this conversation when the owner supplies a PR/link or requests review. No background watcher, webhook or scheduled monitor has been configured. Git transport read access works; the GitHub API returned `Forbidden` in this environment, so posting a GitHub review is not established by local Git access.
+
+## Previous task: validation authorized and executed
 
 The owner re-enabled testing on 17 November 2026. The reorganized layout was exercised and a real startup-cleanup bug was corrected. The final local Node suite has **59 passed, 0 failed and 2 managed-browser skips** out of 61 tests; the Python suite has **16 passed**. Build, packaging, trusted-TLS CLI smoke, frozen install, registry advisory report, source restoration and preservation checks passed. Full-history Gitleaks passed with one documented exact historical prose exception.
 
@@ -31,6 +41,6 @@ The repository already contains a Chrome MV3 browser-proxy client, founder HTTPS
 
 ## Next task
 
-Complete real-extension checks on an authorized browser runner, without weakening this environment's managed policies. Audit one native Linux build target and its license, source provenance, submodules and toolchain before attempting a native proof. A real tunnel additionally requires an authorized endpoint and suitable privileged test machine. Commit and push each bounded task before starting another.
+Use the task IDs and acceptance checks in PROJECT_HANDOFF.md. T24 is a small local dashboard-state reproduction/fix; T03 is the first native Linux build audit. T01 needs an authorized browser runner and must preserve managed policy here. A real native tunnel additionally requires an authorized endpoint and suitable privileged test machine. Subsequent implementation tools should push one bounded task branch and open a PR against main for review before beginning another task; do not merge without owner authorization.
 
 No additional spending, new paid service, production deployment or project-license selection is authorized by this reorganization.
