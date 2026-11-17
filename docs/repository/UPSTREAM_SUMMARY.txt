@@ -1,0 +1,351 @@
+UPSTREAM SOURCE INVENTORY AND FUNCTIONAL CATALOG
+Prepared: 17 November 2026
+
+Scope: every ZIP central-directory entry in the two preserved source archives,
+including every nested regular file, directory and symlink. Archive bytes were
+read offline; no archived script, hook, application or build command was run.
+
+Catalog: docs/repository/UPSTREAM_CATALOG.jsonl (one JSON object per entry).
+The catalog records the original archive path, preserved internal path,
+recreated build/upstream equivalent, type/size, content SHA-256 for files,
+symlink target text, functional category/module, and bounded dependency clues.
+Repeated archive_sha256 identifies the repository-preserved archive bytes,
+not an upstream signature, trusted revision or distribution permission.
+
+METHOD AND LIMITS
+Functional labels use actual module and nested path roles, including native
+daemon, CLI, routing/DNS/firewall/WireGuard, Android libraries, Apple tunnel
+extensions, Electron desktop UI, Qt/QML client, privileged service, server
+provisioning, recipes, release tooling, tests, assets, documentation and notices.
+These are structural/lexical classifications, not a manual semantic audit of
+every implementation. An import/include is evidence of a literal reference,
+not proof that a dependency is present, safe, buildable or dynamically used.
+
+Dependency references are deduplicated and capped at 16 per entry; each
+record includes unique_literal_references, cap and truncated. The scan reads
+recognized UTF-8 source/manifests up to 1 MiB; a NUL byte marks binary data.
+Skipped/unrecognized/non-UTF8 outcomes are explicit. Cargo/package manifests
+receive dependency-name parsing; source patterns collect representative Rust
+use, C/C++ includes, Swift/Kotlin/Java/Python/JS imports, QML imports, CMake
+packages/includes, Gradle project/artifact and Go import references. This is
+not a resolved transitive graph, version audit, include-path resolver, license
+conclusion or security review. Generated code/runtime imports may be missed.
+
+WHY VENDOR INTERNAL STRUCTURE IS PRESERVED
+The archived module paths participate in Cargo workspaces, relative source
+imports, Gradle/Conan/CMake/Xcode builds, resource references, submodules and
+platform tooling. Relocating individual vendor files would risk breaking
+these contracts and losing provenance. The project groups intact source ZIPs
+under upstream/archives and recreates independent native trees under ignored
+build/upstream; files stay in their original vendor-relative positions.
+Licenses/notices and branding assets are preserved, without assuming rights
+to copy trademarks, redistribute binaries or relicense third-party code.
+Original vendor AGENTS/CLAUDE/CI files are cataloged as preserved source
+material, not current instructions to execute untrusted code.
+
+Neither native application is established as built or runtime-verified by
+this inventory. Vendor account APIs, release keys, servers and update
+infrastructure are not supplied as our operated product by these archives.
+Archive/source checksums do not establish that a reported account compromise
+was investigated or remediated.
+
+ARCHIVE TOTALS
+amnezia: upstream/archives/amnezia-client-dev.zip
+  SHA-256: f32e784d47c196158728eee8df7aeef01093df6368ebc72a142d0829a9cebcd0
+  Entries: 1768; regular files: 1513; symlinks: 1; directories: 254; uncompressed bytes: 22720179
+
+mullvad: upstream/archives/mullvadvpn-app-main.zip
+  SHA-256: 95d77642fd18ded01423c9bf125f22159479dfd058dbb801cf286f425d98ba6f
+  Entries: 10249; regular files: 6972; symlinks: 3; directories: 3274; uncompressed bytes: 94116324
+
+Combined: 12017 archive entries; 8485 regular files; 4 symlinks.
+
+TOP-LEVEL MODULE INVENTORY
+Counts include all nested entries below each top-level module. A root file is
+listed by its own name; (root) is the ZIP root directory.
+
+AMNEZIA
+  (root): files=0 links=0 directories=1
+    project-root: Upstream archive root directory
+  .clang-format: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  .clang-format-ignore: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  .gitattributes: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  .github: files=10 links=0 directories=7
+    build-release-and-automation: Build/deployment/release packaging or CI configuration
+  .gitignore: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  .gitmodules: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  .gitpod.Dockerfile: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  .gitpod.yml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  AGENTS.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  CLAUDE.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  CMakeLists.txt: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  LICENSE: files=1 links=0 directories=0
+    license-and-notices: Original upstream/dependency license or notice; preserve in place
+  README.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  README_RU.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  THIRD_PARTY_LICENSES.md: files=1 links=0 directories=0
+    license-and-notices: Original upstream/dependency license or notice; preserve in place
+  client: files=1343 links=0 directories=193
+    native-qt-qml-client: Qt/C++/QML client application and configuration
+  cmake: files=10 links=0 directories=2
+    build-release-and-automation: Build/deployment/release packaging or CI configuration
+  common: files=4 links=0 directories=3
+    native-shared-components: Shared native application and service support
+  conanfile.py: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+  deploy: files=35 links=1 directories=11
+    build-release-and-automation: Build/deployment/release packaging or CI configuration
+  docs: files=3 links=0 directories=1
+    upstream-documentation-and-audits: Original upstream developer/product documentation
+  ipc: files=7 links=0 directories=1
+    local-ipc-and-contracts: Inter-process communication contracts/helpers
+  metadata: files=17 links=0 directories=6
+    brand-assets-and-packaging-resources: Upstream application metadata and distribution assets
+  recipes: files=29 links=0 directories=26
+    third-party-dependency-recipes: Conan/build recipes for protocol engines and native dependencies; not built here
+  service: files=39 links=0 directories=3
+    privileged-native-service: OS-facing privileged service, server code and native service integration
+  version.h.in: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, build policy, source-control metadata or root documentation
+
+MULLVAD
+  (root): files=0 links=0 directories=1
+    project-root: Upstream archive root directory
+  .cargo: files=1 links=0 directories=1
+    build-release-and-automation: Upstream build tooling, CI, platform packaging or developer environment configuration
+  .clang-format: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  .dockerignore: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  .editorconfig: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  .envrc: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  .gitattributes: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  .github: files=91 links=0 directories=14
+    build-release-and-automation: Upstream build tooling, CI, platform packaging or developer environment configuration
+  .gitignore: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  .gitmodules: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  .yamllint: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  BuildInstructions.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  CHANGELOG.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  CONTRIBUTING.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  Cargo.lock: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  Cargo.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  LICENSE.md: files=1 links=0 directories=0
+    license-and-notices: Original upstream/dependency license or notice; preserve in place
+  README.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  Release.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  SECURITY.md: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  android: files=1667 links=2 directories=1692
+    android-native-client: Android application, Kotlin libraries, JNI/Gradle integration and platform resources
+  audits: files=20 links=0 directories=1
+    upstream-documentation-and-audits: Preserved upstream documentation or historical assessment; not a project security certification
+  build.sh: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  building: files=112 links=0 directories=52
+    build-release-and-automation: Upstream build tooling, CI, platform packaging or developer environment configuration
+  ci: files=107 links=0 directories=18
+    build-release-and-automation: Upstream build tooling, CI, platform packaging or developer environment configuration
+  clippy.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  code-owners.json: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  deny.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  desktop: files=2584 links=0 directories=953
+    desktop-electron-client: Electron/TypeScript desktop application, packages, UI and local daemon integration
+  dist-assets: files=33 links=1 directories=8
+    brand-assets-and-packaging-resources: Upstream graphics/branding or platform distribution resources; no branding reuse implied
+  docs: files=20 links=0 directories=3
+    upstream-documentation-and-audits: Preserved upstream documentation or historical assessment; not a project security certification
+  flake.lock: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  flake.nix: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  graphics: files=17 links=0 directories=2
+    brand-assets-and-packaging-resources: Upstream graphics/branding or platform distribution resources; no branding reuse implied
+  installer-downloader: files=46 links=0 directories=7
+    release-and-update: Application installer download/update UI and integration
+  ios: files=1340 links=0 directories=294
+    apple-native-client: Swift/Xcode iOS/tvOS app, PacketTunnel extension, native bridges and Apple resources
+  mullvad-api: files=38 links=0 directories=8
+    native-shared-components: Vendor account/device/relay network API client; not an owned backend
+  mullvad-cli: files=31 links=0 directories=4
+    native-cli: Native command-line interface to local management API
+  mullvad-daemon: files=120 links=0 directories=12
+    native-daemon: Privileged native VPN daemon and tunnel/account coordination
+  mullvad-daemon-relay-selector: files=8 links=0 directories=4
+    native-shared-components: Daemon relay-selection adapter
+  mullvad-encrypted-dns-proxy: files=9 links=0 directories=4
+    native-shared-components: Encrypted DNS proxy integration
+  mullvad-exclude: files=2 links=0 directories=2
+    native-shared-components: Process/application tunnel-exclusion support
+  mullvad-fs: files=2 links=0 directories=2
+    native-shared-components: Filesystem support for native components
+  mullvad-ios: files=41 links=0 directories=10
+    native-shared-components: Rust library/interface support for iOS integration
+  mullvad-jni: files=5 links=0 directories=2
+    native-shared-components: Android JNI bridge between managed and native code
+  mullvad-leak-checker: files=10 links=0 directories=4
+    native-shared-components: Network leak-check tooling and support
+  mullvad-logging: files=2 links=0 directories=2
+    native-shared-components: Product logging support
+  mullvad-management-interface: files=27 links=0 directories=5
+    native-shared-components: Local daemon management API and generated/interface bindings
+  mullvad-masque-proxy: files=12 links=0 directories=7
+    native-shared-components: MASQUE proxy/transport integration
+  mullvad-nsis: files=15 links=0 directories=10
+    release-and-update: Windows NSIS installer support
+  mullvad-paths: files=9 links=0 directories=2
+    native-shared-components: Platform-aware filesystem paths
+  mullvad-problem-report: files=5 links=0 directories=2
+    native-shared-components: Local diagnostic/problem report tooling
+  mullvad-relay-selector: files=26 links=0 directories=5
+    native-shared-components: Relay constraints and selection policy
+  mullvad-release-android: files=8 links=0 directories=3
+    release-and-update: Android release automation/tooling
+  mullvad-setup: files=7 links=0 directories=3
+    native-shared-components: Installation/setup helper
+  mullvad-tls-client: files=4 links=0 directories=2
+    native-shared-components: TLS client support
+  mullvad-types: files=28 links=0 directories=8
+    native-shared-components: Shared product data/configuration model types
+  mullvad-update: files=47 links=0 directories=10
+    release-and-update: Signed application update discovery/verification/download implementation
+  mullvad-version: files=4 links=0 directories=2
+    native-shared-components: Product version metadata/generation
+  nix: files=7 links=0 directories=1
+    build-release-and-automation: Upstream build tooling, CI, platform packaging or developer environment configuration
+  osv-scanner.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  rust-toolchain.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  rustfmt.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  scripts: files=17 links=0 directories=2
+    build-release-and-automation: Upstream build tooling, CI, platform packaging or developer environment configuration
+  talpid-cgroup: files=4 links=0 directories=2
+    platform-networking: Linux cgroup-based process/network support
+  talpid-core: files=49 links=0 directories=13
+    platform-networking: Native tunnel state machine and platform integration
+  talpid-dbus: files=10 links=0 directories=4
+    platform-networking: Linux D-Bus integration
+  talpid-dns: files=15 links=0 directories=4
+    platform-networking: Platform DNS configuration/control
+  talpid-error: files=2 links=0 directories=2
+    platform-networking: Error-chain and reporting support
+  talpid-future: files=3 links=0 directories=2
+    platform-networking: Asynchronous execution/future utilities
+  talpid-logging: files=9 links=0 directories=3
+    platform-networking: Native library logging support
+  talpid-macos: files=7 links=0 directories=2
+    platform-networking: macOS platform/network integration
+  talpid-net: files=4 links=0 directories=2
+    platform-networking: Networking/socket primitives
+  talpid-netstack: files=9 links=0 directories=3
+    platform-networking: User-space networking stack support
+  talpid-platform-metadata: files=8 links=0 directories=2
+    platform-networking: Platform and environment metadata
+  talpid-routing: files=17 links=0 directories=5
+    platform-networking: Platform routing-table management
+  talpid-time: files=3 links=0 directories=2
+    platform-networking: Time/timing utilities
+  talpid-tunnel: files=9 links=0 directories=4
+    platform-networking: Native tunnel abstraction and integration
+  talpid-tunnel-config-client: files=9 links=0 directories=4
+    platform-networking: Tunnel configuration transport/client
+  talpid-types: files=15 links=0 directories=5
+    platform-networking: Shared native networking and tunnel model types
+  talpid-windows: files=9 links=0 directories=2
+    platform-networking: Windows platform/network integration
+  talpid-winfw: files=69 links=0 directories=5
+    platform-networking: Windows firewall policy and native integration
+  talpid-wireguard: files=40 links=0 directories=10
+    platform-networking: WireGuard tunnel implementation/integration
+  test: files=106 links=0 directories=29
+    upstream-tests:tests-and-fixtures: Upstream integration/system test infrastructure and fixtures; nested tests/fixtures, not production runtime
+  tombi.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  tunnel-obfuscation: files=20 links=0 directories=5
+    platform-networking: Tunnel traffic obfuscation transport integration
+  typos.toml: files=1 links=0 directories=0
+    upstream-project-metadata: Upstream workspace manifest, policy, source control metadata or root documentation
+  windows-installer: files=5 links=0 directories=2
+    release-and-update: Windows packaging and installer integration
+
+FUNCTIONAL CATEGORY TOTALS (ALL ENTRY TYPES)
+
+AMNEZIA
+  android-native-client: 231
+  apple-native-client: 41
+  brand-assets-and-packaging-resources: 23
+  build-release-and-automation: 75
+  license-and-notices: 5
+  local-ipc-and-contracts: 8
+  native-provisioning-and-protocol-config: 311
+  native-qt-qml-client: 893
+  native-qt-qml-client:tests-and-fixtures: 58
+  native-shared-components: 7
+  privileged-native-service: 42
+  project-root: 1
+  third-party-dependency-recipes: 55
+  upstream-documentation-and-audits: 4
+  upstream-project-metadata: 14
+  Dependency scan outcomes:
+    lexical-source-and-manifest-heuristic: 1394
+    not-applicable: 255
+    not-recognized-as-source-or-manifest: 119
+
+MULLVAD
+  android-native-client: 2494
+  android-native-client:tests-and-fixtures: 867
+  apple-native-client: 1634
+  brand-assets-and-packaging-resources: 61
+  build-release-and-automation: 419
+  build-release-and-automation:tests-and-fixtures: 4
+  desktop-electron-client: 3337
+  desktop-electron-client:tests-and-fixtures: 200
+  license-and-notices: 1
+  native-cli: 35
+  native-daemon: 76
+  native-daemon:tests-and-fixtures: 56
+  native-shared-components: 272
+  native-shared-components:tests-and-fixtures: 41
+  platform-networking: 315
+  platform-networking:tests-and-fixtures: 77
+  project-root: 1
+  release-and-update: 126
+  release-and-update:tests-and-fixtures: 27
+  upstream-documentation-and-audits: 44
+  upstream-project-metadata: 27
+  upstream-tests:tests-and-fixtures: 135
+  Dependency scan outcomes:
+    lexical-source-and-manifest-heuristic: 6086
+    not-applicable: 3277
+    not-recognized-as-source-or-manifest: 884
+    skipped-text-size-limit: 2

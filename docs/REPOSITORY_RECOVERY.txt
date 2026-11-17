@@ -1,0 +1,62 @@
+REPOSITORY REORGANIZATION AND PRESERVATION RECORD
+Prepared: 17 November 2026
+Baseline main: 4655d408bab907b48e176d7641c6bed55204d7dc
+
+Scope
+The owner reported disruption and authorized complete functional organization,
+preservation instead of deletion, detailed product planning and direct main
+delivery. The later instruction explicitly prohibits test execution for this
+restructuring. No tests are run after that instruction; final execution checks
+are deferred. Git history is preserved and no force push is used.
+
+Observed repository evidence
+The fetched remote main matched the last commit verified in this conversation.
+The inspection found contradictory/stale documents and outdated branch/PR
+directions. That does not establish who changed an account or prove the absence
+of compromise. No particular file is labeled attacker-authored without evidence.
+Upstream sources are inventoried, not fully security-audited or executed.
+
+Functional changes
+- Keep the browser extension, control API and gateway as distinct components.
+- Rename apps/website to apps/operations to describe its private founder role.
+- Group scripts into development, recovery and packaging responsibilities.
+- Group Node suites by control API, extension, gateway, integration, operations
+  and runtime; keep shared fixture helpers separate.
+- Place original native ZIPs in upstream/archives; retain internal vendor layout.
+- Preserve prior docs, source plans, Word archive, catalogs, templates and exact
+  pre-change code/tooling under AnalyseFuture rather than discard them.
+- Replace current entry instructions with factual README/AGENTS/CONTRIBUTING/
+  SECURITY guidance, PROJECT_IDEA.txt and PROJECT_STRUCTURE.md.
+- Update relative imports, assets, npm commands, documentation and manual CI.
+- Keep CI manual so the push does not automatically execute tests.
+
+Preservation ledger
+AnalyseFuture/PRESERVATION_MANIFEST.json lists all 99 baseline tracked files,
+SHA-256 values, byte sizes, retained destinations and relocation reasons.
+Originals of changed code are preserved as inert .original.txt files. Unchanged
+source assets are mapped to their active destinations. Both ZIPs and the Word
+archive remain byte-identical. No private runtime content is added to Git.
+The baseline commit remains available in history. The ledger describes this
+reorganization; future intentional source changes can alter active files.
+
+Catalogs
+PROJECT_STRUCTURE.md explains roles and dependency relationships. The authored
+file catalog covers every resulting project file; the native catalog covers
+all entries inside both archives, and the workspace inventory accounts for
+generated/installed/private areas by their actual role. Metadata and bounded
+static dependency extraction are not proof that every source behavior is safe.
+
+What this does not repair
+A repository reorganization cannot revoke a GitHub session or token, recover an
+account, rotate exposed production credentials or determine all attacker access.
+The account owner should inspect sessions, authentication methods, tokens,
+connected apps, collaborators, deploy keys, webhooks, Actions access and audit
+evidence; revoke unauthorized access and rotate anything exposed. This task does
+not claim those account actions have been performed.
+
+Continuation
+Use the current main source and current instructions, not archived prompts.
+Keep each bounded task in a committed and pushed state before the next. Do not
+force-push, reset shared work, bypass verification or publish private state.
+When tests are authorized, validate the final reorganized commit using the
+documented commands before calling the environment or application ready.

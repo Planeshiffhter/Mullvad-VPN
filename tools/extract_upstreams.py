@@ -44,14 +44,14 @@ class ArchiveSpec:
 
 ARCHIVES = (
     ArchiveSpec(
-        "mullvadvpn-app-main.zip", "mullvadvpn-app-main", "mullvad",
+        "upstream/archives/mullvadvpn-app-main.zip", "mullvadvpn-app-main", "mullvad",
         "95d77642fd18ded01423c9bf125f22159479dfd058dbb801cf286f425d98ba6f",
         # Original packaging link, preserved as text, never traversed.
         (("dist-assets/linux/problem-report-link",
           "/opt/Mullvad VPN/resources/mullvad-problem-report"),),
     ),
     ArchiveSpec(
-        "amnezia-client-dev.zip", "amnezia-client-dev", "amnezia",
+        "upstream/archives/amnezia-client-dev.zip", "amnezia-client-dev", "amnezia",
         "f32e784d47c196158728eee8df7aeef01093df6368ebc72a142d0829a9cebcd0",
     ),
 )

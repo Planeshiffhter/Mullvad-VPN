@@ -1,40 +1,13 @@
-# Cost policy — prototype hard limit
+# Additional spending limit
 
-**Owner instruction: exactly $0 additional out-of-pocket spend for the private pilot.** Existing already-paid Codex access may be used subject to its usage allowance; it is **not** unlimited and is not the same as paid OpenAI API billing.
+The current development budget is **$0 additional owner spending**. Existing Codex/GitHub access may be used within its actual entitlement. Access and free-tier advertising do not establish unlimited capacity or future availability.
 
-## Allowed
+Local builds, offline source extraction and tests in the existing environment are permitted. No paid host, API subscription, managed database, domain purchase, app-store fee, paid CI, credit top-up, or trial that may charge is authorized by this repository. Do not silently substitute a paid service when a free prerequisite is unavailable.
 
-- Open-source code, normal GitHub development, local/cloud sandbox tests available within existing entitlements.
-- CI only where verified to be free under the account's actual quotas.
-- A legitimately authorized US host only after account region, terms, bandwidth/storage/IP cost and actual billable settings are checked.
-- Free DNS/TLS resources if truly free for the use and lawful under their terms.
+Before provisioning any external gateway, obtain the owner's authorization and verify the actual account, permitted VPN/proxy use, region, compute/storage/public-IP charges, bandwidth limits, trial expiry and shutdown access. Record the evidence, remaining uncertainty and any provider hard limits. Existing account access or an environment variable does not authorize spending.
 
-## Not authorized
+Application traffic counters enforce an application quota. They omit some TLS/IP, operating-system, management and unauthenticated traffic and cannot guarantee a provider bill. Reserve headroom, use provider controls where available, and compare observed usage with the provider's actual billing view before claiming a $0 live pilot.
 
-Paid proxy/VPS/cloud instance, credit top-up, commercial VPN API, domain, app-store fees, SMS/email provider, paid CI, managed database, analytics, payment processing, free trial that silently turns billable, bypass of free-tier restrictions, or spending company funds without explicit owner authorization.
+When a required host or entitlement is unavailable, mark that operation blocked and continue independent local development. Public users, billing, native distribution and store publication need their own cost, legal and security readiness decisions. Planning files do not authorize a launch.
 
-## Operating procedure
-
-1. Document every external service and whether it has a card on file, trial expiration, region constraint, public IP cost, egress cost and hard quota.
-2. Do not provision resources before verifying free eligibility and provider policy; never assume credits guarantee $0 forever.
-3. Implement server-enforced quotas, safe traffic limits, logs without browsing history and a shutdown procedure.
-4. When the US host cannot be acquired at $0, mark deployment **Blocked**; continue independently testable local work.
-5. Record actual cost and resource dashboard observations at release and throughout the founder pilot.
-6. No paid fallback without an explicit owner decision recorded in [DECISIONS.md](DECISIONS.md).
-
-**Possible candidate, not an approved or guaranteed resource:** Oracle Cloud Always Free (home-region / availability / card-verification constraints apply). See the historical plan for source references. The user remains responsible for owner-controlled cloud verification.
-
-
-## Current dependency and service inventory
-
-| Item | Current use | Incremental spend / boundary |
-| --- | --- | --- |
-| Existing Codex cloud environment + installed Chromium/Node/OpenSSL/zip | Local build/test | Existing entitlement only; no new purchase made, usage allowance still applies |
-| npm runtime packages (proxy-chain, ipaddr.js and locked transitives) | Local forwarding/policy | Open-source artifacts; no hosted API subscription |
-| TypeScript, Chrome/Node types and Playwright | Development | Open-source tooling; no paid browser cloud |
-| Built-in SQLite and Node crypto | Local account/state/backup | No managed database, email, SMS or AI API |
-| Local test certificates and loopback verifier | Explicit fixtures | No purchased domain/certificate; not a public CA or US host |
-| US compute, public IP, disk, bandwidth, DNS/TLS renewal, off-host backup | Not configured | Cost/terms unknown; live deployment blocked, no paid fallback |
-| Public CI, stores, billing, analytics and external users | Disabled/not configured | No billable workflow or external launch enabled |
-
-Application byte quotas are not provider billing caps. TLS/IP overhead, rejected/unauthenticated traffic, updates and management may consume resources. Live $0 acceptance requires separate provider limits, emergency shutdown and actual bill review.
+The earlier inventory and provider candidates are preserved in [the historical cost policy](../AnalyseFuture/previous-docs/COST_POLICY.md). They are dated research, not approved accounts or spending commitments.

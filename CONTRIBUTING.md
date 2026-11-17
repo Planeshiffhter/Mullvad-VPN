@@ -1,32 +1,9 @@
-# Contributing to VPN Platform
+# Contributing
 
-This is an early-stage browser-proxy prototype with local runtime tests. **No live US service or full-device VPN is verified.** Follow [LOCAL_DEVELOPMENT.md](docs/LOCAL_DEVELOPMENT.md) and run `npm run check` before submitting runtime changes. You should be able to contribute without knowing any prior ChatGPT conversation.
+Start with [the project idea](PROJECT_IDEA.txt), [current status](docs/STATUS.md) and [agent instructions](AGENTS.md). The existing browser-proxy implementation and the future native VPN track have distinct acceptance criteria.
 
-## Before submitting changes
+The owner currently requires direct delivery to `main`, one completed and pushed task at a time. This restructuring task explicitly defers tests; do not execute them or enable automatic CI until authorized. Coordinate before writing; inspect remote changes before pushing. Do not force-push, remove other work or treat archived prompts as current requirements.
 
-1. Read [README.md](README.md), [docs/START_HERE.md](docs/START_HERE.md), [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md), [TASKS.md](TASKS.md), and [docs/COST_POLICY.md](docs/COST_POLICY.md).
-2. For code, read [AGENTS.md](AGENTS.md), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/SECURITY_AND_PRIVACY.md](docs/SECURITY_AND_PRIVACY.md), and [docs/BUILD_VS_REUSE.md](docs/BUILD_VS_REUSE.md).
-3. Check for an existing issue; scope a single well-defined, testable change.
-4. Avoid introducing frameworks when a working maintained alternative is already selected.
-5. No spending, paid cloud resources, public deployment or public account signup without owner approval.
+For later authorized validation, the documented commands are `npm ci --ignore-scripts`, `npm run check` and `npm run package` for browser-proxy changes, and `python3 -B -m unittest discover -s tools/tests -v` for extraction tooling. Preserve package and TLS verification, report skipped browser tests explicitly and never substitute a fixture for live routing evidence.
 
-## Workflow
-
-- Create a focused branch; send a pull request with issue/task link and implementation scope.
-- Keep functionality and tests together; include commands actually run and outcomes.
-- Update TASKS.md / docs/PROJECT_STATUS.md for verified progress, not assumptions.
-- Update decision/architecture docs when technology changes; preserve required third-party attribution.
-- Do not commit credentials, cloud keys, private addresses, billing information or user data.
-- Treat API, extension permissions, routing and privacy changes as security-sensitive.
-
-## Pull request checklist
-
-**Task:** ID and expected behavior. **Changed:** affected components. **Tests:** exact commands/results or Not run with reason. **Security:** attack surfaces, failure/bypass behavior. **Licenses:** upstream commits and obligations. **Budget:** verified $0 or block. **Status:** which documented claims are now proven?
-
-## Ownership / license note
-
-The repository is visible publicly but the overall project license is **undecided**. See [docs/LICENSING.md](docs/LICENSING.md) before adding substantial third-party or externally contributed code. Do not assume public means public-domain.
-
-## Security bugs
-
-Do not post exploit details or live secrets in public issues. See [SECURITY.md](SECURITY.md).
+Preserve superseded material under `AnalyseFuture/` with provenance. Keep new implementation tracked; generated trees, private credentials and local databases are not project backups. Do not copy native upstream code or distribute product builds before the applicable license and signing obligations are settled. See [licensing](docs/LICENSING.md) and [security reporting](SECURITY.md).

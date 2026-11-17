@@ -1,10 +1,8 @@
 name: Verify private browser proxy
 
 on:
-  pull_request:
-    branches:
-      - main
-      - feat/tested-private-browser-proxy
+  # Manual only while the owner has requested restructuring without test runs.
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,12 +16,20 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
-      - name: Check out reviewed source
+      - name: Check out source
         uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
           # Gitleaks scans reachable Git history, not only the PR working tree.
           fetch-depth: 0
+
+      - name: Test offline source extraction tooling
+        run: python3 -B -m unittest discover -s tools/tests -v
+
+      - name: Recreate and verify preserved native sources
+        run: |
+          python3 tools/extract_upstreams.py
+          python3 tools/extract_upstreams.py --verify-only
 
       - name: Install pinned Gitleaks CLI
         shell: bash

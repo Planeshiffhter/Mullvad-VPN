@@ -2,7 +2,7 @@
 
 **No server is currently confirmed or provisioned by this repository.** This page defines the preflight needed before any real US endpoint.
 
-## Preflight gate (Task 3)
+## Preflight gate
 
 - Owner has an authorized hosting account and **US region** available at $0 incremental cost.
 - Verify instance, public IPv4/IPv6, disk, CPU, bandwidth/egress, network terms, billing and trial-expiry effects.
@@ -39,6 +39,6 @@ A script, Dockerfile, README screenshot, mock region list, or passing isolated t
 
 ## Available local deliverables
 
-A tested operator-configured runtime and unapplied templates are in [../infrastructure/README.md](../infrastructure/README.md). Their existence does not pass this deployment gate. Local setup/package commands and owner Chrome installation instructions are in [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md); exact test boundaries are in [VALIDATION.md](VALIDATION.md). The current cloud task exposes no public proxy. No external identity or authorized US host is configured.
+An operator-configured runtime and unapplied templates are in [../infrastructure/README.md](../infrastructure/README.md). Their existence does not pass this deployment gate. Local setup/package commands and owner Chrome installation instructions are in [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md); current validation boundaries are in [STATUS.md](STATUS.md). The current cloud task exposes no public proxy. No external identity or authorized US host is configured.
 
 The loopback management API needs an owner-only access path. Its TLS certificate must match the hostname actually entered in Chrome, including when a tunnel/host mapping is used. A tunnel alone does not fix certificate names; never bypass a mismatch. Host firewall, public ingress, management routing, ACME renewal and provider quotas must be reviewed and tested on the actual authorized host.

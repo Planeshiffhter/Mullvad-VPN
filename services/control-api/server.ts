@@ -50,7 +50,7 @@ export function createControlApi({ tls, store, gateways = [], revoke = () => {},
       }
       if (req.method === 'GET' && staticFiles.has(url)) {
         const [file, type] = staticFiles.get(url)!;
-        const content = await readFile(fileURLToPath(new URL(`../../apps/website/${file}`, import.meta.url)));
+        const content = await readFile(fileURLToPath(new URL(`../../apps/operations/${file}`, import.meta.url)));
         res.writeHead(200, { 'Content-Type': `${type}; charset=utf-8` }); return res.end(content);
       }
       if (req.method === 'GET' && url === '/healthz') return json(200, { status: 'ok', product: 'private-browser-proxy', releaseBlocked: true });

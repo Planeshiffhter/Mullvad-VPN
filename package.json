@@ -7,14 +7,14 @@
     "node": ">=24.0.0 <25"
   },
   "scripts": {
-    "test": "node --test --test-timeout=30000 tests/*.test.js",
+    "test": "node --test --test-timeout=30000 tests/*/*.test.js",
     "build": "node apps/extension/build.js",
-    "dev:init": "node scripts/dev.mjs init",
-    "dev": "node scripts/dev.mjs start",
+    "dev:init": "node scripts/development/dev.mjs init",
+    "dev": "node scripts/development/dev.mjs start",
     "account": "node services/control-api/cli.ts",
-    "backup": "node scripts/ops.mjs",
+    "backup": "node scripts/recovery/backup.mjs",
     "check": "npm run typecheck && npm test && npm run build && git diff --check",
-    "package": "node scripts/package.mjs",
+    "package": "node scripts/packaging/package.mjs",
     "typecheck": "tsc --noEmit",
     "start": "node infrastructure/serve.mjs"
   },

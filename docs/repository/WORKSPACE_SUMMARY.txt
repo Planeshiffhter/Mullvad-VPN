@@ -1,0 +1,77 @@
+STATIC WORKSPACE COVERAGE: 17 November 2026
+No application, archived code, tests or builds are executed by this catalog.
+All filesystem paths are visited except protected .git internals; symlinks are never followed.
+Private .local entries are counted and redacted; their contents, hashes and values are not read.
+Generated and installed files remain in required layouts; source identity is observed where archive records exist.
+Counts describe this workspace snapshot, not required future generated state or test readiness.
+Authored/preserved project file records: 147
+Filesystem inventory rows (including dirs and protected Git marker): 25404
+Traversal errors: 0
+
+.github: directory=3
+.github: file=3
+apps: directory=1
+apps/extension: directory=1
+apps/extension: file=8
+apps/operations: directory=1
+apps/operations: file=3
+docs: directory=2
+docs: file=15
+generated-extension-artifact: directory=2
+generated-extension-artifact: file=8
+generated-native-sources: directory=7060
+generated-native-sources: file=16970
+generated-native-sources: symlink=8
+infrastructure: directory=1
+infrastructure: file=5
+installed-dependency: directory=116
+installed-dependency: file=1027
+installed-dependency: symlink=3
+preserved-history/index: directory=1
+preserved-history/index: file=3
+preserved-history/previous-code: directory=7
+preserved-history/previous-code: file=20
+preserved-history/previous-docs: directory=3
+preserved-history/previous-docs: file=34
+preserved-history/previous-empty-directories: directory=6
+preserved-history/previous-github: directory=2
+preserved-history/previous-github: file=2
+preserved-history/previous-root: directory=1
+preserved-history/previous-root: file=9
+preserved-history/previous-tooling: directory=4
+preserved-history/previous-tooling: file=2
+private-development-state: directory=1
+private-development-state: file=5
+project-root: file=13
+scripts: directory=1
+scripts: file=1
+scripts/development: directory=1
+scripts/development: file=1
+scripts/packaging: directory=1
+scripts/packaging: file=1
+scripts/recovery: directory=1
+scripts/recovery: file=1
+services: directory=1
+services/control-api: directory=1
+services/control-api: file=3
+services/gateway: directory=1
+services/gateway: file=2
+tests: directory=1
+tests/control-api: directory=1
+tests/control-api: file=2
+tests/extension: directory=1
+tests/extension: file=3
+tests/gateway: directory=1
+tests/gateway: file=1
+tests/helpers: directory=1
+tests/helpers: file=1
+tests/integration: directory=1
+tests/integration: file=1
+tests/operations: directory=1
+tests/operations: file=4
+tests/runtime: directory=1
+tests/runtime: file=2
+tools: directory=4
+tools: file=6
+upstream: directory=2
+upstream: file=3

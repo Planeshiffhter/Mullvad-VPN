@@ -1,0 +1,9 @@
+PRESERVED EMPTY DIRECTORY SHELLS
+
+Old tracked file contents are preserved in the ledger; these empty directory
+shells left by relocation are retained locally under AnalyseFuture. Git does
+not store empty directories independently of their files.
+
+apps/website -> AnalyseFuture/previous-empty-directories/apps/website
+docs/knowledge-archive -> AnalyseFuture/previous-empty-directories/docs/knowledge-archive
+docs/source-plans -> AnalyseFuture/previous-empty-directories/docs/source-plans

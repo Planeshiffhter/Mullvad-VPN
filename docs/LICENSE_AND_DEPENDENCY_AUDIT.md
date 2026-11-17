@@ -1,59 +1,28 @@
-# License and dependency audit — commercial-use planning
+# Current dependency and license inventory
 
-Observed 2026-11-15. This document is an engineering inventory, not legal advice. Final commercial distribution terms and the repository's own license require owner/legal approval.
+Observed from `package.json`, `package-lock.json` and installed artifact metadata/notices during the repository reorganization on 17 November 2026. This is an engineering inventory; it does not select the project's license or certify commercial compliance/security.
 
-## Current selected dependency set
+The lockfile contains **38 package entries**: **19 installed** on this Linux x64 environment and 19 uninstalled platform-specific TypeScript packages. The license identifiers across all locked entries are Apache-2.0 (25), MIT (12) and 0BSD (1). Uninstalled-package identifiers come from lock metadata, not inspection of their full artifacts.
 
-The browser-proxy MVP deliberately keeps a small dependency surface.
+| Packages and exact versions | Scope | Declared license | Installed notice evidence |
+| --- | --- | --- | --- |
+| `proxy-chain@3.0.3` | Direct runtime | Apache-2.0 | LICENSE |
+| `ipaddr.js@2.3.0` | Direct runtime | MIT | LICENSE |
+| `agent-base@9.0.0`, `debug@4.4.3`, `ip-address@10.7.6`, `ms@2.1.3`, `smart-buffer@4.2.0`, `socks@2.8.10`, `socks-proxy-agent@10.1.0` | Transitive runtime | MIT | LICENSE or license.md |
+| `tslib@2.9.1` | Transitive runtime | 0BSD | LICENSE.txt |
+| `@playwright/test@1.65.0`, `playwright@1.65.0`, `playwright-core@1.65.0` | Development/browser testing | Apache-2.0 | LICENSE and NOTICE |
+| `typescript@7.0.2`, installed `@typescript/typescript-linux-x64@7.0.2` | Development/compiler | Apache-2.0 | LICENSE and NOTICE.txt |
+| Other optional `@typescript/typescript-*` packages at `7.0.2` | Other compiler platforms | Apache-2.0 | Lock metadata only; not installed |
+| `@types/chrome@0.3.7`, `@types/node@24.19.2`, `@types/har-format@1.2.16`, `undici-types@7.24.6` | Development/types | MIT | LICENSE |
 
-| Component | Exact selected version | Repository | License | Commercial-use obligations / notes | Security and test evidence |
-| --- | --- | --- | --- | --- | --- |
-| proxy-chain | `3.0.3` | https://github.com/apify/proxy-chain | Apache-2.0 | Commercial use permitted; retain license and applicable notices; state modifications when distributing modified upstream code | Runtime integration tests cover HTTP, CONNECT, auth, TLS, revocation, quotas and socket cleanup |
-| ipaddr.js | `2.3.0` | https://github.com/whitequark/ipaddr.js | MIT | Commercial use permitted; retain copyright and permission notice | Destination-policy tests cover private, special-use, mapped IPv4/IPv6 and DNS-pinning behavior |
-| @playwright/test | `1.65.0` | https://github.com/microsoft/playwright | Apache-2.0 | Development-only; retain applicable license/NOTICE when redistributing relevant artifacts | Browser/UI tests; upstream 1.65.1 exists but is not auto-adopted |
-| @types/chrome | `0.3.7` | DefinitelyTyped package | MIT | Development-only; retain notice if redistributed | Type checking only |
-| @types/node | `24.19.2` | DefinitelyTyped package | MIT | Development-only | Type checking only |
-| TypeScript | `7.0.2` | https://github.com/microsoft/TypeScript | Apache-2.0 | Development/build tooling; retain license/NOTICE as applicable | Strict `tsc --noEmit` |
-| Node.js runtime | `24.22.1` project pin | https://github.com/nodejs/node | mixed upstream project notices | Review runtime redistribution obligations if bundling Node; currently operator-provided runtime | Built-in HTTPS, crypto and SQLite are used; no custom crypto protocol |\n| Gitleaks CLI | `v8.30.1` | https://github.com/gitleaks/gitleaks | MIT | CI-only tool; no runtime/product redistribution required for current use. The release archive is pinned to SHA-256 `551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb`. | Full-history CI scan; latest run must pass before claiming coverage |
+MIT requires retaining the copyright and permission notice. Apache-2.0 requires its license and applicable notices, and identification of modifications when relevant. 0BSD has no attribution condition; retain its license as provenance. Check actual terms for the artifact and distribution being prepared.
 
-The lockfile records exact npm tarball URLs and integrity hashes. `private: true` prevents accidental npm publication but does not define product licensing.
+`scripts/packaging/package.mjs` includes installed runtime dependency license texts and any NOTICE files in the private extension archive. Those server dependencies are not bundled as extension executable code. Packaging refuses a missing required installed license file; preserve notices in separate service distributions as well.
 
-## Candidate catalog — license and selection status
+Node **24.22.1**, OpenSSL, SQLite, Python, Chromium and other platform tools have their own upstream and bundled third-party terms. They are not licensed by the npm inventory. CI uses checksum-pinned Gitleaks **8.30.1** (MIT); retaining or redistributing that binary requires its own applicable notices. No new paid service or npm dependency is introduced by the reorganization.
 
-| Candidate | Current observed version/ref | License | Decision | Commercial / security note |
-| --- | --- | --- | --- | --- |
-| wxt-dev/wxt | `wxt-v0.21.5` | MIT | Deferred | Commercial-friendly, but unnecessary migration for current small extension |
-| SuperPlugs/SuperTunnel | `v0.1.0` | MIT | Reference only | Avoid copying whole product/controller; use concepts only |
-| Windscribe/browser-extension-mv3 | audited commit `cfb2915...` | root MIT | Reference only | Root license does not automatically settle bundled submodule/assets; no source copied |
-| 3proxy/3proxy | `1.0.3` | upstream multi/alternative license text | Not selected for MVP | License choice and daemon integration add review work; current proxy adapter is already tested |
-| OutlineFoundation/outline-server | `server-v1.12.3` release | Apache-2.0 | Deferred | Shadowsocks/Outline architecture is not a drop-in Chrome HTTPS forward proxy |
-| OutlineFoundation/outline-apps | `v1.10.1` release; newer HEAD audited | Apache-2.0 | Future reference | Native/mobile product architecture only |
-| WireGuard/wireguard-go | audited commit `b3bc704...` | MIT | Future native selection candidate | Repin and re-audit at native implementation; requires OS privileges and platform-specific kill-switch/DNS work |
-| better-auth/better-auth | `v1.7.25` | MIT | Deferred | Upstream supports only latest; recent high/critical advisories reinforce careful upgrade discipline |
-| keycloak/keycloak | `26.8.2` | Apache-2.0 | Rejected for founder MVP | Operationally heavy for one account; reconsider for enterprise IAM only |
-| 0xERR0R/blocky | `v0.36.0` | Apache-2.0 | Deferred | Candidate for later DNS filtering; do not combine with another DNS framework without a distinct need |
-| AdguardTeam/dnsproxy | `v0.86.0` | Apache-2.0 | Deferred | Candidate for encrypted DNS/proxy needs, not required merely for blocklists |
-| shadcn-ui/ui | `shadcn@4.23.0` | MIT | Deferred | Copy-in component model still creates ongoing dependency/style maintenance; current UI is too small to justify it |
-| caddyserver/caddy | `v2.11.9` | Apache-2.0 | Deployment candidate | Current release includes security fixes; pin only when a real host/domain/TLS deployment is approved |
-| prometheus/prometheus | `v3.16.0` | Apache-2.0 | Deferred | Too much operational surface for one founder gateway |
-| gitleaks/gitleaks | `v8.30.1` | MIT | Selected / integrated CI CLI | Uses upstream CLI binary directly with published SHA-256 verification; avoids the separate Gitleaks Action licensing requirement for organizations; verify latest scan before merge/release |
-| aquasecurity/trivy | `v0.76.2` | Apache-2.0 | Deferred | Useful when images/filesystems/native packages exist; database download and CI time are unnecessary for current narrow npm service |
-| Mullvad app | audited commit in REPO_AUDIT | GPL-3.0 | Reference only | Do not copy code into a proprietary/undecided-license product without an explicit copyleft compliance decision |
-| Proton VPN browser extension | audited commit in REPO_AUDIT | GPL-3.0 | Reference only | Same copyleft boundary; UX concepts may be studied, source not copied |
+Mullvad and Amnezia native archives retain their original licenses and notices separately. They are not integrated into the browser proxy. Their transitive source, binary, submodule and asset licensing needs a new per-artifact audit before native integration or distribution; the root GPL license alone is insufficient. See [LICENSING.md](LICENSING.md).
 
-## Project-license boundary
+After a dependency change, use `npm ci --ignore-scripts`, inspect installed metadata/license/NOTICE files and all lockfile additions, run the relevant tests and registry advisory check, and record the results in [STATUS.md](STATUS.md). An `npm audit` or secret scan result is a bounded signal, not a comprehensive security audit. Historic advisory results are not current clearance.
 
-The repository does not currently contain a general project `LICENSE`. Public visibility is **not** a license grant. Before accepting substantial external contributions or distributing proprietary/commercial builds, choose the product/source licensing model explicitly.
-
-Do not copy GPL code from reference projects into the current codebase unless the owner intentionally chooses a compatible distribution model and fulfills the corresponding obligations.
-
-## Security-advisory policy
-
-1. Keep runtime versions exact in the lockfile.
-2. Review upstream releases/advisories on a scheduled basis; do not auto-upgrade production.
-3. Upgrade when a security issue, compatibility defect, browser change, or tested maintenance reason applies.
-4. Run focused tests first, then the complete verification suite for lockfile changes.
-5. Record the reason, version, license change, transitive dependency change and test evidence in the PR.
-6. Do not claim a clean security audit from `npm audit`, Gitleaks, or Trivy alone; each is one signal.
-
-Historical evidence from 2026-11-13 recorded `npm audit` with zero advisories for the locked tree. Re-run it on the commit proposed for merge/release.
+The [full earlier package inventory](../AnalyseFuture/previous-docs/DEPENDENCY_LICENSE_MATRIX.md) and [earlier candidate review](../AnalyseFuture/previous-docs/LICENSE_AND_DEPENDENCY_AUDIT.md) remain available for provenance; version recommendations and status claims there are dated.

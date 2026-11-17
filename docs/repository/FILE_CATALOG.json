@@ -1,0 +1,2303 @@
+{
+  "scope": "All current Git project files, including uncommitted reorganization additions; deleted old paths are represented by preserved destinations.",
+  "method": "Content/path-aware functional classification and bounded literal import observation; no execution or resolved semantic/security audit.",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "functional_collection": "project-root",
+      "purpose": "Shared source whitespace and editor policy",
+      "literal_dependencies": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "functional_collection": ".github",
+      "purpose": "Structured bug report intake without sensitive disclosure",
+      "literal_dependencies": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "functional_collection": ".github",
+      "purpose": "Structured feature request intake without sensitive disclosure",
+      "literal_dependencies": []
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "functional_collection": ".github",
+      "purpose": "Manual security/build/test verification; no automatic run in this task",
+      "literal_dependencies": []
+    },
+    {
+      "path": ".gitignore",
+      "functional_collection": "project-root",
+      "purpose": "Generated artifacts and private-state exclusion policy",
+      "literal_dependencies": []
+    },
+    {
+      "path": ".node-version",
+      "functional_collection": "project-root",
+      "purpose": "Pinned Node runtime for TypeScript stripping and SQLite",
+      "literal_dependencies": []
+    },
+    {
+      "path": ".npmrc",
+      "functional_collection": "project-root",
+      "purpose": "Exact dependency saves and npm installation behavior",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AGENTS.md",
+      "functional_collection": "project-root",
+      "purpose": "Current owner instructions, preservation and delivery requirements",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/PRESERVATION_MANIFEST.json",
+      "functional_collection": "preserved-history/index",
+      "purpose": "Every baseline file's exact preserved destination and content identity",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/PREVIOUS_LAYOUT.txt",
+      "functional_collection": "preserved-history/index",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/README.txt",
+      "functional_collection": "preserved-history/index",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/apps/extension/README.md.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/package.json.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/scripts/README.md.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/scripts/dev.mjs.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/scripts/ops.mjs.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/scripts/package.mjs.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/services/control-api/server.ts.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/chromium-route.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/control-api.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/dev.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/extension-browser.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/extension.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/gateway.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/integration.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/ops.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/package.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/retention.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/runtime.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/security.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-code/tests/website.test.js.original.txt",
+      "functional_collection": "preserved-history/previous-code",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/ARCHITECTURE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/BUILD_VS_REUSE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/COMPETITOR_FEATURE_MATRIX.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/COMPETITOR_MATRIX.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/COST_POLICY.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/DECISIONS.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/DEPENDENCY_LICENSE_MATRIX.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/DEPLOYMENT.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/HANDOFF.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/IMPLEMENTATION_ROADMAP.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/LICENSE_AND_DEPENDENCY_AUDIT.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/LICENSING.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/LOCAL_DEVELOPMENT.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/PROJECT_MEMORY.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/PROJECT_STATUS.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/REPOSITORY_AUDIT.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/REPO_AUDIT.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/REQUIREMENTS.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/ROADMAP.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/SECURITY_AND_PRIVACY.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/SECURITY_THREAT_MODEL.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/START_HERE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/TEST_STRATEGY.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/VALIDATION.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/VISION_AND_SCOPE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/CONTINUATION_HANDOFF.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/COUNTRY_AND_SERVER_ARCHITECTURE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/PROJECT_CHRONICLE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/REPOSITORY_RESEARCH.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/SECURITY_LICENSE_AND_INFRASTRUCTURE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/SOURCE_INDEX.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/START_HERE.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-docs/source-plans/VPN_Company_Launch_Plan_2026-11-12.md",
+      "functional_collection": "preserved-history/previous-docs",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-github/pull_request_template.md",
+      "functional_collection": "preserved-history/previous-github",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-github/workflows/verify-knowledge-archive.yml",
+      "functional_collection": "preserved-history/previous-github",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/AGENTS.original.txt",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/ALL_SUGGESTED_VPN_REPOSITORIES.txt",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/CHANGELOG.md",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/CONTRIBUTING.md",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/PROJECT_GOAL_2026-11-17.txt",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/README.md",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/SECURITY.md",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/SELECTED_VPN_REPOSITORIES.txt",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-root/TASKS.md",
+      "functional_collection": "preserved-history/previous-root",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-tooling/.github/workflows/verify.yml.original.txt",
+      "functional_collection": "preserved-history/previous-tooling",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/previous-tooling/tools/extract_upstreams.py.original.txt",
+      "functional_collection": "preserved-history/previous-tooling",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "functional_collection": "project-root",
+      "purpose": "Contributor workflow and deferred validation policy",
+      "literal_dependencies": []
+    },
+    {
+      "path": "PROJECT_IDEA.txt",
+      "functional_collection": "project-root",
+      "purpose": "Detailed product vision, feasibility, responsibilities and staged roadmap",
+      "literal_dependencies": []
+    },
+    {
+      "path": "PROJECT_STRUCTURE.md",
+      "functional_collection": "project-root",
+      "purpose": "Functional folder organization and dependency map",
+      "literal_dependencies": []
+    },
+    {
+      "path": "README.md",
+      "functional_collection": "project-root",
+      "purpose": "Current project entry point, boundaries and development commands",
+      "literal_dependencies": []
+    },
+    {
+      "path": "SECURITY.md",
+      "functional_collection": "project-root",
+      "purpose": "Private reporting and account-recovery responsibilities",
+      "literal_dependencies": []
+    },
+    {
+      "path": "apps/extension/README.md",
+      "functional_collection": "apps/extension",
+      "purpose": "Browser installation, lifecycle and protection boundaries",
+      "literal_dependencies": []
+    },
+    {
+      "path": "apps/extension/build.js",
+      "functional_collection": "apps/extension",
+      "purpose": "Unpacked extension asset copying and TypeScript stripping",
+      "literal_dependencies": [
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:module",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "apps/extension/core.ts",
+      "functional_collection": "apps/extension",
+      "purpose": "Proxy route controller, schema validation, auth scoping and lifecycle state",
+      "literal_dependencies": []
+    },
+    {
+      "path": "apps/extension/manifest.json",
+      "functional_collection": "apps/extension",
+      "purpose": "Chrome MV3 permissions, worker and popup registration",
+      "literal_dependencies": [
+        {
+          "literal": "popup.html",
+          "kind": "relative-asset",
+          "resolved_path": "apps/extension/popup.html",
+          "observation": "file-present"
+        },
+        {
+          "literal": "worker.js",
+          "kind": "relative-asset",
+          "resolved_path": "apps/extension/worker.js",
+          "source_path": "apps/extension/worker.ts",
+          "observation": "generated-js-from-typescript"
+        }
+      ]
+    },
+    {
+      "path": "apps/extension/popup.css",
+      "functional_collection": "apps/extension",
+      "purpose": "Browser extension visual presentation",
+      "literal_dependencies": []
+    },
+    {
+      "path": "apps/extension/popup.html",
+      "functional_collection": "apps/extension",
+      "purpose": "Browser extension connection-interface document",
+      "literal_dependencies": [
+        {
+          "literal": "popup.css",
+          "kind": "relative-asset",
+          "resolved_path": "apps/extension/popup.css",
+          "observation": "file-present"
+        },
+        {
+          "literal": "popup.js",
+          "kind": "relative-asset",
+          "resolved_path": "apps/extension/popup.js",
+          "source_path": "apps/extension/popup.ts",
+          "observation": "generated-js-from-typescript"
+        }
+      ]
+    },
+    {
+      "path": "apps/extension/popup.ts",
+      "functional_collection": "apps/extension",
+      "purpose": "Popup UI actions and extension session interaction",
+      "literal_dependencies": [
+        {
+          "literal": "./core.js",
+          "kind": "relative-module",
+          "resolved_path": "apps/extension/core.js",
+          "source_path": "apps/extension/core.ts",
+          "observation": "generated-js-from-typescript"
+        }
+      ]
+    },
+    {
+      "path": "apps/extension/worker.ts",
+      "functional_collection": "apps/extension",
+      "purpose": "MV3 background events, session restoration and proxy-auth challenges",
+      "literal_dependencies": [
+        {
+          "literal": "./core.js",
+          "kind": "relative-module",
+          "resolved_path": "apps/extension/core.js",
+          "source_path": "apps/extension/core.ts",
+          "observation": "generated-js-from-typescript"
+        }
+      ]
+    },
+    {
+      "path": "apps/operations/app.js",
+      "functional_collection": "apps/operations",
+      "purpose": "Private founder dashboard authentication, status and grant revocation UI",
+      "literal_dependencies": []
+    },
+    {
+      "path": "apps/operations/index.html",
+      "functional_collection": "apps/operations",
+      "purpose": "Private operations/help document served by control API",
+      "literal_dependencies": [
+        {
+          "literal": "/",
+          "kind": "relative-asset"
+        },
+        {
+          "literal": "/app.js",
+          "kind": "relative-asset"
+        },
+        {
+          "literal": "/style.css",
+          "kind": "relative-asset"
+        }
+      ]
+    },
+    {
+      "path": "apps/operations/style.css",
+      "functional_collection": "apps/operations",
+      "purpose": "Private founder dashboard presentation",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "functional_collection": "docs",
+      "purpose": "Current architecture operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/COST_POLICY.md",
+      "functional_collection": "docs",
+      "purpose": "Current cost policy operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "functional_collection": "docs",
+      "purpose": "Current deployment operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/LICENSE_AND_DEPENDENCY_AUDIT.md",
+      "functional_collection": "docs",
+      "purpose": "Current license and dependency audit operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/LICENSING.md",
+      "functional_collection": "docs",
+      "purpose": "Current licensing operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/LOCAL_DEVELOPMENT.md",
+      "functional_collection": "docs",
+      "purpose": "Current local development operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/REPOSITORY_RECOVERY.txt",
+      "functional_collection": "docs",
+      "purpose": "Current repository recovery operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/SECURITY_AND_PRIVACY.md",
+      "functional_collection": "docs",
+      "purpose": "Current security and privacy operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/STATUS.md",
+      "functional_collection": "docs",
+      "purpose": "Current status operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/TESTING.md",
+      "functional_collection": "docs",
+      "purpose": "Current testing operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/repository/FILE_CATALOG.json",
+      "functional_collection": "docs",
+      "purpose": "Functional source inventory, dependency clues or workspace coverage record",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/repository/UPSTREAM_CATALOG.jsonl",
+      "functional_collection": "docs",
+      "purpose": "Functional source inventory, dependency clues or workspace coverage record",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/repository/UPSTREAM_SUMMARY.txt",
+      "functional_collection": "docs",
+      "purpose": "Functional source inventory, dependency clues or workspace coverage record",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/repository/WORKSPACE_INVENTORY.tsv",
+      "functional_collection": "docs",
+      "purpose": "Functional source inventory, dependency clues or workspace coverage record",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/repository/WORKSPACE_SUMMARY.txt",
+      "functional_collection": "docs",
+      "purpose": "Functional source inventory, dependency clues or workspace coverage record",
+      "literal_dependencies": []
+    },
+    {
+      "path": "infrastructure/README.md",
+      "functional_collection": "infrastructure",
+      "purpose": "Runtime and host deployment prerequisites",
+      "literal_dependencies": []
+    },
+    {
+      "path": "infrastructure/config.example.json",
+      "functional_collection": "infrastructure",
+      "purpose": "Non-live runtime configuration template with placeholder hosts",
+      "literal_dependencies": []
+    },
+    {
+      "path": "infrastructure/firewall.nft.example",
+      "functional_collection": "infrastructure",
+      "purpose": "Unapplied host network-policy example",
+      "literal_dependencies": []
+    },
+    {
+      "path": "infrastructure/private-browser-proxy.service",
+      "functional_collection": "infrastructure",
+      "purpose": "Unapplied service-manager deployment example",
+      "literal_dependencies": []
+    },
+    {
+      "path": "infrastructure/serve.mjs",
+      "functional_collection": "infrastructure",
+      "purpose": "Configured API/gateway runtime assembly and preflight validation",
+      "literal_dependencies": [
+        {
+          "literal": "../apps/extension/core.ts",
+          "kind": "relative-module",
+          "resolved_path": "apps/extension/core.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../services/control-api/server.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/server.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../services/gateway/index.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/index.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:fs",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "package-lock.json",
+      "functional_collection": "project-root",
+      "purpose": "Frozen npm dependency graph, versions and integrity",
+      "literal_dependencies": []
+    },
+    {
+      "path": "package.json",
+      "functional_collection": "project-root",
+      "purpose": "Root command interface and direct dependency declarations",
+      "literal_dependencies": []
+    },
+    {
+      "path": "scripts/README.md",
+      "functional_collection": "scripts",
+      "purpose": "Operator/developer tooling usage and private-state requirements",
+      "literal_dependencies": []
+    },
+    {
+      "path": "scripts/development/dev.mjs",
+      "functional_collection": "scripts/development",
+      "purpose": "Local state initialization and loopback development service assembly",
+      "literal_dependencies": [
+        {
+          "literal": "../../services/control-api/server.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/server.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/gateway/index.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/index.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/gateway/policy.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/policy.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:crypto",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:util",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "scripts/packaging/package.mjs",
+      "functional_collection": "scripts/packaging",
+      "purpose": "Deterministic extension archive, checksum and dependency notices",
+      "literal_dependencies": [
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:crypto",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:util",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "scripts/recovery/backup.mjs",
+      "functional_collection": "scripts/recovery",
+      "purpose": "Authenticated encrypted SQLite backup and protected restore",
+      "literal_dependencies": [
+        {
+          "literal": "node:crypto",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:sqlite",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:stream/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:util",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "services/control-api/cli.ts",
+      "functional_collection": "services/control-api",
+      "purpose": "Operator account creation and recovery interface",
+      "literal_dependencies": [
+        {
+          "literal": "./store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        }
+      ]
+    },
+    {
+      "path": "services/control-api/server.ts",
+      "functional_collection": "services/control-api",
+      "purpose": "HTTPS account/grant/status routes, CORS and operations assets",
+      "literal_dependencies": [
+        {
+          "literal": "./store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:net",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "services/control-api/store.ts",
+      "functional_collection": "services/control-api",
+      "purpose": "SQLite accounts, hashed secrets, grants, usage and retention",
+      "literal_dependencies": [
+        {
+          "literal": "node:crypto",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:sqlite",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "services/gateway/index.js",
+      "functional_collection": "services/gateway",
+      "purpose": "TLS forward-proxy adapter, authorization, metering and active revocation",
+      "literal_dependencies": [
+        {
+          "literal": "./policy.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/policy.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "proxy-chain",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "services/gateway/policy.js",
+      "functional_collection": "services/gateway",
+      "purpose": "Public-destination restrictions and validated/pinned DNS policy",
+      "literal_dependencies": [
+        {
+          "literal": "ipaddr.js",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:dns/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:net",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/control-api/control-api.test.js",
+      "functional_collection": "tests/control-api",
+      "purpose": "Founder account/session/grant HTTPS API behavior",
+      "literal_dependencies": [
+        {
+          "literal": "../../services/control-api/server.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/server.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../helpers/tls.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/tls.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/control-api/retention.test.js",
+      "functional_collection": "tests/control-api",
+      "purpose": "Durable aggregate quota, expiry and revocation retention",
+      "literal_dependencies": [
+        {
+          "literal": "../../services/control-api/server.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/server.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../helpers/tls.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/tls.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:crypto",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:sqlite",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/extension/chromium-route.test.js",
+      "functional_collection": "tests/extension",
+      "purpose": "Actual browser TLS-proxy routing and revoked-grant behavior, where permitted",
+      "literal_dependencies": [
+        {
+          "literal": "../../services/control-api/server.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/server.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/gateway/index.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/index.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../helpers/tls.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/tls.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "@playwright/test",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:crypto",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:events",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:http",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/extension/extension-browser.test.js",
+      "functional_collection": "tests/extension",
+      "purpose": "Actual MV3-load or explicit managed-policy skip and simulated popup UI",
+      "literal_dependencies": [
+        {
+          "literal": "@playwright/test",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:events",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:http",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/extension/extension.test.js",
+      "functional_collection": "tests/extension",
+      "purpose": "Extension route controller and worker lifecycle/auth behavior",
+      "literal_dependencies": [
+        {
+          "literal": "../../apps/extension/core.ts",
+          "kind": "relative-module",
+          "resolved_path": "apps/extension/core.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:module",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/gateway/gateway.test.js",
+      "functional_collection": "tests/gateway",
+      "purpose": "TLS forwarding, destination policy, revocation, quotas and socket cleanup",
+      "literal_dependencies": [
+        {
+          "literal": "../../services/gateway/index.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/index.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/gateway/policy.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/policy.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:events",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:http",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:net",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:tls",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/helpers/tls.js",
+      "functional_collection": "tests/helpers",
+      "purpose": "Shared temporary TLS identity fixture for component suites",
+      "literal_dependencies": [
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/integration/integration.test.js",
+      "functional_collection": "tests/integration",
+      "purpose": "Cross-component account/grant/traffic/recovery and logout flows",
+      "literal_dependencies": [
+        {
+          "literal": "../../apps/extension/core.ts",
+          "kind": "relative-module",
+          "resolved_path": "apps/extension/core.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../scripts/recovery/backup.mjs",
+          "kind": "relative-module",
+          "resolved_path": "scripts/recovery/backup.mjs",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/server.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/server.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/gateway/index.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/index.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../helpers/tls.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/tls.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:http",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/operations/ops.test.js",
+      "functional_collection": "tests/operations",
+      "purpose": "Encrypted backup/restore integrity, permissions and overwrite protection",
+      "literal_dependencies": [
+        {
+          "literal": "../../scripts/recovery/backup.mjs",
+          "kind": "relative-module",
+          "resolved_path": "scripts/recovery/backup.mjs",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:sqlite",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/operations/package.test.js",
+      "functional_collection": "tests/operations",
+      "purpose": "Deterministic archive, notices and secret-file exclusion",
+      "literal_dependencies": [
+        {
+          "literal": "../../scripts/packaging/package.mjs",
+          "kind": "relative-module",
+          "resolved_path": "scripts/packaging/package.mjs",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:util",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/operations/security.test.js",
+      "functional_collection": "tests/operations",
+      "purpose": "Cross-session founder revocation and invalid bearer denial",
+      "literal_dependencies": [
+        {
+          "literal": "../../services/control-api/server.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/server.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../helpers/tls.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/tls.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/operations/website.test.js",
+      "functional_collection": "tests/operations",
+      "purpose": "Private operations dashboard rendering and user actions",
+      "literal_dependencies": [
+        {
+          "literal": "@playwright/test",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:http",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/runtime/dev.test.js",
+      "functional_collection": "tests/runtime",
+      "purpose": "Local initialization, fixture mode and retained-state recovery",
+      "literal_dependencies": [
+        {
+          "literal": "../../scripts/development/dev.mjs",
+          "kind": "relative-module",
+          "resolved_path": "scripts/development/dev.mjs",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../scripts/recovery/backup.mjs",
+          "kind": "relative-module",
+          "resolved_path": "scripts/recovery/backup.mjs",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:events",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:tls",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/runtime/runtime.test.js",
+      "functional_collection": "tests/runtime",
+      "purpose": "Runtime preflight, TLS API startup and service lifecycle",
+      "literal_dependencies": [
+        {
+          "literal": "../../infrastructure/serve.mjs",
+          "kind": "relative-module",
+          "resolved_path": "infrastructure/serve.mjs",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../../services/control-api/store.ts",
+          "kind": "relative-module",
+          "resolved_path": "services/control-api/store.ts",
+          "observation": "file-present"
+        },
+        {
+          "literal": "../helpers/tls.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/tls.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:events",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:net",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:test",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/.gitignore",
+      "functional_collection": "tools",
+      "purpose": "Python bytecode exclusion for repository tooling",
+      "literal_dependencies": []
+    },
+    {
+      "path": "tools/catalog_repository.py",
+      "functional_collection": "tools",
+      "purpose": "Static functional, reference and filesystem catalog generation",
+      "literal_dependencies": [
+        {
+          "literal": "__future__",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "collections",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "csv",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "hashlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "json",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "re",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "stat",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "subprocess",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/extract_upstreams.py",
+      "functional_collection": "tools",
+      "purpose": "Offline checksum-pinned native-source recreation and preservation",
+      "literal_dependencies": [
+        {
+          "literal": "__future__",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "argparse",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "dataclasses",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "hashlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "posixpath",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "shutil",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "stat",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "sys",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "tempfile",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "zipfile",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/tests/test_extract_upstreams.py",
+      "functional_collection": "tools",
+      "purpose": "Preserved real-filesystem archive safety regression suite",
+      "literal_dependencies": [
+        {
+          "literal": "./../extract_upstreams.py",
+          "kind": "relative-module",
+          "resolved_path": "tools/extract_upstreams.py",
+          "observation": "file-present"
+        },
+        {
+          "literal": "hashlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "stat",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "tempfile",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "unittest",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "warnings",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "zipfile",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tsconfig.json",
+      "functional_collection": "project-root",
+      "purpose": "Strict compiler policy for extension and control API",
+      "literal_dependencies": []
+    },
+    {
+      "path": "upstream/README.txt",
+      "functional_collection": "upstream",
+      "purpose": "Collection purpose, provenance and handling rules",
+      "literal_dependencies": []
+    },
+    {
+      "path": "upstream/archives/amnezia-client-dev.zip",
+      "functional_collection": "upstream",
+      "purpose": "Original separately licensed native application source archive; preserve vendor build layout",
+      "literal_dependencies": []
+    },
+    {
+      "path": "upstream/archives/mullvadvpn-app-main.zip",
+      "functional_collection": "upstream",
+      "purpose": "Original separately licensed native application source archive; preserve vendor build layout",
+      "literal_dependencies": []
+    }
+  ],
+  "node_command_and_dependency_interface": {
+    "name": "private-browser-proxy",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "engines": {
+      "node": ">=24.0.0 <25"
+    },
+    "scripts": {
+      "test": "node --test --test-timeout=30000 tests/*/*.test.js",
+      "build": "node apps/extension/build.js",
+      "dev:init": "node scripts/development/dev.mjs init",
+      "dev": "node scripts/development/dev.mjs start",
+      "account": "node services/control-api/cli.ts",
+      "backup": "node scripts/recovery/backup.mjs",
+      "check": "npm run typecheck && npm test && npm run build && git diff --check",
+      "package": "node scripts/packaging/package.mjs",
+      "typecheck": "tsc --noEmit",
+      "start": "node infrastructure/serve.mjs"
+    },
+    "dependencies": {
+      "ipaddr.js": "2.3.0",
+      "proxy-chain": "3.0.3"
+    },
+    "devDependencies": {
+      "@playwright/test": "1.65.0",
+      "@types/chrome": "0.3.7",
+      "@types/node": "24.19.2",
+      "typescript": "7.0.2"
+    }
+  },
+  "locked_dependency_relationships": {
+    "": {
+      "version": "0.1.0",
+      "dependencies": {
+        "ipaddr.js": "2.3.0",
+        "proxy-chain": "3.0.3"
+      }
+    },
+    "node_modules/@playwright/test": {
+      "version": "1.65.0",
+      "dev": true,
+      "license": "Apache-2.0",
+      "dependencies": {
+        "playwright": "1.65.0"
+      }
+    },
+    "node_modules/@types/chrome": {
+      "version": "0.3.7",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@types/har-format": "*"
+      }
+    },
+    "node_modules/@types/har-format": {
+      "version": "1.2.16",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/@types/node": {
+      "version": "24.19.2",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "undici-types": ">=7.24.0 <7.24.7"
+      }
+    },
+    "node_modules/@typescript/typescript-aix-ppc64": {
+      "version": "7.0.2",
+      "cpu": [
+        "ppc64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "aix"
+      ]
+    },
+    "node_modules/@typescript/typescript-darwin-arm64": {
+      "version": "7.0.2",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "darwin"
+      ]
+    },
+    "node_modules/@typescript/typescript-darwin-x64": {
+      "version": "7.0.2",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "darwin"
+      ]
+    },
+    "node_modules/@typescript/typescript-freebsd-arm64": {
+      "version": "7.0.2",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "freebsd"
+      ]
+    },
+    "node_modules/@typescript/typescript-freebsd-x64": {
+      "version": "7.0.2",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "freebsd"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-arm": {
+      "version": "7.0.2",
+      "cpu": [
+        "arm"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-arm64": {
+      "version": "7.0.2",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-loong64": {
+      "version": "7.0.2",
+      "cpu": [
+        "loong64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-mips64el": {
+      "version": "7.0.2",
+      "cpu": [
+        "mips64el"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-ppc64": {
+      "version": "7.0.2",
+      "cpu": [
+        "ppc64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-riscv64": {
+      "version": "7.0.2",
+      "cpu": [
+        "riscv64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-s390x": {
+      "version": "7.0.2",
+      "cpu": [
+        "s390x"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-linux-x64": {
+      "version": "7.0.2",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ]
+    },
+    "node_modules/@typescript/typescript-netbsd-arm64": {
+      "version": "7.0.2",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "netbsd"
+      ]
+    },
+    "node_modules/@typescript/typescript-netbsd-x64": {
+      "version": "7.0.2",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "netbsd"
+      ]
+    },
+    "node_modules/@typescript/typescript-openbsd-arm64": {
+      "version": "7.0.2",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "openbsd"
+      ]
+    },
+    "node_modules/@typescript/typescript-openbsd-x64": {
+      "version": "7.0.2",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "openbsd"
+      ]
+    },
+    "node_modules/@typescript/typescript-sunos-x64": {
+      "version": "7.0.2",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "sunos"
+      ]
+    },
+    "node_modules/@typescript/typescript-win32-arm64": {
+      "version": "7.0.2",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "win32"
+      ]
+    },
+    "node_modules/@typescript/typescript-win32-x64": {
+      "version": "7.0.2",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "Apache-2.0",
+      "optional": true,
+      "os": [
+        "win32"
+      ]
+    },
+    "node_modules/agent-base": {
+      "version": "9.0.0",
+      "license": "MIT"
+    },
+    "node_modules/debug": {
+      "version": "4.4.3",
+      "license": "MIT",
+      "dependencies": {
+        "ms": "^2.1.3"
+      }
+    },
+    "node_modules/ip-address": {
+      "version": "10.7.6",
+      "license": "MIT"
+    },
+    "node_modules/ipaddr.js": {
+      "version": "2.3.0",
+      "license": "MIT"
+    },
+    "node_modules/ms": {
+      "version": "2.1.3",
+      "license": "MIT"
+    },
+    "node_modules/playwright": {
+      "version": "1.65.0",
+      "dev": true,
+      "license": "Apache-2.0",
+      "dependencies": {
+        "playwright-core": "1.65.0"
+      }
+    },
+    "node_modules/playwright-core": {
+      "version": "1.65.0",
+      "dev": true,
+      "license": "Apache-2.0"
+    },
+    "node_modules/proxy-chain": {
+      "version": "3.0.3",
+      "license": "Apache-2.0",
+      "dependencies": {
+        "socks": "^2.8.10",
+        "socks-proxy-agent": "^10.1.0",
+        "tslib": "^2.8.1"
+      }
+    },
+    "node_modules/smart-buffer": {
+      "version": "4.2.0",
+      "license": "MIT"
+    },
+    "node_modules/socks": {
+      "version": "2.8.10",
+      "license": "MIT",
+      "dependencies": {
+        "ip-address": "^10.1.1",
+        "smart-buffer": "^4.2.0"
+      }
+    },
+    "node_modules/socks-proxy-agent": {
+      "version": "10.1.0",
+      "license": "MIT",
+      "dependencies": {
+        "agent-base": "9.0.0",
+        "debug": "^4.3.4",
+        "socks": "^2.8.3"
+      }
+    },
+    "node_modules/tslib": {
+      "version": "2.9.1",
+      "license": "0BSD"
+    },
+    "node_modules/typescript": {
+      "version": "7.0.2",
+      "dev": true,
+      "license": "Apache-2.0",
+      "optionalDependencies": {
+        "@typescript/typescript-aix-ppc64": "7.0.2",
+        "@typescript/typescript-darwin-arm64": "7.0.2",
+        "@typescript/typescript-darwin-x64": "7.0.2",
+        "@typescript/typescript-freebsd-arm64": "7.0.2",
+        "@typescript/typescript-freebsd-x64": "7.0.2",
+        "@typescript/typescript-linux-arm": "7.0.2",
+        "@typescript/typescript-linux-arm64": "7.0.2",
+        "@typescript/typescript-linux-loong64": "7.0.2",
+        "@typescript/typescript-linux-mips64el": "7.0.2",
+        "@typescript/typescript-linux-ppc64": "7.0.2",
+        "@typescript/typescript-linux-riscv64": "7.0.2",
+        "@typescript/typescript-linux-s390x": "7.0.2",
+        "@typescript/typescript-linux-x64": "7.0.2",
+        "@typescript/typescript-netbsd-arm64": "7.0.2",
+        "@typescript/typescript-netbsd-x64": "7.0.2",
+        "@typescript/typescript-openbsd-arm64": "7.0.2",
+        "@typescript/typescript-openbsd-x64": "7.0.2",
+        "@typescript/typescript-sunos-x64": "7.0.2",
+        "@typescript/typescript-win32-arm64": "7.0.2",
+        "@typescript/typescript-win32-x64": "7.0.2"
+      }
+    },
+    "node_modules/undici-types": {
+      "version": "7.24.6",
+      "dev": true,
+      "license": "MIT"
+    }
+  }
+}

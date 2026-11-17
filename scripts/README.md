@@ -7,9 +7,9 @@ Supply `BACKUP_PASSWORD` through your secure environment settings. A passphrase 
 From the repository root:
 
 ```sh
-node scripts/ops.mjs backup /private/data/control.sqlite /private/backups/control.enc
-node scripts/ops.mjs restore /private/backups/control.enc /private/recovery/control.sqlite
-node --test tests/ops.test.js
+node scripts/recovery/backup.mjs backup /private/data/control.sqlite /private/backups/control.enc
+node scripts/recovery/backup.mjs restore /private/backups/control.enc /private/recovery/control.sqlite
+node --test tests/operations/ops.test.js
 ```
 
 Both commands refuse to overwrite an existing file. `--force` permits replacement, but stop every service using the destination database before restoring. Restore rejects existing `-wal`, `-shm` or `-journal` sidecars: stop the service and complete a normal SQLite checkpoint first. Never remove active WAL files to bypass this check. An older snapshot also contains older authorization state. Before restarting the application, run its owner-controlled account recovery command with a securely supplied new `FOUNDER_PASSWORD` (`npm run account -- recover /private/recovery/control.sqlite`); this invalidates restored sessions and connection grants so revocations cannot be undone by restoring old state. Validate the recovered API and accounts against the restored database before changing the service's database path. Retain the previous deployment and original database for rollback until that check passes.
@@ -38,4 +38,4 @@ The popup's control API origin is `https://localhost:9443`; retrieve credentials
 
 # Private extension package
 
-`node scripts/package.mjs` builds the extension and creates `dist/private-route-extension-0.1.0.zip` plus its `.sha256` checksum. Packaging copies only an explicit extension-asset allowlist and third-party license notices, never `.local/`, account data or TLS keys. Stable file timestamps and sorted archive entries make identical inputs produce identical archive bytes. Install the unpacked `dist/extension/` folder through Chrome Developer Mode for private testing. No store upload, public signup, production deployment or live US exit is performed.
+`node scripts/packaging/package.mjs` builds the extension and creates `dist/private-route-extension-0.1.0.zip` plus its `.sha256` checksum. Packaging copies only an explicit extension-asset allowlist and third-party license notices, never `.local/`, account data or TLS keys. Stable file timestamps and sorted archive entries make identical inputs produce identical archive bytes. Install the unpacked `dist/extension/` folder through Chrome Developer Mode for private testing. No store upload, public signup, production deployment or live US exit is performed.

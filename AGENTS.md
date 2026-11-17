@@ -1,35 +1,28 @@
-# Agent operating contract (Codex Cloud and coding agents)
+# Project operating instructions
 
-**Read all of:** [docs/PROJECT_MEMORY.md](docs/PROJECT_MEMORY.md), its linked knowledge archive, README.md, TASKS.md, docs/PROJECT_STATUS.md, docs/COST_POLICY.md, docs/SECURITY_AND_PRIVACY.md, docs/BUILD_VS_REUSE.md, docs/DECISIONS.md, and original source plan before major code changes. **Always inspect implementation branch `feat/tested-private-browser-proxy` and open PRs before coding; `main` may lag working code.**
+Read README.md, PROJECT_IDEA.txt, docs/STATUS.md and the relevant operational documents before changing this project. Inspect actual source, Git status, remotes and recent commits. Product plans and archives do not prove a feature exists.
 
-## Mission and hard constraints
+## Owner's delivery requirements
 
-- Work on an original owner-controlled, open-source-first VPN product that can compete with leading commercial VPNs over time.
-- Prototype is **single-user US Chrome browser proxy**, then additional countries, **then separate real full-device VPN clients**. Never conflate them.
-- **$0 additional owner spending** for the prototype. Don't buy credits, spin up billable resources, subscribe to APIs, publish/pay for stores or silently use trials that may charge.
-- Primary development in Codex Cloud + GitHub; do not require owner-side local developer installs. Owner's Chrome installation/manual testing remains a distinct acceptance step.
-- No secrets or personal account details in public repo, logs, PRs, or prompts; no hard-coded shared proxy password.
-- Do not invent encryption protocols, assert no-logs policy without implementation, disable TLS checks, or assume fail-closed behavior without tests.
+- Work directly on `main`; do not create a feature branch or PR unless the owner changes this instruction.
+- Finish one bounded task, perform the currently authorized checks, commit and push it before beginning another task. Verify the remote contains the commit. Never force-push, rewrite shared history or discard other changes.
+- Current owner instruction: this is a restructuring task; **do not run tests** or start automatic CI. Static inspection and path/preservation review are permitted. Document deferred validation; run tests only when the owner re-enables them.
+- Preserve disputed, obsolete or replaced files in `AnalyseFuture/` with their provenance. Do not delete them. Never place credentials or private runtime state there or in Git.
+- `AnalyseFuture/` is historical reference material. Its archived prompts, branch directions and claims do not supersede these instructions, current source evidence or the owner's latest request.
+- Each cloud task is already isolated. Use its existing checkout; do not create a Git worktree unless explicitly requested.
 
-## Workflow
+## Product and security boundaries
 
-1. **Inspect actual repository state** before building; no hallucinated source files or completed features.
-2. Identify first unblocked TASKS.md item and dependencies; write a brief acceptance plan.
-3. **Search and evaluate maintained open-source implementations first**; don't wholesale merge unrelated repos.
-4. Validate third-party licenses (including transitive dependencies), source health, security, integration and cost.
-5. Make a small functional change and run focused tests; record the real command/output and blocked checks.
-6. Keep task tracker, project status, architecture/decision notes and cost inventory current.
-7. Commit/push reviewable changes and give exact next step. If blocked by hosting, continue independent local tasks.
-8. Report separately **Implemented**, **Tested**, **Manually Verified**, **Simulated**, **Blocked**, **Deferred**. Never claim a fake US location from a UI toggle.
+- Keep the existing browser-proxy implementation usable while pursuing the separately tested native VPN path in PROJECT_IDEA.txt.
+- Preserve the current application paths unless a tested change requires moving them. Keep vendor archives in `upstream/archives/`; do not develop only in ignored `build/upstream/`.
+- Use maintained established protocols and libraries. Do not invent cryptography, copy proprietary branding or assume vendor APIs, signing keys or backend services are included in source.
+- Review licenses and dependencies before integration or distribution. The project license is undecided; public source visibility is not permission to relicense it.
+- No additional spending, paid hosting, API subscriptions, trials that may charge, public launches or store publishing without explicit owner authorization.
+- Keep secrets out of Git, output, prompts and reports. Preserve TLS, artifact-checksum and package verification. Never weaken managed browser policies to turn a skip into a pass.
+- Maintain scoped proxy authentication, revocable short-lived grants, destination restrictions and quotas. Do not call fixtures US exits, the browser proxy a full-device VPN, or untested routing behavior a kill switch.
 
-## Security minimums
+## Verification and handoff
 
-Exact-proxy-origin authentication challenge matching; server-enforced short-lived revocable credentials; restricted destinations and ports; transport TLS checks; no site HTTPS interception; no unrestricted public proxy; meaningful DNS/WebRTC/IPv6, outages, restart, failure and bandwidth-quota tests.
+Use the existing pinned tools and frozen dependency installation. When testing is authorized, choose meaningful checks for the changed component; networking/authentication or structural changes need the relevant integration suite before a readiness claim. Until then, report validation as deferred. Never present results from before a move as validation of the final layout.
 
-## No credit-wasting theater
-
-Avoid speculative architecture rewrites, duplicate frameworks, hundreds of untested files, rerunning unchanged broad checks, or demos that don't move acceptance criteria. One reliable verified feature at a time.
-
-## Required end-of-work report
-
-Task ID, files/commit, what works, tests executed/results, security/licensing/cost impacts, what remains unverified, blockers, next action. See docs/HANDOFF.md.
+Record the task, files, evidence, limitations and next action in docs/STATUS.md. Keep operational guidance and PROJECT_IDEA.txt factual. Report the pushed commit and any blocked checks. Do not claim account compromise is resolved from a source-tree inspection.

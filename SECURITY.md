@@ -1,19 +1,9 @@
-# Security policy (pre-release)
+# Security reporting and recovery boundaries
 
-The repository currently contains **plans only** and has no verified live VPN/proxy service.
+This repository contains a locally tested browser-proxy prototype and preserved native source archives. It is not a certified production VPN service. No independent security audit or live deployment is claimed.
 
-## Reporting
+Do not post credentials, private keys, account details, packet captures or sensitive infrastructure addresses in public issues. If GitHub private vulnerability reporting is enabled for this repository, use that private channel. Otherwise contact the repository owner through an already established private route; no public security email address is asserted here.
 
-Please do **not** post exploit payloads, private customer information, access tokens, keys, credentials, or exploitable production details in public GitHub issues.
+For a suspected account or repository compromise, the account owner must review GitHub sessions, authentication factors, tokens, connected apps, collaborators, deploy keys, webhooks and Actions access; revoke unauthorized access and rotate any exposed secrets. Preserve relevant audit evidence. Source reorganization alone does not restore account control or prove the absence of compromise. This task does not change account security settings.
 
-Use a private GitHub security advisory/reporting feature **if the repository has enabled it**, or request a private reporting channel from a repository maintainer without disclosing the vulnerability details publicly. No security mailbox is published because no owner-approved address has been provided.
-
-## Response expectations
-
-Maintainers should acknowledge reports when available, triage impact, test a fix in a non-production environment, and document the resolution. **No SLA or bounty is promised** for this early-stage project.
-
-## In-scope future areas
-
-Browser permissions, proxy authentication origin, connection-grant revocation, TLS, destination filtering, DNS/WebRTC/IPv6 leaks, server quotas, admin APIs, secrets, dependencies, updater/build pipeline and privacy claims.
-
-See [docs/SECURITY_AND_PRIVACY.md](docs/SECURITY_AND_PRIVACY.md).
+For local development, never disable TLS verification, execute unreviewed archived scripts, publish `.local/` or load private credentials into AI tools. Current protection boundaries and release gates are in [security and privacy](docs/SECURITY_AND_PRIVACY.md).
