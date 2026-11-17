@@ -1,14 +1,20 @@
 # Current project status
 
-Updated: 17 November 2026. Current instructions are README.md, PROJECT_HANDOFF.md, PROJECT_IDEA.txt, PROJECT_STRUCTURE.md and AGENTS.md. Earlier snapshots and research are preserved in AnalyseFuture/.
+Updated: 18 November 2026. Current instructions are README.md, PROJECT_HANDOFF.md, PROJECT_IDEA.txt, PROJECT_STRUCTURE.md and AGENTS.md. Earlier snapshots and research are preserved in AnalyseFuture/.
 
-## Latest task: implementation handoff and PR continuation
+## Latest task: repository audit and hardening
+
+Revalidated baseline `5a33f2d` and confirmed its functional layout. Fixed the operations grant display (T24), WebRTC verification after policy changes (T02), transactional founder recovery and session revocation (T10), and dangling runtime database links. Pinned the manual workflow actions to their existing release commits and added a project-only catalog refresh for review (T14). The [feature matrix](FEATURE_MATRIX.md) records scope and evidence, including the static native build investigation (T03).
+
+See the [validation results](VALIDATION_2026-11-18.md) and [recovery record](REPOSITORY_RECOVERY.txt) for test counts, repository evidence and account-owner actions. No tracked files moved or were removed. Final local verification recorded 63 passed Node tests, two managed-browser skips and 18 passed Python tests. Native prerequisites, live proxy acceptance and account access review remain open.
+
+## Prior task: implementation handoff and PR continuation
 
 Added root [PROJECT_HANDOFF.md](../PROJECT_HANDOFF.md), linked prominently from the repository homepage. It inventories implemented browser-proxy capabilities and their evidence/limits, explains every active project file and folder plus individual historical files, and links the exhaustive third-party/native catalogs. It defines 24 task packets with dependencies, owner prerequisites, implementation scope and acceptance evidence, including the native, browser, deployment, recovery, release and later customer-platform tracks.
 
 The owner requested that subsequent implementation tools create pull requests for review. AGENTS.md, CONTRIBUTING.md, README.md and PROJECT_IDEA.txt now reflect one bounded task per branch/PR, with no automatic merge. This handoff-documentation delivery retains the prior direct-main instruction. Exact pre-change documents are preserved with hashes in `AnalyseFuture/before-handoff-86792c2/`. Static inventories are refreshed for the final file set. The restored instance lacks the prior generated `build/initial-extraction-4t_gtg6r/` copy and some empty/cache directories, so the workspace snapshot has fewer rows; no tracked application or archive files were removed.
 
-Documentation validation: local Markdown paths/anchors, complete project-file link coverage, unique task IDs, workflow consistency, preserved-byte hashes, catalog coverage and whitespace passed for this task (167 project-file links and 24 unique task IDs). No application behavior is changed or new runtime result claimed; the known local runtime evidence is recorded below. T24 is a source-identified discrepancy requiring a new reproduction/regression: the dashboard ignores exhausted grant state when calculating active/Authorized display. No fix is claimed.
+Documentation validation: local Markdown paths/anchors, complete project-file link coverage, unique task IDs, workflow consistency, preserved-byte hashes, catalog coverage and whitespace passed for this task (167 project-file links and 24 unique task IDs). The handoff made no runtime changes. Its T24 finding is addressed by the audit above.
 
 PR monitoring is a review workflow in this conversation when the owner supplies a PR/link or requests review. No background watcher, webhook or scheduled monitor has been configured. Git transport read access works; the GitHub API returned `Forbidden` in this environment, so posting a GitHub review is not established by local Git access.
 
@@ -41,6 +47,6 @@ The repository already contains a Chrome MV3 browser-proxy client, founder HTTPS
 
 ## Next task
 
-Use the task IDs and acceptance checks in PROJECT_HANDOFF.md. T24 is a small local dashboard-state reproduction/fix; T03 is the first native Linux build audit. T01 needs an authorized browser runner and must preserve managed policy here. A real native tunnel additionally requires an authorized endpoint and suitable privileged test machine. Subsequent implementation tools should push one bounded task branch and open a PR against main for review before beginning another task; do not merge without owner authorization.
+Use the task IDs and acceptance checks in PROJECT_HANDOFF.md. T24 and the static T03 investigation are complete for this branch. T01 needs an authorized browser runner. T04 needs the pinned native toolchain and build prerequisites described in the feature matrix. A real native tunnel additionally requires an authorized endpoint and suitable privileged test machine. Subsequent implementation tools should push one bounded task branch and open a PR against main for review before beginning another task; do not merge without owner authorization.
 
 No additional spending, new paid service, production deployment or project-license selection is authorized by this reorganization.

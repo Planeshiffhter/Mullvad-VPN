@@ -1,5 +1,5 @@
 {
-  "scope": "All current Git project files, including uncommitted reorganization additions; deleted old paths are represented by preserved destinations.",
+  "scope": "Existing Git-tracked project files, nonignored additions and catalog outputs.",
   "method": "Content/path-aware functional classification and bounded literal import observation; no execution or resolved semantic/security audit.",
   "files": [
     {
@@ -581,13 +581,13 @@
     {
       "path": "CONTRIBUTING.md",
       "functional_collection": "project-root",
-      "purpose": "Contributor workflow and deferred validation policy",
+      "purpose": "Contributor workflow and validation policy",
       "literal_dependencies": []
     },
     {
       "path": "PROJECT_HANDOFF.md",
       "functional_collection": "project-root",
-      "purpose": "Component asset associated with project-root",
+      "purpose": "Component and archive inventory, task backlog and review criteria",
       "literal_dependencies": []
     },
     {
@@ -773,6 +773,12 @@
       "literal_dependencies": []
     },
     {
+      "path": "docs/FEATURE_MATRIX.md",
+      "functional_collection": "docs",
+      "purpose": "Feature implementation, test evidence and native build prerequisites",
+      "literal_dependencies": []
+    },
+    {
       "path": "docs/LICENSE_AND_DEPENDENCY_AUDIT.md",
       "functional_collection": "docs",
       "purpose": "Current license and dependency audit operational guidance",
@@ -818,6 +824,12 @@
       "path": "docs/VALIDATION_2026-11-17.md",
       "functional_collection": "docs",
       "purpose": "Current validation 2026-11-17 operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/VALIDATION_2026-11-18.md",
+      "functional_collection": "docs",
+      "purpose": "Current validation 2026-11-18 operational guidance",
       "literal_dependencies": []
     },
     {
@@ -1855,6 +1867,10 @@
           "kind": "external-or-runtime"
         },
         {
+          "literal": "argparse",
+          "kind": "external-or-runtime"
+        },
+        {
           "literal": "collections",
           "kind": "external-or-runtime"
         },
@@ -1943,6 +1959,53 @@
         },
         {
           "literal": "zipfile",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/tests/test_catalog_repository.py",
+      "functional_collection": "tools",
+      "purpose": "Catalog scope and ignored workspace redaction regressions",
+      "literal_dependencies": [
+        {
+          "literal": "csv",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "hashlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "json",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "shutil",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "subprocess",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "sys",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "tempfile",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "tools",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "unittest",
           "kind": "external-or-runtime"
         }
       ]
