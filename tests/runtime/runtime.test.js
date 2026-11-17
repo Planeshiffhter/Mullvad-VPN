@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile, rm, symlink } from 'node:fs/promises';
+import { mkdtemp, writeFile, rm, stat, symlink } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import https from 'node:https';
@@ -64,4 +64,14 @@ test('configured runtime starts real TLS API, rejects unauthenticated admin, sto
     running = await start(validated);
     assert.equal((await request(input.management.port, tls.ca, '/healthz')).status, 200);
   } finally { await running.close(); }
+});
+
+test('runtime and storage reject a dangling database symlink without creating its target', async t => {
+  const { input, dir } = await config(t);
+  const target = join(dir, 'missing.sqlite');
+  await symlink(target, input.database);
+
+  assert.throws(() => validateConfig(input), /Runtime file symlinks are forbidden/);
+  assert.throws(() => new Store(input.database), /Database symlinks are forbidden/);
+  await assert.rejects(stat(target), { code: 'ENOENT' });
 });

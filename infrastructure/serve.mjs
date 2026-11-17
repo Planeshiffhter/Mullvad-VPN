@@ -1,4 +1,4 @@
-import { readFileSync, realpathSync, existsSync, lstatSync } from 'node:fs';
+import { readFileSync, realpathSync, lstatSync } from 'node:fs';
 import { isAbsolute, dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Store } from '../services/control-api/store.ts';
@@ -11,7 +11,7 @@ function externalFile(path) {
   if (typeof path !== 'string' || !isAbsolute(path)) throw new Error('Runtime files require absolute paths outside checkout');
   const parent = realpathSync(dirname(path));
   const actual = resolve(parent, path.split('/').at(-1));
-  if (existsSync(actual) && lstatSync(actual).isSymbolicLink()) throw new Error('Runtime file symlinks are forbidden');
+  if (lstatSync(actual, { throwIfNoEntry: false })?.isSymbolicLink()) throw new Error('Runtime file symlinks are forbidden');
   const rel = relative(checkout, actual);
   if (!(rel === '..' || rel.startsWith('../')) || isAbsolute(rel)) throw new Error('Runtime secrets and database must remain outside checkout');
   return actual;
