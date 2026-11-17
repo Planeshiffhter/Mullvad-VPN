@@ -11,6 +11,7 @@ previous-root/      Original root plans, prompts, catalogs and entry documents.
 previous-docs/      Complete prior documentation tree, including the Word archive.
 previous-github/    Old PR template and documentation-only verification workflow.
 previous-tooling/   Exact originals of tooling changed for the new structure.
+before-validation-c7b2977/ Originals before testing was re-enabled and cleanup fixed.
 
 AGENTS.original.txt and tooling originals have inert names to avoid activating
 old agent directions or GitHub workflow behavior. File contents are preserved.

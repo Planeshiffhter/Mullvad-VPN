@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import https from 'node:https';
 import tls from 'node:tls';
+import net from 'node:net';
 import { once } from 'node:events';
 import { mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -61,6 +62,29 @@ test('default local services require trusted TLS and advertise no live gateway',
   try { assert.equal((await request(restarted.apiAddress.port, f.ca, '/healthz')).status, 200); }
   finally { await restarted.close(); }
 });
+
+for (const blockedListener of ['gatewayPort', 'apiPort']) {
+  test(`development startup preserves the bind error and recovers after occupied ${blockedListener}`, async (t) => {
+    const f = await setup(t);
+    const blocker = net.createServer();
+    blocker.listen(0, '127.0.0.1');
+    await once(blocker, 'listening');
+    t.after(() => new Promise(resolve => blocker.close(() => resolve())));
+    await writeFile(f.paths.config, JSON.stringify({
+      apiPort: 0, gatewayPort: 0, fixturePort: 0, extensionOrigins: [],
+      [blockedListener]: blocker.address().port,
+    }));
+
+    await assert.rejects(startDevelopment({ stateDir: f.stateDir }), { code: 'EADDRINUSE' });
+    assert.equal(blocker.listening, true, 'Startup failure must not stop the unrelated listener');
+    await new Promise(resolve => blocker.close(resolve));
+
+    const recovered = await startDevelopment({ stateDir: f.stateDir });
+    try {
+      assert.equal((await request(recovered.apiAddress.port, f.ca, '/healthz')).body.status, 'ok');
+    } finally { await recovered.close(); }
+  });
+}
 
 test('explicit fixture uses an issued grant and real TLS CONNECT without claiming a US exit', async (t) => {
   const f = await setup(t);

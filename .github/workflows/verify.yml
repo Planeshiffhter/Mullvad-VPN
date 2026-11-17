@@ -1,7 +1,7 @@
 name: Verify private browser proxy
 
 on:
-  # Manual only while the owner has requested restructuring without test runs.
+  # Manually triggered validation; local testing does not automatically run CI.
   workflow_dispatch:
 
 permissions:

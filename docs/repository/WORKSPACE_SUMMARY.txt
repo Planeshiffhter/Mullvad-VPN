@@ -4,8 +4,8 @@ All filesystem paths are visited except protected .git internals; symlinks are n
 Private .local entries are counted and redacted; their contents, hashes and values are not read.
 Generated and installed files remain in required layouts; source identity is observed where archive records exist.
 Counts describe this workspace snapshot, not required future generated state or test readiness.
-Authored/preserved project file records: 147
-Filesystem inventory rows (including dirs and protected Git marker): 25404
+Authored/preserved project file records: 160
+Filesystem inventory rows (including dirs and protected Git marker): 25426
 Traversal errors: 0
 
 .github: directory=3
@@ -16,7 +16,7 @@ apps/extension: file=8
 apps/operations: directory=1
 apps/operations: file=3
 docs: directory=2
-docs: file=15
+docs: file=16
 generated-extension-artifact: directory=2
 generated-extension-artifact: file=8
 generated-native-sources: directory=7060
@@ -27,6 +27,8 @@ infrastructure: file=5
 installed-dependency: directory=116
 installed-dependency: file=1027
 installed-dependency: symlink=3
+preserved-history/before-validation-c7b2977: directory=9
+preserved-history/before-validation-c7b2977: file=11
 preserved-history/index: directory=1
 preserved-history/index: file=3
 preserved-history/previous-code: directory=7
@@ -42,7 +44,7 @@ preserved-history/previous-tooling: directory=4
 preserved-history/previous-tooling: file=2
 private-development-state: directory=1
 private-development-state: file=5
-project-root: file=13
+project-root: file=14
 scripts: directory=1
 scripts: file=1
 scripts/development: directory=1

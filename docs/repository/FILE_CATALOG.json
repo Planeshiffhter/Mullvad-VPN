@@ -33,6 +33,12 @@
       "literal_dependencies": []
     },
     {
+      "path": ".gitleaksignore",
+      "functional_collection": "project-root",
+      "purpose": "Exact reviewed historical prose finding exclusion; other credential detections remain active",
+      "literal_dependencies": []
+    },
+    {
       "path": ".node-version",
       "functional_collection": "project-root",
       "purpose": "Pinned Node runtime for TypeScript stripping and SQLite",
@@ -65,6 +71,72 @@
     {
       "path": "AnalyseFuture/README.txt",
       "functional_collection": "preserved-history/index",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/.github/workflows/verify.yml.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/AGENTS.md.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/CONTRIBUTING.md.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/PROJECT_STRUCTURE.md.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/README.md.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/README.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/docs/STATUS.md.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/docs/TESTING.md.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/services/gateway/index.js.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/tests/runtime/dev.test.js.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/before-validation-c7b2977/tools/catalog_repository.py.original.txt",
+      "functional_collection": "preserved-history/before-validation-c7b2977",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
@@ -698,6 +770,12 @@
       "path": "docs/TESTING.md",
       "functional_collection": "docs",
       "purpose": "Current testing operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/VALIDATION_2026-11-17.md",
+      "functional_collection": "docs",
+      "purpose": "Current validation 2026-11-17 operational guidance",
       "literal_dependencies": []
     },
     {
@@ -1634,6 +1712,10 @@
         },
         {
           "literal": "node:https",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:net",
           "kind": "external-or-runtime"
         },
         {

@@ -28,9 +28,9 @@ No live US exit, production VPN service, full-device client, worldwide network o
 
 Generated `build/`, `dist/`, dependencies and private `.local/` state are ignored. New development must be tracked outside generated upstream trees.
 
-## Development commands for later use
+## Develop and validate
 
-The current task is **restructuring only: do not run tests**. The commands below document the workflow for a later authorized validation task. CI is manual so this restructuring push does not automatically execute it.
+The owner re-enabled testing on 17 November 2026. The reorganized project has been validated locally; see [the validation report](docs/VALIDATION_2026-11-17.md) for exact results and the two browser-policy skips. CI remains manually triggered.
 
 Use Node **24.22.1**, npm, Python **3.12+**, OpenSSL and `zip`. Chromium is required for browser tests. If the default npm cache is unwritable, set `npm_config_cache=/workspace/.npm-cache` for the install.
 

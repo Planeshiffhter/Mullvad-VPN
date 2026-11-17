@@ -27,6 +27,7 @@ GENERATED = {
     "docs/repository/WORKSPACE_SUMMARY.txt",
 }
 PURPOSES = {
+    ".gitleaksignore": "Exact reviewed historical prose finding exclusion; other credential detections remain active",
     ".editorconfig": "Shared source whitespace and editor policy",
     ".gitignore": "Generated artifacts and private-state exclusion policy",
     ".node-version": "Pinned Node runtime for TypeScript stripping and SQLite",

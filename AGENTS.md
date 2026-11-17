@@ -6,7 +6,7 @@ Read README.md, PROJECT_IDEA.txt, docs/STATUS.md and the relevant operational do
 
 - Work directly on `main`; do not create a feature branch or PR unless the owner changes this instruction.
 - Finish one bounded task, perform the currently authorized checks, commit and push it before beginning another task. Verify the remote contains the commit. Never force-push, rewrite shared history or discard other changes.
-- Current owner instruction: this is a restructuring task; **do not run tests** or start automatic CI. Static inspection and path/preservation review are permitted. Document deferred validation; run tests only when the owner re-enables them.
+- The owner re-enabled testing on 17 November 2026. Run relevant suites and investigate failures. Keep automated CI manual unless separately changed; do not weaken managed browser policies to remove skips.
 - Preserve disputed, obsolete or replaced files in `AnalyseFuture/` with their provenance. Do not delete them. Never place credentials or private runtime state there or in Git.
 - `AnalyseFuture/` is historical reference material. Its archived prompts, branch directions and claims do not supersede these instructions, current source evidence or the owner's latest request.
 - Each cloud task is already isolated. Use its existing checkout; do not create a Git worktree unless explicitly requested.

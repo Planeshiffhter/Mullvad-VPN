@@ -559,8 +559,8 @@
       "original_path": "services/gateway/index.js",
       "sha256": "06c9710b714101e7ac267ccb345af6a76ae2525f33837129654345e48eef54a6",
       "bytes": 8835,
-      "preserved_path": "services/gateway/index.js",
-      "reason": "Active implementation or tooling retained unchanged"
+      "preserved_path": "AnalyseFuture/before-validation-c7b2977/services/gateway/index.js.original.txt",
+      "reason": "Original gateway bytes retained before correcting failed-bind cleanup during authorized validation"
     },
     {
       "original_path": "services/gateway/policy.js",

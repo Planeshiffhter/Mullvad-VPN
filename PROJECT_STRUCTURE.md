@@ -17,6 +17,7 @@ Mullvad-VPN/
 ├── tsconfig.json                 Shared browser/control-API TypeScript policy
 ├── .node-version / .npmrc         Pinned Node and npm installation policy
 ├── .gitignore / .editorconfig     Generated/private exclusions and editor rules
+├── .gitleaksignore                Exact reviewed historical prose finding only
 ├── .github/
 │   ├── ISSUE_TEMPLATE/           Bug and feature intake
 │   └── workflows/verify.yml      Manual verification workflow; no auto test run
@@ -58,6 +59,7 @@ Mullvad-VPN/
 │   ├── LICENSE_AND_DEPENDENCY_AUDIT.md
 │   ├── STATUS.md                  Current evidence, deferred checks and next work
 │   ├── TESTING.md                 Commands for later authorized validation
+│   ├── VALIDATION_2026-11-17.md    Executed post-restructuring checks and limits
 │   ├── REPOSITORY_RECOVERY.txt    Scope, preservation evidence and recovery limits
 │   └── repository/                Detailed authored/upstream/workspace catalogs
 └── AnalyseFuture/
@@ -67,7 +69,8 @@ Mullvad-VPN/
     ├── previous-docs/            Complete prior documentation/research tree
     ├── previous-github/          Previous PR template and Word-archive workflow
     ├── previous-tooling/         Original changed extractor/workflow contents
-    └── previous-code/            Exact originals before path/command changes
+    ├── previous-code/            Exact originals before path/command changes
+    └── before-validation-c7b2977/ Originals before authorized validation fixes
 ```
 
 ## Every authored component has a defined role
@@ -148,4 +151,4 @@ Historical documents are classified by what they do: previous product direction,
 
 ## Validation boundary
 
-The owner requested **no tests for this restructuring**. Only static file/content/dependency/path and preservation review is authorized for the final layout. Tests that finished earlier in this session predate the latest structural moves and do not validate this final tree. CI is manual-only; no automatic test run is requested by this push. Runtime, browser and packaging validation are deferred until the owner authorizes them.
+The restructuring commit was delivered without final execution tests, as requested at that time. The owner subsequently re-enabled testing on 17 November 2026. See [the validation report](docs/VALIDATION_2026-11-17.md): the reorganized project and startup fix have local execution evidence, with two real-extension tests explicitly skipped under managed browser policy. Native vendor builds, live US routing and owner-device acceptance remain unverified. CI remains manually triggered.

@@ -153,7 +153,12 @@ export function createGateway({
       clearInterval(sweepTimer);
       for (const state of grants.values()) terminate(state);
       for (const socket of rawSockets) socket.destroy();
-      await proxy.close(true);
+      try { await proxy.close(true); }
+      catch (error) {
+        // A failed bind never started the listener. Cleanup must preserve the
+        // original startup error and let the caller release its other resources.
+        if (error.code !== 'ERR_SERVER_NOT_RUNNING') throw error;
+      }
     },
     revoke(id) {
       if (typeof id !== 'string' || id.length > 128) return;

@@ -1,6 +1,6 @@
-# Deferred validation commands
+# Project validation commands
 
-The owner currently requests restructuring without running tests. These commands are documentation for a later authorized task; they were not executed against the final structure.
+The owner re-enabled testing on 17 November 2026. These commands exercise the reorganized project; actual outcomes and limitations are recorded in [the validation report](VALIDATION_2026-11-17.md).
 
 From the repository root, use Node 24.22.1, npm, OpenSSL, zip and Chromium. Python 3.12+ is used for source tooling. Preserve TLS, package integrity and artifact checksums.
 
@@ -17,4 +17,4 @@ python3 tools/extract_upstreams.py --verify-only
 
 Managed Chromium can block real unpacked-extension tests. Report those as skipped. The popup test with an injected extension runtime is simulated at that boundary; it does not establish actual browser proxy behavior. A fixture exit is not a live location or native VPN tunnel.
 
-After testing is authorized, record the exact commit and actual results in [STATUS.md](STATUS.md). A manual workflow is available in `.github/workflows/verify.yml`; do not start it under the current no-tests instruction. No release, deployment or security certification follows from a passing suite alone.
+Record the tested code and actual results in [STATUS.md](STATUS.md). A manual workflow is available in `.github/workflows/verify.yml`; local results do not establish that GitHub Actions has run. No release, deployment or security certification follows from a passing suite alone.
