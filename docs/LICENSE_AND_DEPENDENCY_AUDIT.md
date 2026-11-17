@@ -25,4 +25,4 @@ Mullvad and Amnezia native archives retain their original licenses and notices s
 
 After a dependency change, use `npm ci --ignore-scripts`, inspect installed metadata/license/NOTICE files and all lockfile additions, run the relevant tests and registry advisory check, and record the results in [STATUS.md](STATUS.md). An `npm audit` or secret scan result is a bounded signal, not a comprehensive security audit. Historic advisory results are not current clearance.
 
-The [full earlier package inventory](../AnalyseFuture/previous-docs/DEPENDENCY_LICENSE_MATRIX.md) and [earlier candidate review](../AnalyseFuture/previous-docs/LICENSE_AND_DEPENDENCY_AUDIT.md) remain available for provenance; version recommendations and status claims there are dated.
+The [full earlier package inventory](../AnalyseFuture/licensing/previous-docs/DEPENDENCY_LICENSE_MATRIX.md) and [earlier candidate review](../AnalyseFuture/licensing/previous-docs/LICENSE_AND_DEPENDENCY_AUDIT.md) remain available for provenance; version recommendations and status claims there are dated.

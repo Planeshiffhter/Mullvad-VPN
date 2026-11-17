@@ -62,15 +62,28 @@ Mullvad-VPN/
 │   ├── VALIDATION_2026-11-17.md    Executed post-restructuring checks and limits
 │   ├── REPOSITORY_RECOVERY.txt    Scope, preservation evidence and recovery limits
 │   └── repository/                Detailed authored/upstream/workspace catalogs
-└── AnalyseFuture/
-    ├── README.txt                Historical-material handling and interpretation
-    ├── PRESERVATION_MANIFEST.json Every baseline tracked file and preserved copy
-    ├── previous-root/            Original root documents, catalogs and goal input
-    ├── previous-docs/            Complete prior documentation/research tree
-    ├── previous-github/          Previous PR template and Word-archive workflow
-    ├── previous-tooling/         Original changed extractor/workflow contents
-    ├── previous-code/            Exact originals before path/command changes
-    └── before-validation-c7b2977/ Originals before authorized validation fixes
+└── AnalyseFuture/                 Feature-organized historical archive
+    ├── FEATURE_INDEX.md           Every file/folder, role and active-test mapping
+    ├── ARCHIVE_FEATURE_MAP.json   Complete 81-file relocation/source evidence
+    ├── PRESERVATION_MANIFEST.json Updated 99-record baseline pointers
+    ├── README.txt                 Current interpretation/verification entry
+    ├── browser-extension/                           Chrome MV3 client guidance and controller/worker/browser integration snapshots. Active code is in apps/extension
+    ├── control-api/                           Founder HTTPS identity, SQLite/grants, retention and API regression snapshots.
+    ├── governance/                           Historical owner/contributor instructions
+    ├── infrastructure/                           Provider/cost/deployment prerequisites
+    ├── licensing/                           Third-party/license/supply-chain research
+    ├── native-research/                           Upstream/native reuse, dependency and proposed server-directory research
+    ├── operations-ui/                           Founder dashboard browser interaction test history.
+    ├── packaging/                           Private deterministic extension package tool and test originals.
+    ├── product-planning/                           Vision, requirements, competitor comparisons and proposed milestones
+    ├── proxy-gateway/                           Authenticated TLS forward proxy and gateway lifecycle history
+    ├── recovery/                           Authenticated encrypted database backup/restore originals and tests.
+    ├── repository-history/                           Provenance, previous layouts, continuity/Word archive and original preservation metadata.
+    ├── runtime/                           Loopback initialization/fixture/configured lifecycle tools and regression history.
+    ├── security-privacy/                           Threat/privacy/reporting guidance and founder revocation-test history.
+    ├── shared-integration/                           Cross-component API/proxy/recovery tests and architecture context.
+    ├── source-tooling/                           Source extraction/inventory tooling originals
+    ├── testing-release/                           Historical validation reports/workflows/command interface. Current manual CI/tests are separate active files.
 ```
 
 ## Every authored component has a defined role
@@ -152,3 +165,7 @@ Historical documents are classified by what they do: previous product direction,
 ## Validation boundary
 
 The restructuring commit was delivered without final execution tests, as requested at that time. The owner subsequently re-enabled testing on 17 November 2026. See [the validation report](docs/VALIDATION_2026-11-17.md): the reorganized project and startup fix have local execution evidence, with two real-extension tests explicitly skipped under managed browser policy. Native vendor builds, live US routing and owner-device acceptance remain unverified. CI remains manually triggered.
+
+## Feature archive relocation
+
+The linked rejoansardar23 fork at `86792c2` contained 81 historical files. They are now grouped into 17 feature collections; original snapshot paths remain below each collection and in the relocation ledger. All payload bytes are retained, including the prior README and manifest. See [the complete index](AnalyseFuture/FEATURE_INDEX.md) and [implemented-feature/test analysis](docs/ARCHIVE_FEATURE_AUDIT.md). No historical application copy replaces the maintained active implementation.

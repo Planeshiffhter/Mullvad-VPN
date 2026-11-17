@@ -22,4 +22,4 @@ The exact control API origin bypasses the proxy so account and revocation action
 
 Native clients require a separate tracked implementation, chosen license model, platform tunnel APIs, authorized gateway, DNS/routing/firewall handling, signing and update authority, and platform-specific failure tests. Upstream vendor accounts, backends, relays, trademarks and release keys do not become ours through source possession. Extracted `build/upstream/` trees are ignored study/build outputs; keep original development in tracked components.
 
-Earlier design decisions and research remain in [the preserved architecture](../AnalyseFuture/previous-docs/ARCHITECTURE.md) and [build-versus-reuse review](../AnalyseFuture/previous-docs/BUILD_VS_REUSE.md). Their dated branch directions and release claims are historical.
+Earlier design decisions and research remain in [the preserved architecture](../AnalyseFuture/shared-integration/previous-docs/ARCHITECTURE.md) and [build-versus-reuse review](../AnalyseFuture/native-research/previous-docs/BUILD_VS_REUSE.md). Their dated branch directions and release claims are historical.

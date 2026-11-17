@@ -10,4 +10,4 @@ Before integrating native source or distributing builds, record the exact source
 
 Use original branding and owner-controlled signing/update infrastructure. Do not remove upstream notices, relabel proprietary assets or assume a provider API is available for our service. Keep new development tracked outside ignored extraction outputs.
 
-The [earlier licensing guidance](../AnalyseFuture/previous-docs/LICENSING.md) and [dependency inventory](../AnalyseFuture/previous-docs/DEPENDENCY_LICENSE_MATRIX.md) are preserved as historical references; neither selects a project license nor grants new rights.
+The [earlier licensing guidance](../AnalyseFuture/licensing/previous-docs/LICENSING.md) and [dependency inventory](../AnalyseFuture/licensing/previous-docs/DEPENDENCY_LICENSE_MATRIX.md) are preserved as historical references; neither selects a project license nor grants new rights.

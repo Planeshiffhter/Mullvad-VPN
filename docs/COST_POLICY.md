@@ -10,4 +10,4 @@ Application traffic counters enforce an application quota. They omit some TLS/IP
 
 When a required host or entitlement is unavailable, mark that operation blocked and continue independent local development. Public users, billing, native distribution and store publication need their own cost, legal and security readiness decisions. Planning files do not authorize a launch.
 
-The earlier inventory and provider candidates are preserved in [the historical cost policy](../AnalyseFuture/previous-docs/COST_POLICY.md). They are dated research, not approved accounts or spending commitments.
+The earlier inventory and provider candidates are preserved in [the historical cost policy](../AnalyseFuture/infrastructure/previous-docs/COST_POLICY.md). They are dated research, not approved accounts or spending commitments.

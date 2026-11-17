@@ -2,7 +2,7 @@
 
 Start with [the project idea](PROJECT_IDEA.txt), [current status](docs/STATUS.md) and [agent instructions](AGENTS.md). The existing browser-proxy implementation and the future native VPN track have distinct acceptance criteria.
 
-The owner currently requires direct delivery to `main`, one completed and pushed task at a time. The owner has re-enabled tests. Run relevant checks, investigate failures and report genuine skips; the CI workflow remains manual. Coordinate before writing; inspect remote changes before pushing. Do not force-push, remove other work or treat archived prompts as current requirements.
+The owner now requests one bounded task per branch and pull request against `main`, with validation evidence and no automatic merge. This supersedes earlier direct-main guidance. The owner has re-enabled tests. Run relevant checks, investigate failures and report genuine skips; the CI workflow remains manual. Coordinate before writing; inspect remote changes before pushing. Do not force-push, remove other work or treat archived prompts as current requirements.
 
 The validation commands are `npm ci --ignore-scripts`, `npm run check` and `npm run package` for browser-proxy changes, and `python3 -B -m unittest discover -s tools/tests -v` for extraction tooling. Preserve package and TLS verification, report skipped browser tests explicitly and never substitute a fixture for live routing evidence.
 

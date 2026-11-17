@@ -31,7 +31,7 @@ Functional changes
 - Keep CI manual so the push does not automatically execute tests.
 
 Preservation ledger
-AnalyseFuture/PRESERVATION_MANIFEST.json lists all 99 baseline tracked files,
+AnalyseFuture/repository-history/PRESERVATION_MANIFEST.json lists all 99 baseline tracked files,
 SHA-256 values, byte sizes, retained destinations and relocation reasons.
 Originals of changed code are preserved as inert .original.txt files. Unchanged
 source assets are mapped to their active destinations. Both ZIPs and the Word
@@ -60,3 +60,11 @@ Keep each bounded task in a committed and pushed state before the next. Do not
 force-push, reset shared work, bypass verification or publish private state.
 When tests are authorized, validate the final reorganized commit using the
 documented commands before calling the environment or application ready.
+
+FEATURE-ARCHIVE ORGANIZATION, 17 November 2026
+The owner requested all81 files in rejoansardar23/Mullvad-VPN AnalyseFuture
+(main86792c2) grouped by feature. ARCHIVE_FEATURE_MAP.json retains each old/new
+path, exact bytes/hash/type/mode, snapshot and applicable active tests. The old
+manifest and README are themselves preserved; canonical preserved_path pointers
+are updated without changing baseline identities. Current analysis/evidence is
+in docs/ARCHIVE_FEATURE_AUDIT.md and AnalyseFuture/FEATURE_INDEX.md.

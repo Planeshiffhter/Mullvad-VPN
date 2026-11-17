@@ -27,6 +27,11 @@ GENERATED = {
     "docs/repository/WORKSPACE_SUMMARY.txt",
 }
 PURPOSES = {
+    "AnalyseFuture/ARCHIVE_FEATURE_MAP.json": "Every original archive file relocation, source identity, feature and active-test relationship",
+    "AnalyseFuture/FEATURE_INDEX.md": "Complete feature-organized historical file and folder index",
+    "docs/ARCHIVE_FEATURE_AUDIT.md": "Archive analysis, implemented feature list and actual integration results",
+    "tools/verify_feature_archive.py": "Nonexecuting full archive and source-Git preservation verifier",
+    "tools/tests/test_feature_archive.py": "Real archive integration and filesystem failure regressions",
     ".gitleaksignore": "Exact reviewed historical prose finding exclusion; other credential detections remain active",
     ".editorconfig": "Shared source whitespace and editor policy",
     ".gitignore": "Generated artifacts and private-state exclusion policy",
@@ -72,7 +77,8 @@ PURPOSES = {
     "tools/.gitignore": "Python bytecode exclusion for repository tooling",
     "tools/tests/test_extract_upstreams.py": "Preserved real-filesystem archive safety regression suite",
     ".github/workflows/verify.yml": "Manual security/build/test verification; no automatic run in this task",
-    "AnalyseFuture/PRESERVATION_MANIFEST.json": "Every baseline file's exact preserved destination and content identity",
+    "AnalyseFuture/PRESERVATION_MANIFEST.json": "Current 99-record baseline preservation ledger with relocated pointers",
+    "AnalyseFuture/repository-history/PRESERVATION_MANIFEST.json": "Exact original baseline preservation ledger before feature organization",
 }
 TEST_PURPOSES = {
     "control-api.test.js": "Founder account/session/grant HTTPS API behavior",

@@ -4,8 +4,8 @@ All filesystem paths are visited except protected .git internals; symlinks are n
 Private .local entries are counted and redacted; their contents, hashes and values are not read.
 Generated and installed files remain in required layouts; source identity is observed where archive records exist.
 Counts describe this workspace snapshot, not required future generated state or test readiness.
-Authored/preserved project file records: 160
-Filesystem inventory rows (including dirs and protected Git marker): 25426
+Authored/preserved project file records: 181
+Filesystem inventory rows (including dirs and protected Git marker): 13491
 Traversal errors: 0
 
 .github: directory=3
@@ -16,32 +16,53 @@ apps/extension: file=8
 apps/operations: directory=1
 apps/operations: file=3
 docs: directory=2
-docs: file=16
+docs: file=17
 generated-extension-artifact: directory=2
 generated-extension-artifact: file=8
-generated-native-sources: directory=7060
-generated-native-sources: file=16970
-generated-native-sources: symlink=8
+generated-native-sources: directory=3530
+generated-native-sources: file=8485
+generated-native-sources: symlink=4
 infrastructure: directory=1
 infrastructure: file=5
 installed-dependency: directory=116
 installed-dependency: file=1027
 installed-dependency: symlink=3
-preserved-history/before-validation-c7b2977: directory=9
-preserved-history/before-validation-c7b2977: file=11
+preserved-history/browser-extension: directory=5
+preserved-history/browser-extension: file=4
+preserved-history/control-api: directory=5
+preserved-history/control-api: file=3
+preserved-history/governance: directory=5
+preserved-history/governance: file=7
 preserved-history/index: directory=1
-preserved-history/index: file=3
-preserved-history/previous-code: directory=7
-preserved-history/previous-code: file=20
-preserved-history/previous-docs: directory=3
-preserved-history/previous-docs: file=34
-preserved-history/previous-empty-directories: directory=6
-preserved-history/previous-github: directory=2
-preserved-history/previous-github: file=2
-preserved-history/previous-root: directory=1
-preserved-history/previous-root: file=9
-preserved-history/previous-tooling: directory=4
-preserved-history/previous-tooling: file=2
+preserved-history/index: file=4
+preserved-history/infrastructure: directory=4
+preserved-history/infrastructure: file=3
+preserved-history/licensing: directory=5
+preserved-history/licensing: file=6
+preserved-history/native-research: directory=4
+preserved-history/native-research: file=7
+preserved-history/operations-ui: directory=3
+preserved-history/operations-ui: file=1
+preserved-history/packaging: directory=4
+preserved-history/packaging: file=2
+preserved-history/product-planning: directory=5
+preserved-history/product-planning: file=11
+preserved-history/proxy-gateway: directory=6
+preserved-history/proxy-gateway: file=2
+preserved-history/recovery: directory=4
+preserved-history/recovery: file=2
+preserved-history/repository-history: directory=9
+preserved-history/repository-history: file=21
+preserved-history/runtime: directory=8
+preserved-history/runtime: file=6
+preserved-history/security-privacy: directory=7
+preserved-history/security-privacy: file=5
+preserved-history/shared-integration: directory=6
+preserved-history/shared-integration: file=3
+preserved-history/source-tooling: directory=7
+preserved-history/source-tooling: file=3
+preserved-history/testing-release: directory=12
+preserved-history/testing-release: file=9
 private-development-state: directory=1
 private-development-state: file=5
 project-root: file=14
@@ -73,7 +94,7 @@ tests/operations: directory=1
 tests/operations: file=4
 tests/runtime: directory=1
 tests/runtime: file=2
-tools: directory=4
+tools: directory=2
 tools: file=6
 upstream: directory=2
 upstream: file=3

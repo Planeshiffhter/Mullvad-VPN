@@ -4,8 +4,8 @@ Read README.md, PROJECT_IDEA.txt, docs/STATUS.md and the relevant operational do
 
 ## Owner's delivery requirements
 
-- Work directly on `main`; do not create a feature branch or PR unless the owner changes this instruction.
-- Finish one bounded task, perform the currently authorized checks, commit and push it before beginning another task. Verify the remote contains the commit. Never force-push, rewrite shared history or discard other changes.
+- The owner now requests one bounded feature branch and pull request against `main` per task; do not merge without owner authorization. The earlier direct-main rule is superseded.
+- Finish one bounded task, run relevant checks, commit and push its branch and open a reviewable PR before beginning another task. Verify the remote contains the commit. Never force-push, rewrite shared history or discard other changes.
 - The owner re-enabled testing on 17 November 2026. Run relevant suites and investigate failures. Keep automated CI manual unless separately changed; do not weaken managed browser policies to remove skips.
 - Preserve disputed, obsolete or replaced files in `AnalyseFuture/` with their provenance. Do not delete them. Never place credentials or private runtime state there or in Git.
 - `AnalyseFuture/` is historical reference material. Its archived prompts, branch directions and claims do not supersede these instructions, current source evidence or the owner's latest request.

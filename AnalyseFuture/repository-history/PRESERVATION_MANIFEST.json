@@ -1,0 +1,699 @@
+{
+  "baseline_commit": "4655d408bab907b48e176d7641c6bed55204d7dc",
+  "purpose": "Every pre-restructure tracked file has an exact byte-preserved destination. Historical does not mean malicious.",
+  "files": [
+    {
+      "original_path": ".editorconfig",
+      "sha256": "a6b98ea7cb6d61ed8d430dd0dffa46c87012b5cf859d4ce7207898954951fdcd",
+      "bytes": 188,
+      "preserved_path": ".editorconfig",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "sha256": "92d1c31ad091e088bacb62e4ecd589fab22822f1b04bdc99cfe553d0215bc442",
+      "bytes": 364,
+      "preserved_path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "sha256": "599a41a60dec4f56e048653a425571c3184b88ec875ee899ae5cfa035e84c2d0",
+      "bytes": 408,
+      "preserved_path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": ".github/pull_request_template.md",
+      "sha256": "928ba7b58a6f6a7e8a96acb0118e44bd53643b9d0cba7f6f0afad4e9e5a720cb",
+      "bytes": 659,
+      "preserved_path": "AnalyseFuture/previous-github/pull_request_template.md",
+      "reason": "Historical PR/document workflow retained outside active GitHub configuration"
+    },
+    {
+      "original_path": ".github/workflows/verify-knowledge-archive.yml",
+      "sha256": "865f53a8800de7745ec8af797a927d48f1f94139609dff8722ef8966d95e4e02",
+      "bytes": 3496,
+      "preserved_path": "AnalyseFuture/previous-github/workflows/verify-knowledge-archive.yml",
+      "reason": "Historical PR/document workflow retained outside active GitHub configuration"
+    },
+    {
+      "original_path": ".github/workflows/verify.yml",
+      "sha256": "18c8ffa0d229993d330a67e96725652cd8fae6dcba619bf049318cecafc54927",
+      "bytes": 2742,
+      "preserved_path": "AnalyseFuture/previous-tooling/.github/workflows/verify.yml.original.txt",
+      "reason": "Original tooling preserved before adapting paths or direct-main verification"
+    },
+    {
+      "original_path": ".gitignore",
+      "sha256": "aa07d00d43a6d221ba8cf246615d77ee1f191e0bf85879de28a81802924a185b",
+      "bytes": 271,
+      "preserved_path": ".gitignore",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33",
+      "bytes": 8,
+      "preserved_path": ".node-version",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": ".npmrc",
+      "sha256": "e6d444028a86af5427602e1c3840892cec130019679f6210da8c29e83d9e4751",
+      "bytes": 27,
+      "preserved_path": ".npmrc",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "AGENTS.md",
+      "sha256": "86bfac2110c59d28fcc8efa90f70ae661dc4bb8e8c79a61cf83b8e33f7647c18",
+      "bytes": 3109,
+      "preserved_path": "AnalyseFuture/previous-root/AGENTS.original.txt",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "ALL_SUGGESTED_VPN_REPOSITORIES.txt",
+      "sha256": "e155b734355e0c3c0cdea3935b0e48839951912530f0451a7e0796cc45081514",
+      "bytes": 5982,
+      "preserved_path": "AnalyseFuture/previous-root/ALL_SUGGESTED_VPN_REPOSITORIES.txt",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "CHANGELOG.md",
+      "sha256": "1ae791e74e33707ec95ca627b0dc2de6c1c9d80bb352a4aafaff127a1c4e68e1",
+      "bytes": 2623,
+      "preserved_path": "AnalyseFuture/previous-root/CHANGELOG.md",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "CONTRIBUTING.md",
+      "sha256": "d364477ba1a86fe9c4718c7e69f4700db163d176febc079d3505ef4515166162",
+      "bytes": 2350,
+      "preserved_path": "AnalyseFuture/previous-root/CONTRIBUTING.md",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "PROJECT_GOAL_2026-11-17.txt",
+      "sha256": "213157526b937b73dabbb6ca9b40e03ca238eb76375963e1e0a896b6ecc80525",
+      "bytes": 5016,
+      "preserved_path": "AnalyseFuture/previous-root/PROJECT_GOAL_2026-11-17.txt",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "README.md",
+      "sha256": "72036f79a0571a4bf282077b1eefeaad8a18080912120a86862d7f3d0a16f6d2",
+      "bytes": 11179,
+      "preserved_path": "AnalyseFuture/previous-root/README.md",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "SECURITY.md",
+      "sha256": "9764278606dddbc79e9a74b6e6d0364d1afa736a90696b7846d580b924df1be9",
+      "bytes": 1160,
+      "preserved_path": "AnalyseFuture/previous-root/SECURITY.md",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "SELECTED_VPN_REPOSITORIES.txt",
+      "sha256": "05fdd436956713c9e119be87b257a946b7953049648de32ee7049c85c35819b0",
+      "bytes": 2083,
+      "preserved_path": "AnalyseFuture/previous-root/SELECTED_VPN_REPOSITORIES.txt",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "TASKS.md",
+      "sha256": "bdf7c5083e2bc82933b08d5b6b123531b12cf401dc2cada1bfeb7dc6e9b0f0f3",
+      "bytes": 7156,
+      "preserved_path": "AnalyseFuture/previous-root/TASKS.md",
+      "reason": "Replaced or superseded root guidance/input, preserved verbatim for owner review"
+    },
+    {
+      "original_path": "amnezia-client-dev.zip",
+      "sha256": "f32e784d47c196158728eee8df7aeef01093df6368ebc72a142d0829a9cebcd0",
+      "bytes": 12853907,
+      "preserved_path": "upstream/archives/amnezia-client-dev.zip",
+      "reason": "Original archive reorganized without byte changes; no upstream source integrated"
+    },
+    {
+      "original_path": "apps/extension/README.md",
+      "sha256": "7b96902fe7babca915cb331dfd651071e6f635e51c867e1e9fbafd7c20d65ab4",
+      "bytes": 4208,
+      "preserved_path": "AnalyseFuture/previous-code/apps/extension/README.md.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "apps/extension/build.js",
+      "sha256": "383c5d3169a9eb716049d53130a8d24ac11fb64733157df682bfce20eb62e2ba",
+      "bytes": 1340,
+      "preserved_path": "apps/extension/build.js",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "apps/extension/core.ts",
+      "sha256": "b0f3b4170768e8c805c4d9385ea4181f82c5421aa72f4abf01060284cf8d52e4",
+      "bytes": 15205,
+      "preserved_path": "apps/extension/core.ts",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "apps/extension/manifest.json",
+      "sha256": "c775ade38fd0bd122ebb8f4d0de832a9191bec1999e666b3c22e5acfc26bda9e",
+      "bytes": 704,
+      "preserved_path": "apps/extension/manifest.json",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "apps/extension/popup.css",
+      "sha256": "c5da2f73489ffdf88a0f79bf3da442cf41d40e563eb8fb7f34f6077436c2d98a",
+      "bytes": 2322,
+      "preserved_path": "apps/extension/popup.css",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "apps/extension/popup.html",
+      "sha256": "4787039b460bb39f06ebfbbe56ce900f1d6808adf0ca11d716ecf08c52a9616b",
+      "bytes": 1964,
+      "preserved_path": "apps/extension/popup.html",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "apps/extension/popup.ts",
+      "sha256": "5db03005d7473fa74391c0ec4cb64657f9d5eca0f91daf1251c7581a1ef21d77",
+      "bytes": 3520,
+      "preserved_path": "apps/extension/popup.ts",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "apps/extension/worker.ts",
+      "sha256": "d1240d74a034cab5fe5bba67e980b9d82a08e938675f7525a3f461891dd973fc",
+      "bytes": 2670,
+      "preserved_path": "apps/extension/worker.ts",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "apps/website/app.js",
+      "sha256": "a73970b2c1e18fac4206ca748f74a83247437376f3c16926fc80a5023519f15f",
+      "bytes": 7132,
+      "preserved_path": "apps/operations/app.js",
+      "reason": "Unchanged asset relocated to its functional component"
+    },
+    {
+      "original_path": "apps/website/index.html",
+      "sha256": "24449098eefd8f0b93bfc8bf7bf85f1aa37762a2d1b047da54ba0683d08e3281",
+      "bytes": 5811,
+      "preserved_path": "apps/operations/index.html",
+      "reason": "Unchanged asset relocated to its functional component"
+    },
+    {
+      "original_path": "apps/website/style.css",
+      "sha256": "8b6344f130c859510b7eeca89d94e483d3c5bb8ebcd660c5497381f882c7da53",
+      "bytes": 5342,
+      "preserved_path": "apps/operations/style.css",
+      "reason": "Unchanged asset relocated to its functional component"
+    },
+    {
+      "original_path": "docs/ARCHITECTURE.md",
+      "sha256": "cbaaa439a501a0fc130e027cf60e11c809c5068c81e524edcbba65d3e25807b2",
+      "bytes": 11573,
+      "preserved_path": "AnalyseFuture/previous-docs/ARCHITECTURE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/BUILD_VS_REUSE.md",
+      "sha256": "d45245274b8e904b93fc58ef1f3efeb7ffec3a4ac9e5dad444ba2c0e5132ba7c",
+      "bytes": 11463,
+      "preserved_path": "AnalyseFuture/previous-docs/BUILD_VS_REUSE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/COMPETITOR_FEATURE_MATRIX.md",
+      "sha256": "868ff5a2cf7a5ca4e250756f211a342bbcb5985043f60cbf88bef64af113cff2",
+      "bytes": 4877,
+      "preserved_path": "AnalyseFuture/previous-docs/COMPETITOR_FEATURE_MATRIX.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/COMPETITOR_MATRIX.md",
+      "sha256": "f52a590befc6698e5a64a78c4a9ad2469c072ddf33606a41f8e80f3219dd69f3",
+      "bytes": 1967,
+      "preserved_path": "AnalyseFuture/previous-docs/COMPETITOR_MATRIX.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/COST_POLICY.md",
+      "sha256": "6e7fa1b327e69477d6ce81aa6ee176b310f4cb5038f54e00bb33970f30d71434",
+      "bytes": 3375,
+      "preserved_path": "AnalyseFuture/previous-docs/COST_POLICY.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/DECISIONS.md",
+      "sha256": "6b1ad7d9e73be70e6fe9eaf949059ec4226ebda6a752abb0cbb5b161d0db8753",
+      "bytes": 6113,
+      "preserved_path": "AnalyseFuture/previous-docs/DECISIONS.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/DEPENDENCY_LICENSE_MATRIX.md",
+      "sha256": "3dd5d656a2c4063f78c317791bfa176f90e183503eecc69794893d5a0e7228c9",
+      "bytes": 12058,
+      "preserved_path": "AnalyseFuture/previous-docs/DEPENDENCY_LICENSE_MATRIX.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/DEPLOYMENT.md",
+      "sha256": "bf5c39abf7b6acbef57c2db6cc3d359b034a183c43f280da3b48cdc3ee27c1d4",
+      "bytes": 3343,
+      "preserved_path": "AnalyseFuture/previous-docs/DEPLOYMENT.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/HANDOFF.md",
+      "sha256": "422af7ff42276ca913f7eea405fbe00d9ee83feeb1631dd06ccfa8cc6f1efdfc",
+      "bytes": 11863,
+      "preserved_path": "AnalyseFuture/previous-docs/HANDOFF.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/IMPLEMENTATION_ROADMAP.md",
+      "sha256": "9584c0a0516a336a773398736cba7f9c27a50428789c03c15cc7a96998f05446",
+      "bytes": 6936,
+      "preserved_path": "AnalyseFuture/previous-docs/IMPLEMENTATION_ROADMAP.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/LICENSE_AND_DEPENDENCY_AUDIT.md",
+      "sha256": "ba3638cc5d262908f16e2896fe73414dd8782e7c048776b37407759244cbf80b",
+      "bytes": 6879,
+      "preserved_path": "AnalyseFuture/previous-docs/LICENSE_AND_DEPENDENCY_AUDIT.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/LICENSING.md",
+      "sha256": "35fed35700181a875125ffbdd28413a6b7d3be64cf3b00c36f8b02b48ed0901d",
+      "bytes": 1392,
+      "preserved_path": "AnalyseFuture/previous-docs/LICENSING.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/LOCAL_DEVELOPMENT.md",
+      "sha256": "e81d44f28b1130471aa357327b7c1233033ad424490e7fec3bef8db5b3d65b55",
+      "bytes": 5884,
+      "preserved_path": "AnalyseFuture/previous-docs/LOCAL_DEVELOPMENT.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/PROJECT_MEMORY.md",
+      "sha256": "d4e7a5e60115a4c64ed8201e81bc79f61b6b3daf5a2bfec3e0d75beefae4c85b",
+      "bytes": 4719,
+      "preserved_path": "AnalyseFuture/previous-docs/PROJECT_MEMORY.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/PROJECT_STATUS.md",
+      "sha256": "76e0dee09785abeaa1ba62d059652d4c2c3e17d25c7218aee13067ceb4d869b7",
+      "bytes": 7636,
+      "preserved_path": "AnalyseFuture/previous-docs/PROJECT_STATUS.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/REPOSITORY_AUDIT.md",
+      "sha256": "e4ba7273708be04c859eb11532a17f7cbe11dabcff923fa026d2f1eb18ffe6ba",
+      "bytes": 8601,
+      "preserved_path": "AnalyseFuture/previous-docs/REPOSITORY_AUDIT.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/REPO_AUDIT.md",
+      "sha256": "99a97ad4c1d40a0ec20888dd727afe02723999371c420026227912abd2bf7fff",
+      "bytes": 12249,
+      "preserved_path": "AnalyseFuture/previous-docs/REPO_AUDIT.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/REQUIREMENTS.md",
+      "sha256": "804fbea18a05f34ae5679ca2585d25e48d93704a8664aaef996fdfddf4ef36fd",
+      "bytes": 3082,
+      "preserved_path": "AnalyseFuture/previous-docs/REQUIREMENTS.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/ROADMAP.md",
+      "sha256": "995867d68f6d6040318ef5357483f569e2e2c5b055ef714104207408370a25c8",
+      "bytes": 2571,
+      "preserved_path": "AnalyseFuture/previous-docs/ROADMAP.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/SECURITY_AND_PRIVACY.md",
+      "sha256": "95d8eb30f72132ba626241d3580966ee5852ae45269d6e7832b13ed629f065c7",
+      "bytes": 4424,
+      "preserved_path": "AnalyseFuture/previous-docs/SECURITY_AND_PRIVACY.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/SECURITY_THREAT_MODEL.md",
+      "sha256": "62926345eff4634143bd65f80d7eabb5a5c945808e1718623154f81e36e1d6b0",
+      "bytes": 7584,
+      "preserved_path": "AnalyseFuture/previous-docs/SECURITY_THREAT_MODEL.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/START_HERE.md",
+      "sha256": "82d0121413e03a1d9be2ca4e3521858b1dd9b2178b8e4f41136ec06446a4ed12",
+      "bytes": 3329,
+      "preserved_path": "AnalyseFuture/previous-docs/START_HERE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/TEST_STRATEGY.md",
+      "sha256": "91fd834c9038830d61dc2ea8d4c93a7e977aaeb8a65d3e2182ea8a56cbac230e",
+      "bytes": 2086,
+      "preserved_path": "AnalyseFuture/previous-docs/TEST_STRATEGY.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/VALIDATION.md",
+      "sha256": "079f0b7bb759af77fc3a2e278ef5a53ce2998612379f23a8cf6d4873f158dbe0",
+      "bytes": 13984,
+      "preserved_path": "AnalyseFuture/previous-docs/VALIDATION.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/VISION_AND_SCOPE.md",
+      "sha256": "92ad26bb8dd50647611cc3f0e80a2f539f99fce2ac7cc545686b574cdaf4893b",
+      "bytes": 2775,
+      "preserved_path": "AnalyseFuture/previous-docs/VISION_AND_SCOPE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/CONTINUATION_HANDOFF.md",
+      "sha256": "f718646e34513994d1cb7a54b8e9c42ca4efa2d44de38eaff5b2bd767307b0f1",
+      "bytes": 8928,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/CONTINUATION_HANDOFF.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/COUNTRY_AND_SERVER_ARCHITECTURE.md",
+      "sha256": "2c37578702bccc0e22843c9c1a5d4763dbb99278a8966ae236ecb1dac57da840",
+      "bytes": 11816,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/COUNTRY_AND_SERVER_ARCHITECTURE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/PROJECT_CHRONICLE.md",
+      "sha256": "da3d328eb5200382c44b68ea170213f5803b99bbb74be009e245a145878d4d5c",
+      "bytes": 8796,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/PROJECT_CHRONICLE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/REPOSITORY_RESEARCH.md",
+      "sha256": "75a499e2e5d0f413f03449990a4a666187982fdc8df013896e38197454d063bc",
+      "bytes": 14825,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/REPOSITORY_RESEARCH.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/SECURITY_LICENSE_AND_INFRASTRUCTURE.md",
+      "sha256": "bc1fa436be9fe2fa0f30032de6a6d84b5dbb5a0f19d5be01281241c2e9883dfd",
+      "bytes": 8156,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/SECURITY_LICENSE_AND_INFRASTRUCTURE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/SOURCE_INDEX.md",
+      "sha256": "bf1cc0405bfbe947cf47335feb8c55f4d054c41c05368f3d372bb5d47d0328cd",
+      "bytes": 7741,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/SOURCE_INDEX.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/START_HERE.md",
+      "sha256": "0018c5f3b94882b759322edfd38e3446187ea21e9c01233a535133e292ac8262",
+      "bytes": 4466,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/START_HERE.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx",
+      "sha256": "dd7b7046e887e517ea31224640ed265b376720e443c175af48dbfd3765c0b2ac",
+      "bytes": 170041,
+      "preserved_path": "AnalyseFuture/previous-docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "docs/source-plans/VPN_Company_Launch_Plan_2026-11-12.md",
+      "sha256": "ea7ff50e46f26b7913dc6128e70664a081c4e52c3b5f1ad7f11d06cada39244e",
+      "bytes": 26357,
+      "preserved_path": "AnalyseFuture/previous-docs/source-plans/VPN_Company_Launch_Plan_2026-11-12.md",
+      "reason": "Original documentation retained as historical material; current guidance is rebuilt separately"
+    },
+    {
+      "original_path": "infrastructure/README.md",
+      "sha256": "2f217f46011c21c4e2f295124040541fea8a3832d0f5e8a2a580eb66ba9bfde8",
+      "bytes": 3352,
+      "preserved_path": "infrastructure/README.md",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "infrastructure/config.example.json",
+      "sha256": "2266e057bc5893ee1fb803dbeee43c7b1b6a9c45a1c616803225a582aabe6d11",
+      "bytes": 808,
+      "preserved_path": "infrastructure/config.example.json",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "infrastructure/firewall.nft.example",
+      "sha256": "8658f4539aaaa95f6b2e6d5ce1e663040858ab8f3915b55d77a6a076e52e1d7c",
+      "bytes": 1246,
+      "preserved_path": "infrastructure/firewall.nft.example",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "infrastructure/private-browser-proxy.service",
+      "sha256": "6e218a5ea6aa8b5d8f20a104aaae1794e64d6289bcadef4f62a205cd66de6752",
+      "bytes": 717,
+      "preserved_path": "infrastructure/private-browser-proxy.service",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "infrastructure/serve.mjs",
+      "sha256": "15392e07b468c109c1d335c947a046cf734bfe516a276d377c77265c1216fd8b",
+      "bytes": 4675,
+      "preserved_path": "infrastructure/serve.mjs",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "mullvadvpn-app-main.zip",
+      "sha256": "95d77642fd18ded01423c9bf125f22159479dfd058dbb801cf286f425d98ba6f",
+      "bytes": 55702024,
+      "preserved_path": "upstream/archives/mullvadvpn-app-main.zip",
+      "reason": "Original archive reorganized without byte changes; no upstream source integrated"
+    },
+    {
+      "original_path": "package-lock.json",
+      "sha256": "e8161d8b51de7935265a1a07727bdef9dedb0aef39d900f1a2bc21867178060f",
+      "bytes": 19449,
+      "preserved_path": "package-lock.json",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "package.json",
+      "sha256": "4441445e0f7efe62ec8dfee2e69e4abadd5c70476b5bd443c96e1f52b194f0d0",
+      "bytes": 880,
+      "preserved_path": "AnalyseFuture/previous-code/package.json.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "scripts/README.md",
+      "sha256": "1112d692f632c6ed6566b903681ff3e152f10860b46e6ffb0b19d299047c7866",
+      "bytes": 5957,
+      "preserved_path": "AnalyseFuture/previous-code/scripts/README.md.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "scripts/dev.mjs",
+      "sha256": "bcab01829af9fa4eae70099202e33f8e6ab0a49d4c2778876e7d82cd6e2285ca",
+      "bytes": 9163,
+      "preserved_path": "AnalyseFuture/previous-code/scripts/dev.mjs.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "scripts/ops.mjs",
+      "sha256": "412ba6cc8314b57eedc5283d8523171736c9503bf7f36e92fe54465ef0d8393b",
+      "bytes": 7208,
+      "preserved_path": "AnalyseFuture/previous-code/scripts/ops.mjs.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "scripts/package.mjs",
+      "sha256": "15e6ce4c0a4603c27c08bf30d970e02dedda79afb43e59b84c2ad139f0cd687b",
+      "bytes": 4416,
+      "preserved_path": "AnalyseFuture/previous-code/scripts/package.mjs.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "services/control-api/cli.ts",
+      "sha256": "e742e304e3b6347dc09b392863ff09cc06dffaf06e87b8ca678c348f1382c6f2",
+      "bytes": 882,
+      "preserved_path": "services/control-api/cli.ts",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "services/control-api/server.ts",
+      "sha256": "d635adf7318a299c0c4a34f3ac415ba62773d5b75d8f37d2df3177283ae1ed2e",
+      "bytes": 7689,
+      "preserved_path": "AnalyseFuture/previous-code/services/control-api/server.ts.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "services/control-api/store.ts",
+      "sha256": "7d098dd2b4fb1f963d7ac78550834dd41c26c656f059a19662363c3bf4bf5335",
+      "bytes": 10543,
+      "preserved_path": "services/control-api/store.ts",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "services/gateway/index.js",
+      "sha256": "06c9710b714101e7ac267ccb345af6a76ae2525f33837129654345e48eef54a6",
+      "bytes": 8835,
+      "preserved_path": "AnalyseFuture/before-validation-c7b2977/services/gateway/index.js.original.txt",
+      "reason": "Original gateway bytes retained before correcting failed-bind cleanup during authorized validation"
+    },
+    {
+      "original_path": "services/gateway/policy.js",
+      "sha256": "26e197f60133aab717bb908d20d0805cad74b8a13b600b100d1b13065eaadc40",
+      "bytes": 2168,
+      "preserved_path": "services/gateway/policy.js",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "tests/chromium-route.test.js",
+      "sha256": "5524b9702810b361cc258091df1f6701ea5d4e47ea4aa802bd8bf621f94dbf1f",
+      "bytes": 12815,
+      "preserved_path": "AnalyseFuture/previous-code/tests/chromium-route.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/control-api.test.js",
+      "sha256": "632fb711f8a9268a8ef7af86aa2f2dc367cf55e9b16d3b3014f60926c51e3cf9",
+      "bytes": 5338,
+      "preserved_path": "AnalyseFuture/previous-code/tests/control-api.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/dev.test.js",
+      "sha256": "1264475d54221292ea3488eed52e12f12f96668618ca40395d7b3f28689789a3",
+      "bytes": 7686,
+      "preserved_path": "AnalyseFuture/previous-code/tests/dev.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/extension-browser.test.js",
+      "sha256": "6b7c710e14d48d396d5f44ee914d5e0875dfb667a65d8d852540825ca66643d7",
+      "bytes": 5513,
+      "preserved_path": "AnalyseFuture/previous-code/tests/extension-browser.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/extension.test.js",
+      "sha256": "22b6a699f557843d6916f16a996db9b004b523abec4bc27ce88fbdf25ef33540",
+      "bytes": 16378,
+      "preserved_path": "AnalyseFuture/previous-code/tests/extension.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/gateway.test.js",
+      "sha256": "8dd8ab37a1064586d74d9720f02f378f125f7c7b14fe1fd77d7a131accb4f869",
+      "bytes": 12249,
+      "preserved_path": "AnalyseFuture/previous-code/tests/gateway.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/helpers/tls.js",
+      "sha256": "30d0c3be07b89f2fbefda7d3f20b80f68c87cf88dcecec77531bc1c11e8e311c",
+      "bytes": 757,
+      "preserved_path": "tests/helpers/tls.js",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "tests/integration.test.js",
+      "sha256": "198bfaa41b2688a0568a05ddafb5f75ac6045390309d15225d2f190f4b4bedd7",
+      "bytes": 5833,
+      "preserved_path": "AnalyseFuture/previous-code/tests/integration.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/ops.test.js",
+      "sha256": "37eb51cc464cd42fa565049a4942f5f7dd2cbf02242a1976da8a4b82d449dd78",
+      "bytes": 5594,
+      "preserved_path": "AnalyseFuture/previous-code/tests/ops.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/package.test.js",
+      "sha256": "7bbc8b4c1b8e9a0699070bd5691a825b2f64f79df9c62678e9094c96278a0442",
+      "bytes": 2579,
+      "preserved_path": "AnalyseFuture/previous-code/tests/package.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/retention.test.js",
+      "sha256": "32689591066aa9d003bf130ee85ec5b9c25b53ddb6551164b1a1a0982d155726",
+      "bytes": 6205,
+      "preserved_path": "AnalyseFuture/previous-code/tests/retention.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/runtime.test.js",
+      "sha256": "652f09b32cf9c2108bcf832d6f4c44614b676d0f640524a951f5d752250e2040",
+      "bytes": 3818,
+      "preserved_path": "AnalyseFuture/previous-code/tests/runtime.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/security.test.js",
+      "sha256": "4b876dd0a749523624695a98661199c2dcf4eb40fc14ba3e4fc0ac8ed3cd4e82",
+      "bytes": 2757,
+      "preserved_path": "AnalyseFuture/previous-code/tests/security.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tests/website.test.js",
+      "sha256": "9f17e1ecb9d864a38a9b5256a43664c90e19cdd4a9deb6ee395652fc42012825",
+      "bytes": 5913,
+      "preserved_path": "AnalyseFuture/previous-code/tests/website.test.js.original.txt",
+      "reason": "Exact original preserved before functional relocation and relative-reference updates"
+    },
+    {
+      "original_path": "tools/.gitignore",
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+      "bytes": 13,
+      "preserved_path": "tools/.gitignore",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "tools/extract_upstreams.py",
+      "sha256": "d241f985c4acc5618ea85af86476ca8303db08d8714d37cea30ae2adbbd3804e",
+      "bytes": 11633,
+      "preserved_path": "AnalyseFuture/previous-tooling/tools/extract_upstreams.py.original.txt",
+      "reason": "Original tooling preserved before adapting paths or direct-main verification"
+    },
+    {
+      "original_path": "tools/tests/test_extract_upstreams.py",
+      "sha256": "89e1eb5f83d73cff036a3f341b556761b89bd0cab1bd7c635abc71473149341b",
+      "bytes": 10984,
+      "preserved_path": "tools/tests/test_extract_upstreams.py",
+      "reason": "Active implementation or tooling retained unchanged"
+    },
+    {
+      "original_path": "tsconfig.json",
+      "sha256": "43ca35b2ec898a4e4d39fddde053776e7e4ff5cc9b4d45df8f3ca6c0f5d99e3d",
+      "bytes": 424,
+      "preserved_path": "tsconfig.json",
+      "reason": "Active implementation or tooling retained unchanged"
+    }
+  ]
+}

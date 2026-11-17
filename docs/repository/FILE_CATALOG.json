@@ -57,15 +57,21 @@
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/PRESERVATION_MANIFEST.json",
+      "path": "AnalyseFuture/ARCHIVE_FEATURE_MAP.json",
       "functional_collection": "preserved-history/index",
-      "purpose": "Every baseline file's exact preserved destination and content identity",
+      "purpose": "Every original archive file relocation, source identity, feature and active-test relationship",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/PREVIOUS_LAYOUT.txt",
+      "path": "AnalyseFuture/FEATURE_INDEX.md",
       "functional_collection": "preserved-history/index",
-      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "purpose": "Complete feature-organized historical file and folder index",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/PRESERVATION_MANIFEST.json",
+      "functional_collection": "preserved-history/index",
+      "purpose": "Current 99-record baseline preservation ledger with relocated pointers",
       "literal_dependencies": []
     },
     {
@@ -75,470 +81,572 @@
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/.github/workflows/verify.yml.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/browser-extension/previous-code/apps/extension/README.md.original.txt",
+      "functional_collection": "preserved-history/browser-extension",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/AGENTS.md.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/browser-extension/previous-code/tests/chromium-route.test.js.original.txt",
+      "functional_collection": "preserved-history/browser-extension",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/CONTRIBUTING.md.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/browser-extension/previous-code/tests/extension-browser.test.js.original.txt",
+      "functional_collection": "preserved-history/browser-extension",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/PROJECT_STRUCTURE.md.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/browser-extension/previous-code/tests/extension.test.js.original.txt",
+      "functional_collection": "preserved-history/browser-extension",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/README.md.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/control-api/previous-code/services/control-api/server.ts.original.txt",
+      "functional_collection": "preserved-history/control-api",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/README.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/control-api/previous-code/tests/control-api.test.js.original.txt",
+      "functional_collection": "preserved-history/control-api",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/docs/STATUS.md.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/control-api/previous-code/tests/retention.test.js.original.txt",
+      "functional_collection": "preserved-history/control-api",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/docs/TESTING.md.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/governance/before-archive-organization-86792c2/AGENTS.md.original.txt",
+      "functional_collection": "preserved-history/governance",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/services/gateway/index.js.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/governance/before-archive-organization-86792c2/CONTRIBUTING.md.original.txt",
+      "functional_collection": "preserved-history/governance",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/tests/runtime/dev.test.js.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/governance/before-validation-c7b2977/AGENTS.md.original.txt",
+      "functional_collection": "preserved-history/governance",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/before-validation-c7b2977/tools/catalog_repository.py.original.txt",
-      "functional_collection": "preserved-history/before-validation-c7b2977",
+      "path": "AnalyseFuture/governance/before-validation-c7b2977/CONTRIBUTING.md.original.txt",
+      "functional_collection": "preserved-history/governance",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/apps/extension/README.md.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/governance/previous-github/pull_request_template.md",
+      "functional_collection": "preserved-history/governance",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/package.json.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/governance/previous-root/AGENTS.original.txt",
+      "functional_collection": "preserved-history/governance",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/scripts/README.md.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/governance/previous-root/CONTRIBUTING.md",
+      "functional_collection": "preserved-history/governance",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/scripts/dev.mjs.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/infrastructure/before-archive-organization-86792c2/docs/COST_POLICY.md.original.txt",
+      "functional_collection": "preserved-history/infrastructure",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/scripts/ops.mjs.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/infrastructure/previous-docs/COST_POLICY.md",
+      "functional_collection": "preserved-history/infrastructure",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/scripts/package.mjs.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/infrastructure/previous-docs/DEPLOYMENT.md",
+      "functional_collection": "preserved-history/infrastructure",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/services/control-api/server.ts.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/licensing/before-archive-organization-86792c2/docs/LICENSE_AND_DEPENDENCY_AUDIT.md.original.txt",
+      "functional_collection": "preserved-history/licensing",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/chromium-route.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/licensing/before-archive-organization-86792c2/docs/LICENSING.md.original.txt",
+      "functional_collection": "preserved-history/licensing",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/control-api.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/licensing/previous-docs/DEPENDENCY_LICENSE_MATRIX.md",
+      "functional_collection": "preserved-history/licensing",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/dev.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/licensing/previous-docs/LICENSE_AND_DEPENDENCY_AUDIT.md",
+      "functional_collection": "preserved-history/licensing",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/extension-browser.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/licensing/previous-docs/LICENSING.md",
+      "functional_collection": "preserved-history/licensing",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/extension.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/licensing/previous-docs/knowledge-archive/SECURITY_LICENSE_AND_INFRASTRUCTURE.md",
+      "functional_collection": "preserved-history/licensing",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/gateway.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/native-research/previous-docs/BUILD_VS_REUSE.md",
+      "functional_collection": "preserved-history/native-research",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/integration.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/native-research/previous-docs/REPO_AUDIT.md",
+      "functional_collection": "preserved-history/native-research",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/ops.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/native-research/previous-docs/knowledge-archive/COUNTRY_AND_SERVER_ARCHITECTURE.md",
+      "functional_collection": "preserved-history/native-research",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/package.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/native-research/previous-docs/knowledge-archive/REPOSITORY_RESEARCH.md",
+      "functional_collection": "preserved-history/native-research",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/retention.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/native-research/previous-docs/knowledge-archive/SOURCE_INDEX.md",
+      "functional_collection": "preserved-history/native-research",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/runtime.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/native-research/previous-root/ALL_SUGGESTED_VPN_REPOSITORIES.txt",
+      "functional_collection": "preserved-history/native-research",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/security.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/native-research/previous-root/SELECTED_VPN_REPOSITORIES.txt",
+      "functional_collection": "preserved-history/native-research",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-code/tests/website.test.js.original.txt",
-      "functional_collection": "preserved-history/previous-code",
+      "path": "AnalyseFuture/operations-ui/previous-code/tests/website.test.js.original.txt",
+      "functional_collection": "preserved-history/operations-ui",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/ARCHITECTURE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/packaging/previous-code/scripts/package.mjs.original.txt",
+      "functional_collection": "preserved-history/packaging",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/BUILD_VS_REUSE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/packaging/previous-code/tests/package.test.js.original.txt",
+      "functional_collection": "preserved-history/packaging",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/COMPETITOR_FEATURE_MATRIX.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/before-archive-organization-86792c2/PROJECT_IDEA.txt.original.txt",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/COMPETITOR_MATRIX.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/COMPETITOR_FEATURE_MATRIX.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/COST_POLICY.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/COMPETITOR_MATRIX.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/DECISIONS.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/DECISIONS.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/DEPENDENCY_LICENSE_MATRIX.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/IMPLEMENTATION_ROADMAP.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/DEPLOYMENT.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/REQUIREMENTS.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/HANDOFF.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/ROADMAP.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/IMPLEMENTATION_ROADMAP.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/VISION_AND_SCOPE.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/LICENSE_AND_DEPENDENCY_AUDIT.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-docs/source-plans/VPN_Company_Launch_Plan_2026-11-12.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/LICENSING.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-root/PROJECT_GOAL_2026-11-17.txt",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/LOCAL_DEVELOPMENT.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/product-planning/previous-root/TASKS.md",
+      "functional_collection": "preserved-history/product-planning",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/PROJECT_MEMORY.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/proxy-gateway/before-validation-c7b2977/services/gateway/index.js.original.txt",
+      "functional_collection": "preserved-history/proxy-gateway",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/PROJECT_STATUS.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/proxy-gateway/previous-code/tests/gateway.test.js.original.txt",
+      "functional_collection": "preserved-history/proxy-gateway",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/REPOSITORY_AUDIT.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/recovery/previous-code/scripts/ops.mjs.original.txt",
+      "functional_collection": "preserved-history/recovery",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/REPO_AUDIT.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/recovery/previous-code/tests/ops.test.js.original.txt",
+      "functional_collection": "preserved-history/recovery",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/REQUIREMENTS.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/repository-history/PRESERVATION_MANIFEST.json",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Exact original baseline preservation ledger before feature organization",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/PREVIOUS_LAYOUT.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/README.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/before-archive-organization-86792c2/PROJECT_STRUCTURE.md.original.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/before-archive-organization-86792c2/README.md.original.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/before-archive-organization-86792c2/docs/REPOSITORY_RECOVERY.txt.original.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/before-archive-organization-86792c2/docs/STATUS.md.original.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/before-validation-c7b2977/PROJECT_STRUCTURE.md.original.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/before-validation-c7b2977/README.md.original.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/before-validation-c7b2977/README.txt",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/HANDOFF.md",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/PROJECT_MEMORY.md",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/REPOSITORY_AUDIT.md",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/START_HERE.md",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/knowledge-archive/CONTINUATION_HANDOFF.md",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/knowledge-archive/PROJECT_CHRONICLE.md",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/knowledge-archive/START_HERE.md",
+      "functional_collection": "preserved-history/repository-history",
+      "purpose": "Historical material/original source retained for owner review; not current execution guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "AnalyseFuture/repository-history/previous-docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx",
+      "functional_collection": "preserved-history/repository-history",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/ROADMAP.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/repository-history/previous-github/workflows/verify-knowledge-archive.yml",
+      "functional_collection": "preserved-history/repository-history",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/SECURITY_AND_PRIVACY.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/repository-history/previous-root/CHANGELOG.md",
+      "functional_collection": "preserved-history/repository-history",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/SECURITY_THREAT_MODEL.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/repository-history/previous-root/README.md",
+      "functional_collection": "preserved-history/repository-history",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/START_HERE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/runtime/before-validation-c7b2977/tests/runtime/dev.test.js.original.txt",
+      "functional_collection": "preserved-history/runtime",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/TEST_STRATEGY.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/runtime/previous-code/scripts/README.md.original.txt",
+      "functional_collection": "preserved-history/runtime",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/VALIDATION.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/runtime/previous-code/scripts/dev.mjs.original.txt",
+      "functional_collection": "preserved-history/runtime",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/VISION_AND_SCOPE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/runtime/previous-code/tests/dev.test.js.original.txt",
+      "functional_collection": "preserved-history/runtime",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/CONTINUATION_HANDOFF.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/runtime/previous-code/tests/runtime.test.js.original.txt",
+      "functional_collection": "preserved-history/runtime",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/COUNTRY_AND_SERVER_ARCHITECTURE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/runtime/previous-docs/LOCAL_DEVELOPMENT.md",
+      "functional_collection": "preserved-history/runtime",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/PROJECT_CHRONICLE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/security-privacy/before-archive-organization-86792c2/docs/SECURITY_AND_PRIVACY.md.original.txt",
+      "functional_collection": "preserved-history/security-privacy",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/REPOSITORY_RESEARCH.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/security-privacy/previous-code/tests/security.test.js.original.txt",
+      "functional_collection": "preserved-history/security-privacy",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/SECURITY_LICENSE_AND_INFRASTRUCTURE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/security-privacy/previous-docs/SECURITY_AND_PRIVACY.md",
+      "functional_collection": "preserved-history/security-privacy",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/SOURCE_INDEX.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/security-privacy/previous-docs/SECURITY_THREAT_MODEL.md",
+      "functional_collection": "preserved-history/security-privacy",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/START_HERE.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/security-privacy/previous-root/SECURITY.md",
+      "functional_collection": "preserved-history/security-privacy",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/knowledge-archive/VPN_PROJECT_KNOWLEDGE_ARCHIVE_2026-11-16.docx",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/shared-integration/before-archive-organization-86792c2/docs/ARCHITECTURE.md.original.txt",
+      "functional_collection": "preserved-history/shared-integration",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-docs/source-plans/VPN_Company_Launch_Plan_2026-11-12.md",
-      "functional_collection": "preserved-history/previous-docs",
+      "path": "AnalyseFuture/shared-integration/previous-code/tests/integration.test.js.original.txt",
+      "functional_collection": "preserved-history/shared-integration",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-github/pull_request_template.md",
-      "functional_collection": "preserved-history/previous-github",
+      "path": "AnalyseFuture/shared-integration/previous-docs/ARCHITECTURE.md",
+      "functional_collection": "preserved-history/shared-integration",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-github/workflows/verify-knowledge-archive.yml",
-      "functional_collection": "preserved-history/previous-github",
+      "path": "AnalyseFuture/source-tooling/before-archive-organization-86792c2/tools/catalog_repository.py.original.txt",
+      "functional_collection": "preserved-history/source-tooling",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/AGENTS.original.txt",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/source-tooling/before-validation-c7b2977/tools/catalog_repository.py.original.txt",
+      "functional_collection": "preserved-history/source-tooling",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/ALL_SUGGESTED_VPN_REPOSITORIES.txt",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/source-tooling/previous-tooling/tools/extract_upstreams.py.original.txt",
+      "functional_collection": "preserved-history/source-tooling",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/CHANGELOG.md",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/testing-release/before-archive-organization-86792c2/docs/TESTING.md.original.txt",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/CONTRIBUTING.md",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/testing-release/before-validation-c7b2977/.github/workflows/verify.yml.original.txt",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/PROJECT_GOAL_2026-11-17.txt",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/testing-release/before-validation-c7b2977/docs/STATUS.md.original.txt",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/README.md",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/testing-release/before-validation-c7b2977/docs/TESTING.md.original.txt",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/SECURITY.md",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/testing-release/previous-code/package.json.original.txt",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/SELECTED_VPN_REPOSITORIES.txt",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/testing-release/previous-docs/PROJECT_STATUS.md",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-root/TASKS.md",
-      "functional_collection": "preserved-history/previous-root",
+      "path": "AnalyseFuture/testing-release/previous-docs/TEST_STRATEGY.md",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-tooling/.github/workflows/verify.yml.original.txt",
-      "functional_collection": "preserved-history/previous-tooling",
+      "path": "AnalyseFuture/testing-release/previous-docs/VALIDATION.md",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
     {
-      "path": "AnalyseFuture/previous-tooling/tools/extract_upstreams.py.original.txt",
-      "functional_collection": "preserved-history/previous-tooling",
+      "path": "AnalyseFuture/testing-release/previous-tooling/.github/workflows/verify.yml.original.txt",
+      "functional_collection": "preserved-history/testing-release",
       "purpose": "Historical material/original source retained for owner review; not current execution guidance",
       "literal_dependencies": []
     },
@@ -716,6 +824,12 @@
       "path": "docs/ARCHITECTURE.md",
       "functional_collection": "docs",
       "purpose": "Current architecture operational guidance",
+      "literal_dependencies": []
+    },
+    {
+      "path": "docs/ARCHIVE_FEATURE_AUDIT.md",
+      "functional_collection": "docs",
+      "purpose": "Archive analysis, implemented feature list and actual integration results",
       "literal_dependencies": []
     },
     {
@@ -1942,6 +2056,92 @@
         },
         {
           "literal": "zipfile",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/tests/test_feature_archive.py",
+      "functional_collection": "tools",
+      "purpose": "Real archive integration and filesystem failure regressions",
+      "literal_dependencies": [
+        {
+          "literal": "__future__",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "hashlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "importlib.util",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "json",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "tempfile",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "unittest",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "xml.etree.ElementTree",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "zipfile",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/verify_feature_archive.py",
+      "functional_collection": "tools",
+      "purpose": "Nonexecuting full archive and source-Git preservation verifier",
+      "literal_dependencies": [
+        {
+          "literal": "__future__",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "argparse",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "hashlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "json",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "re",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "stat",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "subprocess",
           "kind": "external-or-runtime"
         }
       ]

@@ -2,6 +2,8 @@
 
 An owner-controlled privacy and secure-connectivity project. The long-term goal is a trustworthy VPN service with native apps, browser extensions and independently operated infrastructure.
 
+**Archive analysis: [Every implemented feature and integration-check mapping](docs/ARCHIVE_FEATURE_AUDIT.md), plus [every archived file organized by feature](AnalyseFuture/FEATURE_INDEX.md).**
+
 Read **[PROJECT_IDEA.txt](PROJECT_IDEA.txt)** for the detailed product vision, delivery stages, feasibility limits and responsibilities. It is a plan, not evidence of a completed service.
 
 ## What exists
@@ -49,7 +51,7 @@ For local services, run `npm run dev:init`, then `npm run dev`. See [local devel
 
 ## Delivery and safety
 
-At the owner's request, work directly on `main`: finish one bounded task, perform only the checks currently authorized, commit and push it before starting the next. Do not force-push or discard remote work. Preserve disputed material in `AnalyseFuture/` with provenance rather than deleting it.
+The owner now requests one bounded task per feature branch and pull request against `main`, with relevant validation and no automatic merge. This supersedes the earlier direct-main rule. Do not force-push or discard remote work. Preserve disputed material in `AnalyseFuture/` with provenance rather than deleting it.
 
 Historical documents in `AnalyseFuture/` are not current operating instructions or implementation claims. [The recovery report](docs/REPOSITORY_RECOVERY.txt) explains the reorganization, preservation ledger and limits of the repository inspection. It does not certify that the owner's GitHub account is secure.
 
