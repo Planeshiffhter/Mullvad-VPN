@@ -150,6 +150,7 @@ Every active project file is described below. Historical copies are indexed in t
 | [tests/runtime/dev.test.js](tests/runtime/dev.test.js) | Repeatable initialization, trusted TLS/default gateways, fixture proxy forwarding/CONNECT, retained-state recovery and occupied-port cleanup. |
 | `tests/helpers/` | Shared isolated test infrastructure. |
 | [tests/helpers/tls.js](tests/helpers/tls.js) | Temporary verified TLS identities and cleanup; does not install a production CA. |
+| [tests/helpers/chromium-extension.js](tests/helpers/chromium-extension.js) | Read-only managed policy and prerequisite checks for strict MV3 acceptance. |
 
 ### `tools/` and `upstream/`: inventory and separately licensed assets
 
@@ -157,14 +158,16 @@ Every active project file is described below. Historical copies are indexed in t
 | --- | --- |
 | `tools/` | Source-preservation and static inventory tools, not a VPN implementation. |
 | [tools/extract_upstreams.py](tools/extract_upstreams.py) | Offline pinned ZIP verification and safe recreation; validates layout, contents, permissions and symlinks; refuses mismatched existing source. |
+| [tools/check_native_host.py](tools/check_native_host.py) | Reports Linux tunnel test prerequisites without opening a tunnel or changing routes. |
 | [tools/catalog_repository.py](tools/catalog_repository.py) | Static project/workspace file and lexical-reference catalogs; never executes application imports; private runtime contents and Git internals excluded. |
 | [tools/.gitignore](tools/.gitignore) | Python cache exclusion. |
 | `tools/tests/` | Extractor filesystem safety regressions. |
 | [tools/tests/test_extract_upstreams.py](tools/tests/test_extract_upstreams.py) | Digest, traversal, symlink/mode, existing-edit and changed/missing/additional-entry checks. |
+| [tools/tests/test_check_native_host.py](tools/tests/test_check_native_host.py) | Effective capability and TUN device-access check regressions. |
 | `upstream/` | Provenance/handling boundary for third-party source. |
 | [upstream/README.txt](upstream/README.txt) | Exact hashes, original project URLs, extraction instructions and licensing/provenance limits. |
 | `upstream/archives/` | Immutable original ZIP assets; preserve their bytes and notices. |
-| [upstream/archives/mullvadvpn-app-main.zip](upstream/archives/mullvadvpn-app-main.zip) | Unbuilt Mullvad source: native daemon/CLI, networking libraries, desktop/mobile clients and build inputs. No vendor infrastructure transferred. |
+| [upstream/archives/mullvadvpn-app-main.zip](upstream/archives/mullvadvpn-app-main.zip) | Mullvad source for the native daemon, CLI, networking libraries, desktop/mobile clients and build inputs. The Linux CLI was built separately. No vendor infrastructure transferred. |
 | [upstream/archives/amnezia-client-dev.zip](upstream/archives/amnezia-client-dev.zip) | Unbuilt Amnezia source: Qt/C++/QML client, service/IPC and provisioning/protocol assets; not integrated into our service. |
 
 ### `docs/`: current operational guidance and catalogs
@@ -211,6 +214,7 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 
 - **Goal:** Replace the two cloud-policy skips with actual MV3 and browser-proxy evidence on a legitimately permitted runner.
 - **Needs:** Owner-controlled Chrome/Chromium profile/device that permits unpacked extensions, isolated trusted dev CA, NSS tools where required, exact extension origin in API config. Preserve cloud-managed policies.
+- **Local deliverable:** The [strict acceptance command](apps/extension/README.md) requires a permitted runner and fails on known skip conditions.
 - **Work:** Run the two browser suites; inspect actual worker loading, Basic proxy-auth scoping, verifier IP, expiry/revocation, explicit disconnect, browser/worker restart, stale sessions and owned-setting restoration. Exercise real policy/ownership conflicts without changing unrelated settings.
 - **Files:** `tests/extension/`, `apps/extension/`, `docs/LOCAL_DEVELOPMENT.md`, a dated acceptance report.
 - **Done when:** Report exact commit/OS/browser versions, commands, executed counts and observed behavior. All required scenarios pass on that runner or remaining failures are explicitly open. Simulated runtime or skipped checks cannot close this task. Run relevant controller/integration suites if fixes are needed.
@@ -232,6 +236,7 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 
 ### T04 — Reproduce the selected native build (P1, depends on T03)
 
+- **Local evidence:** The selected pinned Linux CLI target built and passed the version and help checks. [Build record](docs/NATIVE_LINUX_BUILD.md)
 - **Needs:** Target/toolchain/source inputs established by T03; sufficient resources. Owner decisions only where required by the selected integration/distribution action.
 - **Work:** Install pinned build prerequisites, resolve trustworthy submodule/generated inputs, build the single chosen target and capture sanitized logs. Verify any downloaded artifact signatures/checksums/TLS; do not override expected hashes. Repeat from clean target outputs without discarding unique work. Add reusable setup guidance.
 - **Files/output:** Chosen tracked build instructions/helpers and a dated native-build report; update T03 findings and status. Generated binaries remain outputs.
@@ -247,6 +252,7 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 ### T06 — Smallest real native tunnel proof (P1, prerequisite required)
 
 - **Depends on:** T04/T05 plus a suitable authorized privileged test machine and independently authorized WireGuard endpoint; apply T07 if obtaining a host.
+- **Local deliverable:** `python3 -B tools/check_native_host.py` checks Linux host prerequisites without changing network state.
 - **Work:** Prove tunnel establishment and intended traffic routing, DNS resolution, IPv4/IPv6 behavior, endpoint reachability, connect/disconnect cleanup, revocation/key rotation, network loss, restart and configured blocking behavior. Compare routes/interfaces/resolvers/firewall before/during/after. Test traffic outside the intended tunnel under the selected mode.
 - **Files/output:** Native integration tests/helpers and dated platform-specific evidence with secret-free configuration schema.
 - **Done when:** Repeatable real-endpoint tests cover success and failure without disturbing unrelated host networking. Record any unsupported traffic/scenario. A local proxy fixture, native binary or virtual interface alone is insufficient.
@@ -255,6 +261,7 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 
 - **Owner work:** Identify an authorized host/account/region, verify proxy/VPN terms, actual compute/disk/public-IP/egress limits, trial-expiry effects, billing controls and emergency shutdown access. Confirm incremental cost stays $0 or explicitly authorize a changed budget.
 - **Engineering work:** Prepare a sanitized host/region/capacity/cost checklist and management/data-plane exposure design. Do not create accounts, accept charging trials or provision before authorization.
+- **Local deliverable:** The [offline runtime check](infrastructure/README.md) validates a shared TLS identity and gateway configuration before startup.
 - **Files/output:** `docs/DEPLOYMENT.md`, `docs/COST_POLICY.md`, private operational records outside Git.
 - **Done when:** Owner authorization, actual limits/provider terms, account-controlled shutdown and required access are confirmed. Free-tier advertisements and a country string do not pass the gate. Never put account secrets or billing screenshots with private details in a PR.
 
@@ -273,6 +280,7 @@ Status meanings: **ready** = useful engineering can begin locally; **prerequisit
 ### T10 — Off-host recovery and deployment rollback (P1, prerequisite required)
 
 - **Already exists:** Local encrypted SQLite backup/restore and recovery tests; preserve them.
+- **Local deliverable:** The [CLI recovery drill](scripts/README.md) verifies an encrypted handoff between isolated directories on one machine, including fresh and stale access checks.
 - **Needs:** Approved existing off-host storage and deployed test target; T08 for production-like validation.
 - **Work:** Define encrypted copy/retention/access/deletion, owner-controlled passphrase recovery, restore destination, stopped-service procedure and rollback. Restore a copy, perform account recovery to revoke stale sessions/grants, start the service and validate account/usage/denial of stale authorization. Test reversal to the previous deployment.
 - **Files:** `scripts/recovery/`, `tests/operations/`, `tests/integration/`, recovery/deployment runbooks.
@@ -379,7 +387,7 @@ python3 tools/extract_upstreams.py
 python3 tools/extract_upstreams.py --verify-only
 ```
 
-Choose relevant checks for each PR; full browser/service changes should use the complete check/package workflow, native changes need their selected build/behavior matrix, and extractor changes need Python safety tests and source verification. A documentation-only PR needs path/link/inventory/consistency and whitespace checks rather than invented runtime results. Refresh static catalogs when the file set or relevant paths change with `python3 -B tools/catalog_repository.py`; inspect generated diffs and preserve redaction.
+Choose relevant checks for each PR. Full browser/service changes use the complete check/package workflow. Native changes need the selected build and behavior matrix. Extractor changes need Python safety tests and source verification. For a documentation-only PR, verify links, inventory, consistency and whitespace. Refresh the authored catalog with `python3 -B tools/catalog_repository.py --project-only` when files or references change.
 
 For local development, run `npm run dev:init`, then `npm run dev`. Verify with `curl --fail --silent --show-error --noproxy '*' --cacert .local/localhost.pem https://localhost:9443/healthz`. Explicit `npm run dev -- --fixture` is a controlled local test only; stop the existing runner before changing modes. Do not terminate another tool's service or publish loopback preview links. See [local development](docs/LOCAL_DEVELOPMENT.md) for certificate expiry/trust, exact origins and private credentials.
 

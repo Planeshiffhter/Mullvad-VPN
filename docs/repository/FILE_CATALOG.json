@@ -797,6 +797,12 @@
       "literal_dependencies": []
     },
     {
+      "path": "docs/NATIVE_LINUX_BUILD.md",
+      "functional_collection": "docs",
+      "purpose": "Verified pinned Linux CLI build procedure and artifact identities",
+      "literal_dependencies": []
+    },
+    {
       "path": "docs/REPOSITORY_RECOVERY.txt",
       "functional_collection": "docs",
       "purpose": "Current repository recovery operational guidance",
@@ -916,11 +922,29 @@
           "observation": "file-present"
         },
         {
+          "literal": "../services/gateway/policy.js",
+          "kind": "relative-module",
+          "resolved_path": "services/gateway/policy.js",
+          "observation": "file-present"
+        },
+        {
+          "literal": "node:crypto",
+          "kind": "external-or-runtime"
+        },
+        {
           "literal": "node:fs",
           "kind": "external-or-runtime"
         },
         {
+          "literal": "node:net",
+          "kind": "external-or-runtime"
+        },
+        {
           "literal": "node:path",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:tls",
           "kind": "external-or-runtime"
         },
         {
@@ -1307,6 +1331,12 @@
           "observation": "file-present"
         },
         {
+          "literal": "../helpers/chromium-extension.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/chromium-extension.js",
+          "observation": "file-present"
+        },
+        {
           "literal": "../helpers/tls.js",
           "kind": "relative-module",
           "resolved_path": "tests/helpers/tls.js",
@@ -1363,6 +1393,12 @@
       "functional_collection": "tests/extension",
       "purpose": "Actual MV3-load or explicit managed-policy skip and simulated popup UI",
       "literal_dependencies": [
+        {
+          "literal": "../helpers/chromium-extension.js",
+          "kind": "relative-module",
+          "resolved_path": "tests/helpers/chromium-extension.js",
+          "observation": "file-present"
+        },
         {
           "literal": "@playwright/test",
           "kind": "external-or-runtime"
@@ -1489,6 +1525,25 @@
         },
         {
           "literal": "node:tls",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tests/helpers/chromium-extension.js",
+      "functional_collection": "tests/helpers",
+      "purpose": "Managed policy and prerequisite checks for real browser acceptance",
+      "literal_dependencies": [
+        {
+          "literal": "node:child_process",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:fs/promises",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:path",
           "kind": "external-or-runtime"
         }
       ]
@@ -1741,19 +1796,11 @@
           "observation": "file-present"
         },
         {
-          "literal": "../../scripts/recovery/backup.mjs",
-          "kind": "relative-module",
-          "resolved_path": "scripts/recovery/backup.mjs",
-          "observation": "file-present"
-        },
-        {
-          "literal": "../../services/control-api/store.ts",
-          "kind": "relative-module",
-          "resolved_path": "services/control-api/store.ts",
-          "observation": "file-present"
-        },
-        {
           "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:child_process",
           "kind": "external-or-runtime"
         },
         {
@@ -1787,6 +1834,14 @@
         {
           "literal": "node:tls",
           "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:url",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:util",
+          "kind": "external-or-runtime"
         }
       ]
     },
@@ -1815,6 +1870,10 @@
         },
         {
           "literal": "node:assert/strict",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:child_process",
           "kind": "external-or-runtime"
         },
         {
@@ -1847,6 +1906,10 @@
         },
         {
           "literal": "node:url",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "node:util",
           "kind": "external-or-runtime"
         }
       ]
@@ -1904,6 +1967,33 @@
         },
         {
           "literal": "subprocess",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/check_native_host.py",
+      "functional_collection": "tools",
+      "purpose": "Read-only Linux tunnel test prerequisite checks",
+      "literal_dependencies": [
+        {
+          "literal": "os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "platform",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "shutil",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "stat",
           "kind": "external-or-runtime"
         }
       ]
@@ -2006,6 +2096,37 @@
         },
         {
           "literal": "unittest",
+          "kind": "external-or-runtime"
+        }
+      ]
+    },
+    {
+      "path": "tools/tests/test_check_native_host.py",
+      "functional_collection": "tools",
+      "purpose": "Linux capability and device-access check regressions",
+      "literal_dependencies": [
+        {
+          "literal": "os",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "pathlib",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "tempfile",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "tools",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "unittest",
+          "kind": "external-or-runtime"
+        },
+        {
+          "literal": "unittest.mock",
           "kind": "external-or-runtime"
         }
       ]

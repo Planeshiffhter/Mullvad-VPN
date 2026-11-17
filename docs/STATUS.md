@@ -2,7 +2,16 @@
 
 Updated: 18 November 2026. Current instructions are README.md, PROJECT_HANDOFF.md, PROJECT_IDEA.txt, PROJECT_STRUCTURE.md and AGENTS.md. Earlier snapshots and research are preserved in AnalyseFuture/.
 
-## Latest task: repository audit and hardening
+## Latest task: browser, recovery and deployment acceptance work
+
+- The strict MV3 acceptance command fails when a runner's policy blocks unpacked extensions. Managed Chromium still blocks the two real-extension checks. [Browser acceptance](../apps/extension/README.md)
+- The recovery drill uses the existing CLIs and an encrypted archive copied between isolated local directories. Restored usage and fresh credentials worked, old credentials were denied, and the source database remained byte-identical. An authorized off-host drill and deployed rollback remain open. [Recovery drill](../scripts/README.md)
+- The upstream Linux CLI built twice from clean targets with the pinned Rust and Protobuf toolchain. Version and help output matched. Debug binary hashes differed across target paths. This machine lacks TUN access, effective network administration capability and `wg`. [Build record](NATIVE_LINUX_BUILD.md)
+- The offline gateway check validates the shared TLS identity and runtime configuration. An approved host and external TLS, firewall, location and billing evidence remain prerequisites to live acceptance. [Deployment preflight](DEPLOYMENT.md)
+
+Local verification finished with 64 Node tests passed and two managed-browser skips, 20 Python tests passed, and successful extension packaging and archive checks. [Follow-up validation](VALIDATION_2026-11-18.md#acceptance-follow-up)
+
+## Prior task: repository audit and hardening
 
 Revalidated baseline `5a33f2d` and confirmed its functional layout. Fixed the operations grant display (T24), WebRTC verification after policy changes (T02), transactional founder recovery and session revocation (T10), and dangling runtime database links. Pinned the manual workflow actions to their existing release commits and added a project-only catalog refresh for review (T14). The [feature matrix](FEATURE_MATRIX.md) records scope and evidence, including the static native build investigation (T03).
 
@@ -47,6 +56,6 @@ The repository already contains a Chrome MV3 browser-proxy client, founder HTTPS
 
 ## Next task
 
-Use the task IDs and acceptance checks in PROJECT_HANDOFF.md. T24 and the static T03 investigation are complete for this branch. T01 needs an authorized browser runner. T04 needs the pinned native toolchain and build prerequisites described in the feature matrix. A real native tunnel additionally requires an authorized endpoint and suitable privileged test machine. Subsequent implementation tools should push one bounded task branch and open a PR against main for review before beginning another task; do not merge without owner authorization.
+Use the acceptance checks in [PROJECT_HANDOFF.md](../PROJECT_HANDOFF.md). The next external prerequisites are a permitted browser runner (T01), an authorized separate recovery environment (T10), and an approved host and endpoint for T06 and T07. The available GitHub identity received HTTP 403 for a write dry run to the named repository. The review commits are local.
 
 No additional spending, new paid service, production deployment or project-license selection is authorized by this reorganization.

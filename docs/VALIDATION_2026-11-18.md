@@ -45,3 +45,20 @@ A separate `node --test --experimental-test-coverage --test-timeout=30000 tests/
 - **T14 tooling and CI.** Disposable Git fixtures cover a project-only catalog refresh and redaction of ignored paths, sizes, hashes and link targets in full inventories. Both Action version tags were independently resolved to the commits pinned in CI. Hosted CI was unrun.
 
 No actual browser traffic test under a permitted unpacked-extension policy, live exit, native tunnel, leak testing, public deployment or off-host recovery drill was performed. See the [feature matrix](FEATURE_MATRIX.md) and [recovery record](REPOSITORY_RECOVERY.txt) for remaining prerequisites.
+
+## Acceptance follow-up
+
+The follow-up changes build on `6a22253`. Tests ran with managed Chromium policy in place.
+
+| Check | Result |
+| --- | --- |
+| `npm run check` | 64 passed, 0 failed, 2 managed-browser skips. TypeScript and the extension build passed. |
+| Strict MV3 acceptance on managed Chromium | Expected exit 1. The simulated UI test passed and the two actual extension tests stopped at the policy check. No skips counted as success. |
+| Recovery CLI drill | Encrypted handoff between isolated local directories passed. Restored usage, stale password/bearer/grant rejection, fresh login and TLS CONNECT, and source database preservation were verified. |
+| Runtime configuration check | Matching shared certificate and key passed. Wrong API name, wrong proxy name and mismatched key were rejected. A reserved exit IP was rejected for live configuration. SQLite remained unopened. |
+| `python3 -B -m unittest discover -s tools/tests` | 20 passed, including new Linux host prerequisite tests. |
+| `python3 -B tools/check_native_host.py` | Expected nonzero result here. `ip` was available. TUN, effective `CAP_NET_ADMIN` and `wg` were missing. |
+| Package and preserved sources | Extension ZIP checksum and integrity passed. Both extracted source trees matched the preserved archives. |
+| Pinned upstream Linux CLI | Two clean locked offline builds and nonprivileged version and help checks passed. Debug hashes differed across target directories. [Native build record](NATIVE_LINUX_BUILD.md) |
+
+Actual unpacked-extension routing, off-host retrieval and rollback, native routing and a live gateway remain open. The Git push dry run to the named repository returned HTTP 403. No hosting or public service was provisioned.
